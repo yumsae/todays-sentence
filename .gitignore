@@ -84,5 +84,7 @@ db.sqlite3
 
 .idea
 
+.basic
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
