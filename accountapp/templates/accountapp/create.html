@@ -2,14 +2,39 @@
 
 {% block content %}
 
-    <div>
-        <div class="mb-4">
-            <h4>SignUp</h4>
+    <div class="cont_wrap">
+        <div class="title_wrap">
+            <p class="cont_logo">&lt;오늘:의 문장&gt;</p>
         </div>
         <form action="{% url 'accountapp:create' %}" method="post">
             {% csrf_token %}
-            {% bootstrap_form form %}
-            <input type="submit" class="btn btn-dark rounded-pill col-6 mt-3">
+            <div>
+                <p class="create_account">
+                    아이디
+                </p>
+                <input type="text" class="account_box">
+            </div>
+            <div>
+                <p class="create_account">
+                    비밀번호
+                </p>
+                <input type="text" class="account_box">
+            </div>
+            <div>
+                <p class="create_account">
+                    비밀번호 재입력
+                </p>
+                <input type="text" class="account_box">
+            </div>
+            <div>
+                <p class="create_account">
+                    이메일 주소
+                </p>
+                <input type="text" class="account_box">
+            </div>
+
+
+            <input type="submit" class="btn btn-dark rounded-pill col-6 mt-3" style="margin-top: 4rem">
         </form>
     </div>
 

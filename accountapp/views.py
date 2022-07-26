@@ -12,3 +12,4 @@ class AccountCreateView(CreateView):
     template_name = 'accountapp/create.html'
 
 
+
