@@ -10,5 +10,3 @@ class AccountCreateView(CreateView):
     model = User
     form_class = UserCreationForm
     template_name = 'accountapp/create.html'
-
-
