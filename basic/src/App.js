@@ -21,7 +21,7 @@ function App(){
   return (
     <div className="App">
       <div>
-
+      
       </div>
       <div className='form-wrapper'>
         <input className="title-input" type='text' placeholder='제목' onChange={getValue} name='title'/>
@@ -49,7 +49,7 @@ function App(){
       <button className="submit-button" >시 완성!</button>
       <button className="submit-button">문장 도움 받기</button>
     </div>
-
+    
   );
 }
 

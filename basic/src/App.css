@@ -1,38 +1,57 @@
+@font-face {
+  font-family: 'Hahmlet-ExtraLight';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/Hahmlet-ExtraLight.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 .App {
   text-align: center;
+  padding: 150px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.form-wrapper{
+  width: 80%;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title-input {
+  width: 96.5%;
+  height: 40px;
+  margin: 10px;
+  font-size:15px;
+  font-family: 'Hahmlet-ExtraLight';
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.text-area {
+  width: 70%;
+  min-height: 500px;
+  font-family: 'Hahmlet-ExtraLight';
+}
+
+.submit-button{
+  width: 200px;
+  height: 50px;
+  margin: 15px;
+  font-size: 17px;
+  font-family: 'Hahmlet-ExtraLight';
+  background-color: rgb(108, 108, 108);
   color: white;
+  transition: background-color .5s;
+  border: none;
+  border-radius: 10px;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.submit-button:hover{
+  background-color:  #D5C4C4; 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.ck.ck-editor__editable:not(.ck-editor__nested-editable) {
+  min-height: 500px;
+  font-family: 'Hahmlet-ExtraLight';
 }
+
