@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="static/base.css">
+    <!-- GOOGLE FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Song+Myung&display=swap" rel="stylesheet">
     <style>
+        html {
+            background-color: dimgray;
+            max-width: 100%;
+            max-height: 100%;
+        }
 
         * {
             padding: 0;
@@ -20,10 +27,6 @@
         a:visited {
             color: black;
             text-decoration: none;
-        }
-
-        body {
-            background-color: #EFEFEF;
         }
 
         .wrapper {
@@ -40,7 +43,7 @@
             margin: 5px;
             font-weight: 500;
             font-size: 44px;
-            font-family: 'Hamhlet ', serif;
+            font-family: 'Song Myung' , serif;
             color: black;
         }
 
@@ -49,15 +52,7 @@
             font-size: 20px;
             font-weight: 200;
             font-family: 'Noto Serif KR', serif;
-            color: dimgray;
-        }
-
-        .box {
-            border: 1px solid dimgray;
-            width: 600px;
-            height: 60px;
-            margin: 30px auto 0;
-            background-color: white;
+            color: black;
         }
 
         .poem {
@@ -132,7 +127,7 @@
             font-family: "hahmlet", sans-serif;
         }
 
-        .input_box {
+        /* .input_box {
             border: 1px solid dimgray;
             width: 100px;
             height: 60px;
@@ -141,34 +136,46 @@
             position: absolute;
             top: 106px;
             left: 939px;
+        } */
+
+        .container {
+            max-width: 100%;
+            width: 100%;
+            opacity: 30%;
         }
 
     </style>
 </head>
 <body>
-<div class="nav_wrap">
-    <div class="nav">
-        <div class="page_header">
-            <a href="" class="nav_btn">문장쓰기</a>
-            <a href="" class="nav_btn">커뮤니티</a>
-            <a href="" class="nav_btn">문의하기</a>
-            <a href="" class="nav_btn">로그인</a>
+    <div class="today_header">
+        <div class="nav_wrap">
+            <div class="nav">
+                <a href="" class="today_logo">&lt;&gt;오늘:의 문장</a>
+                <a href="" class="nav_btn" style="margin-left: 15px">문장쓰기</a>
+                <a href="" class="nav_btn">커뮤니티</a>
+                <div class="nav_btn_wrap">
+                    <a href="" class="login"></a>
+                </div>
+            </div>
         </div>
     </div>
+<div class ="container">
+    <img src="https://images.unsplash.com/photo-1628430382922-ef1d64c991a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+    alt="reading"></image>
 </div>
 <div class="wrapper">
     <div class="title">
         <h1>&lt;오늘:의 문장&gt;</h1>
-        <p>당신의 문장을 적어주세요</p>
+        <p>이거 p 태그 어디갓어</p>
     </div>
     <div class="box">
         <p class="box_cont">
             오늘 밤에도 별이 바람에 스치운다.
         </p>
-        <div class="input_box">
-        </div>
+        <!-- <div class="input_box">
+        </div> -->
     </div>
-
+    </div>
     <div class="poem_wrap">
 <!--        <div class="poem">-->
 <!--            <h3 class="poem_ti">-->
