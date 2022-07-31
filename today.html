@@ -50,19 +50,45 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            text-align: center;
+            align-items: center;
         }
 
         .subtitle{
             font-family: 'Song Myung';
-
+            font-size: 20px;
+            color: #4A4A4A;
+            position: relative;
         }
 
         .subtitle-box{
-            background-color: white;
-            height: 500px;
             position: absolute;
+            width: 100%;
+            height: 349px;
+            left: 0px;
+            top: 780px;
+            max-width: 100%;
+            background: #FFFFFF;
         }
+
+
+        .contents-wrapper {
+            font-family: 'Song Myung';
+            position: relative;
+        }
+
+        .contents1 {
+            text-align: left;
+        }
+
+        .contents2 {
+            text-align: right;
+        }
+        
+        .content-title{
+            color: #903C3C;
+        }
+
+        
 
         /* .title-box{
             border: 0.1px solid white;
@@ -190,10 +216,6 @@
             position: absolute;
         }
 
-        .contents-wrapper {
-            font-family: 'Song Myung';
-        }
-
 
     </style>
         <div class="today_header">
@@ -238,18 +260,18 @@
     </div>
 
     <div class="contents-wrapper">
-        <div class= "contents">
+        <div class= "contents1">
             <p class="content-title">문장 쓰기 가이드</p>
-            <h2 class="content-subtitle">평범했던 문장을 </br>
+            <h2 class="content-subtitle">평범한 문장을 </br>
                 시적으로 바꿔보세요</h2>
             <p class= "content">문장 작성 가이드를 참고하여</br>
                 처음 썼던 문장을</br>
                 여러 개의 다른 문장들로</br>
                 바꿔쓸 수 있어요</p>
         </div>
-        <div class= "contents">
+        <div class= "contents2">
             <p class="content-title">문장 공유</p>
-            <h2 class="content-subtitle">쓰지 않은 문장을 </br>
+            <h2 class="content-subtitle">쓰지 않는 문장을 </br>
                 다른 사람들과 공유해보세요</h2>
             <p class="content">시에 쓰이지 않은 문장들은</br>
                 문장 공유 게시판에 올라가</br>
