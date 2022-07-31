@@ -12,7 +12,6 @@
         html {
             background-color: dimgray;
             max-width: 100%;
-            max-height: 100%;
         }
 
         * {
@@ -28,34 +27,77 @@
             color: black;
             text-decoration: none;
         }
-
+        /* 
         .wrapper {
             text-align: center;
             position: relative;
-        }
+        } */
 
         .title {
+            text-align: center;
+            margin: 0px auto;
             position: relative;
-            margin-top: 300px;
         }
 
         .title h1 {
+            font-weight: 500;
+            font-size: 44px;
+            font-family: 'Song Myung';
+            color: black;
+            z-index: 1;
+            position: absolute;
+            margin-top: 250px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .subtitle{
+            font-family: 'Song Myung';
+
+        }
+
+        .subtitle-box{
+            background-color: white;
+            height: 500px;
+            position: absolute;
+        }
+
+        /* .title-box{
+            border: 0.1px solid white;
+            margin: auto;
+            width: 450px;
+            height: 300px;
+            background-color: rgb(173, 173, 173);
+            left: 700px;
+        } */
+
+        /* .design-box{
+            border: 0.1px solid white;
+            width: 450px;
+            height: 300px;
+        } */
+
+        /* .title h1 {
             margin: 5px;
             font-weight: 500;
             font-size: 44px;
             font-family: 'Song Myung' , serif;
             color: black;
-        }
+        } */
 
-        .title p {
+
+
+        /* .title p {
             margin: 5px;
             font-size: 20px;
             font-weight: 200;
-            font-family: 'Noto Serif KR', serif;
+            font-family: 'Song Myung', serif;
             color: black;
-        }
+        } */
 
-        .poem {
+        /* .poem {
             font-family: 'Noto Serif KR', serif;
             color: gray;
             position: absolute;
@@ -79,7 +121,7 @@
             margin: 5px;
             font-size: 20px;
             font-weight: 200;
-        }
+        } */
 
         body {
             background-image: url("main.jpeg");
@@ -127,57 +169,97 @@
             font-family: "hahmlet", sans-serif;
         }
 
-        /* .input_box {
+        /* .input-box {
             border: 1px solid dimgray;
             width: 100px;
             height: 60px;
             margin: 30px auto 0;
-            background-color: dimgray;
+            background-color: rgb(55, 55, 55);
             position: absolute;
             top: 106px;
             left: 939px;
         } */
 
-        .container {
+        .img{
             max-width: 100%;
-            width: 100%;
-            opacity: 30%;
+            max-height: 50%;
         }
 
+        .container {
+            opacity: 50%;
+            position: absolute;
+        }
+
+        .contents-wrapper {
+            font-family: 'Song Myung';
+        }
+
+
     </style>
-</head>
-<body>
-    <div class="today_header">
-        <div class="nav_wrap">
-            <div class="nav">
-                <a href="" class="today_logo">&lt;&gt;오늘:의 문장</a>
-                <a href="" class="nav_btn" style="margin-left: 15px">문장쓰기</a>
-                <a href="" class="nav_btn">커뮤니티</a>
-                <div class="nav_btn_wrap">
-                    <a href="" class="login"></a>
+        <div class="today_header">
+            <div class="nav_wrap">
+                <div class="nav">
+                    <a href="" class="today_logo">&lt;&gt;오늘:의 문장</a>
+                    <a href="" class="nav_btn" style="margin-left: 15px">문장쓰기</a>
+                    <a href="" class="nav_btn">커뮤니티</a>
+                    <div class="nav_btn_wrap">
+                        <a href="" class="login"></a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-<div class ="container">
-    <img src="https://images.unsplash.com/photo-1628430382922-ef1d64c991a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
-    alt="reading"></image>
-</div>
-<div class="wrapper">
+</head>
+<body>
+<!-- <div class="wrapper">
     <div class="title">
         <h1>&lt;오늘:의 문장&gt;</h1>
-        <p>이거 p 태그 어디갓어</p>
+        <p>당신의 문장을 적어주세요</p>
     </div>
     <div class="box">
         <p class="box_cont">
             오늘 밤에도 별이 바람에 스치운다.
         </p>
-        <!-- <div class="input_box">
-        </div> -->
+        <div class="input-box">
+        </div>
+    </div> -->
+    </div>
+    <div class= "title">
+        <h1>시 쓰기의 첫 걸음, </br> 오늘의 한 문장부터</h1>
+    <div class= "container">
+        <div class= "img-box"></div>
+        <img class= "img" src="./testimg.jpg" alt="reading" />
+    </div>
+    <div class= "subtitle">
+        <div class="subtitle-box"></div>
+        <h3>모든 시는 한 문장에서 시작해요 </br>
+            문장을 창작하고, 문장을 교환하며 </br>
+            <오늘:의 문장>에서 시를 시작해보세요
+            </h3>
+    </div>
+
+    <div class="contents-wrapper">
+        <div class= "contents">
+            <p class="content-title">문장 쓰기 가이드</p>
+            <h2 class="content-subtitle">평범했던 문장을 </br>
+                시적으로 바꿔보세요</h2>
+            <p class= "content">문장 작성 가이드를 참고하여</br>
+                처음 썼던 문장을</br>
+                여러 개의 다른 문장들로</br>
+                바꿔쓸 수 있어요</p>
+        </div>
+        <div class= "contents">
+            <p class="content-title">문장 공유</p>
+            <h2 class="content-subtitle">쓰지 않은 문장을 </br>
+                다른 사람들과 공유해보세요</h2>
+            <p class="content">시에 쓰이지 않은 문장들은</br>
+                문장 공유 게시판에 올라가</br>
+                다른 사람들에게 영감을</br>
+                줄 수 있어요</p>
+        </div>
     </div>
     </div>
-    <div class="poem_wrap">
-<!--        <div class="poem">-->
+    <!-- <div class="poem_wrap"> -->
+<!--    <div class="poem">-->
 <!--            <h3 class="poem_ti">-->
 <!--                서시-->
 <!--            </h3>-->
@@ -190,7 +272,7 @@
 <!--            <p class="poem_cont">모든 죽어가는 것을 사랑해야지</p>-->
 <!--            <p class="poem_cont">그리고 나한테 주어진 길을</p>-->
 <!--            <p class="poem_cont">걸어가야겠다.</p>-->
-<!--            <p class="poem_cont">오늘 밤에도 별이 바람에 스치운다.</p>-->
+<!--            <p class="poem_cont">오늘 밤에도 별이 바람에 스치운다.</p>
         </div>
 
     </div>
