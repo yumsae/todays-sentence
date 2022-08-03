@@ -8,6 +8,7 @@
         </div>
         <form action="{% url 'accountapp:create' %}" method="post">
             {% csrf_token %}
+            {% include "accountapp/forms_errors.html" %}
             <div>
                 <label for="username" class="create_account">
                     아이디
@@ -24,7 +25,7 @@
                 <label for="password2"class="create_account">
                     비밀번호 재입력
                 </label>
-                <input type="password" class="account_box" name="password2" id="password2" value="{{ form.password2.value|default_if_none:'' }}">
+                <input type="password" class="account_box" name="password2" id="password2" value="{{ form.confirm.value|default_if_none:'' }}">
             </div>
             <div>
                 <label for="email" class="create_account">

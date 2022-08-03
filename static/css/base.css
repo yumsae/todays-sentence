@@ -6,6 +6,15 @@
 }
 a {
     text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: #903C3C;
 }
 
 html, body {
@@ -37,14 +46,15 @@ html, body {
 .nav_btn_wrap {
     display: inline-block;
     float: right;
+    padding-right: 2rem;
 }
 
 .nav_btn {
     margin: auto;
     display: inline-block;
-    font-family: "hahmlet", sans-serif;
+    font-family: "Gowun Batang", sans-serif;
     font-size: 1.5rem;
-    padding-left: 2rem;
+    padding-left: 4rem;
 }
 
 .today_logo {
@@ -54,7 +64,7 @@ html, body {
     float: left;
     font-size: 3rem;
     position: relative;
-    top: -12px;
+    top: -13px;
     left: 5px;
 }
 
@@ -220,15 +230,20 @@ a:visited {
 .guide_title{
     color: #903C3C;
     font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
 .guide_sub {
     font-size: 3.2rem;
     margin-bottom: 3rem;
+    line-height: 3.5rem;
 }
 
 .guide_cont {
-    font-size: 2.5rem;
+    font-size: 2.1rem;
+    font-family: "Gowun Batang", sans-serif;
+    font-weight: 300;
+    line-height: 3rem;
 }
 
 .home_btn {
