@@ -218,3 +218,16 @@ a:visited {
     font-size: 2.5rem;
 }
 
+.home_btn {
+    font-family: "hahmlet", sans-serif;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 15px 20px 17px;
+    font-size: 1.6rem
+}
+
+.home_btn:hover {
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+}
