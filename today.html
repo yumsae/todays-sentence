@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="static/base.css">
+    <!-- GOOGLE FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Song+Myung&display=swap" rel="stylesheet">
     <style>
+        html {
+            background-color: dimgray;
+            max-width: 100%;
+        }
 
         * {
             padding: 0;
@@ -21,46 +27,103 @@
             color: black;
             text-decoration: none;
         }
-
-        body {
-            background-color: #EFEFEF;
-        }
-
+        /* 
         .wrapper {
             text-align: center;
             position: relative;
-        }
+        } */
 
         .title {
+            text-align: center;
+            margin: 0px auto;
             position: relative;
-            margin-top: 300px;
         }
 
         .title h1 {
+            font-weight: 500;
+            font-size: 44px;
+            font-family: 'Song Myung';
+            color: black;
+            z-index: 1;
+            position: absolute;
+            margin-top: 250px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            align-items: center;
+        }
+
+        .subtitle{
+            font-family: 'Song Myung';
+            font-size: 20px;
+            color: #4A4A4A;
+            position: relative;
+        }
+
+        .subtitle-box{
+            position: absolute;
+            width: 100%;
+            height: 349px;
+            left: 0px;
+            top: 780px;
+            max-width: 100%;
+            background: #FFFFFF;
+        }
+
+
+        .contents-wrapper {
+            font-family: 'Song Myung';
+            position: relative;
+        }
+
+        .contents1 {
+            text-align: left;
+        }
+
+        .contents2 {
+            text-align: right;
+        }
+        
+        .content-title{
+            color: #903C3C;
+        }
+
+        
+
+        /* .title-box{
+            border: 0.1px solid white;
+            margin: auto;
+            width: 450px;
+            height: 300px;
+            background-color: rgb(173, 173, 173);
+            left: 700px;
+        } */
+
+        /* .design-box{
+            border: 0.1px solid white;
+            width: 450px;
+            height: 300px;
+        } */
+
+        /* .title h1 {
             margin: 5px;
             font-weight: 500;
             font-size: 44px;
-            font-family: 'Hamhlet ', serif;
+            font-family: 'Song Myung' , serif;
             color: black;
-        }
+        } */
 
-        .title p {
+
+
+        /* .title p {
             margin: 5px;
             font-size: 20px;
             font-weight: 200;
-            font-family: 'Noto Serif KR', serif;
-            color: dimgray;
-        }
+            font-family: 'Song Myung', serif;
+            color: black;
+        } */
 
-        .box {
-            border: 1px solid dimgray;
-            width: 600px;
-            height: 60px;
-            margin: 30px auto 0;
-            background-color: white;
-        }
-
-        .poem {
+        /* .poem {
             font-family: 'Noto Serif KR', serif;
             color: gray;
             position: absolute;
@@ -84,7 +147,7 @@
             margin: 5px;
             font-size: 20px;
             font-weight: 200;
-        }
+        } */
 
         body {
             background-image: url("main.jpeg");
@@ -132,31 +195,44 @@
             font-family: "hahmlet", sans-serif;
         }
 
-        .input_box {
+        /* .input-box {
             border: 1px solid dimgray;
             width: 100px;
             height: 60px;
             margin: 30px auto 0;
-            background-color: dimgray;
+            background-color: rgb(55, 55, 55);
             position: absolute;
             top: 106px;
             left: 939px;
+        } */
+
+        .img{
+            max-width: 100%;
+            max-height: 50%;
         }
 
+        .container {
+            opacity: 50%;
+            position: absolute;
+        }
+
+
     </style>
+        <div class="today_header">
+            <div class="nav_wrap">
+                <div class="nav">
+                    <a href="" class="today_logo">&lt;&gt;오늘:의 문장</a>
+                    <a href="" class="nav_btn" style="margin-left: 15px">문장쓰기</a>
+                    <a href="" class="nav_btn">커뮤니티</a>
+                    <div class="nav_btn_wrap">
+                        <a href="" class="login"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
 </head>
 <body>
-<div class="nav_wrap">
-    <div class="nav">
-        <div class="page_header">
-            <a href="" class="nav_btn">문장쓰기</a>
-            <a href="" class="nav_btn">커뮤니티</a>
-            <a href="" class="nav_btn">문의하기</a>
-            <a href="" class="nav_btn">로그인</a>
-        </div>
-    </div>
-</div>
-<div class="wrapper">
+<!-- <div class="wrapper">
     <div class="title">
         <h1>&lt;오늘:의 문장&gt;</h1>
         <p>당신의 문장을 적어주세요</p>
@@ -165,12 +241,47 @@
         <p class="box_cont">
             오늘 밤에도 별이 바람에 스치운다.
         </p>
-        <div class="input_box">
+        <div class="input-box">
         </div>
+    </div> -->
+    </div>
+    <div class= "title">
+        <h1>시 쓰기의 첫 걸음, </br> 오늘의 한 문장부터</h1>
+    <div class= "container">
+        <div class= "img-box"></div>
+        <img class= "img" src="./testimg.jpg" alt="reading" />
+    </div>
+    <div class= "subtitle">
+        <div class="subtitle-box"></div>
+        <h3>모든 시는 한 문장에서 시작해요 </br>
+            문장을 창작하고, 문장을 교환하며 </br>
+            <오늘:의 문장>에서 시를 시작해보세요
+            </h3>
     </div>
 
-    <div class="poem_wrap">
-<!--        <div class="poem">-->
+    <div class="contents-wrapper">
+        <div class= "contents1">
+            <p class="content-title">문장 쓰기 가이드</p>
+            <h2 class="content-subtitle">평범한 문장을 </br>
+                시적으로 바꿔보세요</h2>
+            <p class= "content">문장 작성 가이드를 참고하여</br>
+                처음 썼던 문장을</br>
+                여러 개의 다른 문장들로</br>
+                바꿔쓸 수 있어요</p>
+        </div>
+        <div class= "contents2">
+            <p class="content-title">문장 공유</p>
+            <h2 class="content-subtitle">쓰지 않는 문장을 </br>
+                다른 사람들과 공유해보세요</h2>
+            <p class="content">시에 쓰이지 않은 문장들은</br>
+                문장 공유 게시판에 올라가</br>
+                다른 사람들에게 영감을</br>
+                줄 수 있어요</p>
+        </div>
+    </div>
+    </div>
+    <!-- <div class="poem_wrap"> -->
+<!--    <div class="poem">-->
 <!--            <h3 class="poem_ti">-->
 <!--                서시-->
 <!--            </h3>-->
@@ -183,7 +294,7 @@
 <!--            <p class="poem_cont">모든 죽어가는 것을 사랑해야지</p>-->
 <!--            <p class="poem_cont">그리고 나한테 주어진 길을</p>-->
 <!--            <p class="poem_cont">걸어가야겠다.</p>-->
-<!--            <p class="poem_cont">오늘 밤에도 별이 바람에 스치운다.</p>-->
+<!--            <p class="poem_cont">오늘 밤에도 별이 바람에 스치운다.</p>
         </div>
 
     </div>
