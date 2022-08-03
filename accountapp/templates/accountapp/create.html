@@ -9,32 +9,30 @@
         <form action="{% url 'accountapp:create' %}" method="post">
             {% csrf_token %}
             <div>
-                <p class="create_account">
+                <label for="username" class="create_account">
                     아이디
-                </p>
-                <input type="text" class="account_box">
+                </label>
+                <input type="text" class="account_box" name="username" id="username" value="{{ form.username.value|default_if_none:'' }}">
             </div>
             <div>
-                <p class="create_account">
+                <label for="password1" class="create_account">
                     비밀번호
-                </p>
-                <input type="text" class="account_box">
+                </label>
+                <input type="password" class="account_box" name="password1" id="password1" value="{{ form.password1.value|default_if_none:'' }}">
             </div>
             <div>
-                <p class="create_account">
+                <label for="password2"class="create_account">
                     비밀번호 재입력
-                </p>
-                <input type="text" class="account_box">
+                </label>
+                <input type="password" class="account_box" name="password2" id="password2" value="{{ form.password2.value|default_if_none:'' }}">
             </div>
             <div>
-                <p class="create_account">
+                <label for="email" class="create_account">
                     이메일 주소
-                </p>
-                <input type="text" class="account_box">
+                </label>
+                <input type="text" class="account_box" name="email" id="email" value="{{ form.email.value|default_if_none:'' }}">
             </div>
-
-
-            <input type="submit" class="submit_btn">
+            <button type="submit" class="submit_btn">생성하기</button>
         </form>
     </div>
 
