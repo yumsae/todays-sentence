@@ -23,41 +23,59 @@ html, body {
     height: 100%;
 }
 
+ul, li {
+    list-style-type: none;
+}
+
 .nav {
     display: block;
     position: relative;
-    padding: 2rem 0 2rem;
     margin: 0;
     background-color: white;
+    height: 80px;
+    overflow: hidden;
+}
+
+.nav_menu {
+    list-style: none;
+}
+
+.nav_item {
+    height: 80px;
+    float:left;
+    padding: 0 1rem;
+    line-height: 80px;
+    vertical-align: middle;
 }
 
 .nav_wrap {
     font-family: "Noto Serif KR", sans-serif;
     width:100%;
+    height: 80px;
+    overflow: hidden;
 }
 
 .nav_btn_wrap {
-    display: inline-block;
-    float: right;
     padding-right: 2rem;
 }
 
 .nav_btn {
     margin: auto;
-    display: inline-block;
     font-family: "Gowun Batang", sans-serif;
     font-size: 1.5rem;
-    padding: 0 2rem;
+    padding: 12px 10px;
 }
 
 .nav_emp {
+    margin: 23px 0;
     border: 1px solid black;
     border-radius: 5px;
-    margin-left: 2rem;
     display: inline-block;
     font-family: "Gowun Batang", sans-serif;
     font-size: 1.5rem;
     padding: 0.5rem 2rem;
+    float: left;
+    vertical-align: middle;
 }
 
 .nav_emp:hover {
@@ -66,15 +84,15 @@ html, body {
     background-color: black;
 }
 
-.today_logo {
+.header_today_logo {
     font-family: 'Song Myung', serif;
-    padding-left: 1rem;
+    padding-left: 2rem;
     /*margin: 0rem 0 1rem;*/
-    float: left;
     font-size: 3rem;
-    position: relative;
-    top: -6px;
-    left: 5px;
+    float: left;
+    margin-right: 2rem;
+    line-height: 80px;
+    vertical-align: middle;
 }
 
 
@@ -229,6 +247,8 @@ html, body {
 .home_guide {
     font-family: 'Song Myung', sans-serif;
     position: relative;
+    padding-top: 150px;
+    margin: 0 100px;
 }
 
 .guide_title{
@@ -262,4 +282,29 @@ html, body {
     border: 1px solid black;
     background-color: black;
     color: white;
+}
+
+.mypage_title {
+    font-family: "Gowun Batang", sans-serif;
+    font-size: 2rem;
+    text-align: left;
+
+}
+
+.nav_mypage_wrap {
+    display: inline-block;
+    float: right;
+    padding-right: 2rem;
+}
+
+.home_btn_container {
+    background-color: #D9D9D9;
+    height: 350px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 130px;
+}
+
+.home_wrap hr {
+    margin: 0
 }
