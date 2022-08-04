@@ -2,29 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        html {
-            background-color: dimgray;
-        }
-    </style>
-        <!-- GOOGLE FONTS-->
-    <link rel="stylesheet" a href= "./mypage.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Song+Myung&display=swap" rel="stylesheet">
-
+    <title>Title</title>
+    <link rel="stylesheet" href="static/css/base.css">
 </head>
-    <h1>반갑습니다, {id.name}님!</h1>
-    <hr />
-    <div class = "objects">
-        <h3 id = "object">작성한 문장</h3>
-        <h3 id = "object1">이메일 변경</h3>
-        <h3 id = "object2">비밀번호 변경</h3>
-        <h3 id = "object3">회원 탈퇴</h3>
-        <h3 id = "object4">로그아웃</h3>
+<body>
+    <div class="today_header">
+        <div class="nav_wrap">
+            <div class="nav">
+                <a href=" {% url "buildapp:home" %}" class="today_logo">&lt;&gt;오늘:의 문장</a>
+                <a href="" class="nav_btn nav_emp">글쓰기</a>
+                <a href="" class="nav_btn" style="padding-left: 3rem">문장쓰기</a>
+                <a href="" class="nav_btn">커뮤니티</a>
+                <div class="nav_wrap">
+                    {% if user.is_authenticated %}
+                        <a class="nav_btn" href="{% url 'accountapp:logout' %}" >{{ user.username }}</a>
+                        <a href="{% url 'profileapp:detail' %}" class="nav_btn" style="padding-right: 1rem">마이페이지</a>
+                    {% else %}
+                        <a href="{% url "accountapp:login" %}" class="nav_btn">로그인</a>
+                        <a href="{% url "accountapp:create" %}" class="nav_btn" style="padding-right: 1rem">회원가입</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="cont_wrap">
+        <div class="title_wrap">
+            <p class="cont_logo" style="text-align: left">&lt;오늘:의 문장&gt;</p>
+        </div>
+        <div>
+            <p class="mypage_title">
+                반갑습니다. {{ user.username }}님!
+            </p>
+        </div>
+        <hr>
+        <div>
+            <a href="">작성한 문장</a>
+            <a href="">이메일 변경</a>
+            <a href="">비밀번호 변경</a>
+            <a href="">회원 탈퇴</a>
+            <a href="">로그아웃</a>
+        </div>
+
     </div>
 </body>
 </html>
+
+
