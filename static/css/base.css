@@ -53,6 +53,11 @@ ul, li {
     width:100%;
     height: 80px;
     overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
 }
 
 .nav_btn_wrap {
