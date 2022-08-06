@@ -100,8 +100,6 @@ ul, li {
     vertical-align: middle;
 }
 
-
-
 .login {
     padding-right: 10px;
     display: inline-block;
@@ -312,4 +310,19 @@ ul, li {
 
 .home_wrap hr {
     margin: 0
+}
+
+.mypage_title {
+    margin-top: .5rem;
+}
+
+.profile_wrap {
+    text-align: right;
+}
+
+.profile_item {
+    font-family: "Gowun Batang", sans-serif;
+    display: block;
+    font-size: 2rem;
+    margin-bottom: .5rem;
 }
