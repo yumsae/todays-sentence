@@ -2,10 +2,28 @@
 
 {% block content %}
 
+<style>
+    :root {
+    --red: #CC3F3B;
+    --black: #121212;
+    --bg: #D9D9D9;
+    --btn-light: #D5C4C4;
+    --btn-light-hover: #B5A4A4;
+    }
 
-<div id="sentence_root"></div>
+    .sentence-title {
+        padding: 10rem;
+        text-align: center;
+        font-family: 'Song Myung', sans-serif;
+    }
+</style>
 
-{% load static %}
-<script  type="module" src="{% static 'reactComponents/WriteSentence.js' %}"></script>
+
+<div id="sentence_root">
+    <div>
+        <h1 class="sentence-title"> <오늘:의 문장> </h1>
+    </div>
+
+</div>
 
 {% endblock %}
