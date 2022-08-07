@@ -35,6 +35,12 @@ ul, li {
     list-style-type: none;
 }
 
+button {
+    border: 0;
+    outline: 0;
+    background-color: rgba( 255, 255, 255, 0 );
+}
+
 .nav {
     display: block;
     position: relative;
@@ -117,21 +123,6 @@ ul, li {
     background-size: cover;
 }
 
-.footer_wrap {
-    color: var(--black);
-    background-color: var(--bg);
-    padding: 20px 0 20px;
-}
-
-.footer {
-    margin: 16px;
-    text-align: center;
-}
-
-.footer_cont {
-    font-size: 16px;
-    margin-bottom: 6px;
-}
 
 .cont_logo {
     font-size: 4rem;

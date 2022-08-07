@@ -11,19 +11,172 @@
     --btn-light-hover: #B5A4A4;
     }
 
+    /* header */
+    .sentence-title-div {
+        padding: 3rem;
+        padding-top: 10rem;
+    }
+
     .sentence-title {
-        padding: 10rem;
         text-align: center;
+        padding-top: 3rem;
         font-family: 'Song Myung', sans-serif;
+    }
+
+    .sentence-write-container {
+        background-image: url("https://images.unsplash.com/photo-1586075010923-2dd4570fb338?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80");
+    }
+
+    /* 작성 가이드 */
+    .sentence-guide-container {
+        padding: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .sentence-guide-content {
+        word-break: break-all;
+        white-space: pre-line;
+        text-align: left;
+        padding: 3rem;
+        width: 90%;
+        font-size: 1.5rem;
+        background-color: rgba( 255, 255, 255, 0.5 );
+        border-radius: 0.1rem;
+    }
+
+
+    /* 단어 추천 파트 */
+    .word-recommendation-container {
+        display: flex;
+        justify-content: space-around;
+        background-color: rgba( 255, 255, 255, 0.5 );
+        padding: 2rem;
+        margin: 0 auto;
+    }
+
+    .word-recommendation-content {
+        border: 0;
+        outline: 0;
+        font-size: 1.1rem;
+        background-color: rgba( 255, 255, 255, 0 );
+    }
+    .word-recommendation-content:hover {
+        color: var(--red);
+    }
+
+    .word-recommendation-title {
+        margin-top: 2rem; 
+        text-align: left;
+        padding-left: 2rem;
+    }
+
+    /* 인디케이터 */
+    .recommendation-indicator-container {
+        margin: 0 auto;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    .recommendation-indicator {
+        margin: 2rem 0.6rem;
+        border: 0;
+        outline: 0;
+        background-color: rgba( 255, 255, 255, 0.5 );
+        padding: 1rem;
+        border-radius: 4rem;
+    }   
+
+    .recommendation-indicator:hover {
+        margin: 2rem 0.6rem;
+        border: 0;
+        outline: 0;
+        background-color: rgba( 0, 0, 0, 0.5 );
+        padding: 1rem;
+        border-radius: 4rem;
+    }   
+
+    .recommendation-indicator-selected {
+        margin: 2rem 0.6rem;
+        border: 0;
+        outline: 0;
+        background-color: rgba( 0, 0, 0, 0.5 );
+        padding: 1rem;
+        border-radius: 4rem;
+    }   
+
+    .next-guide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    .sentence-input-menu {
+        border: 0;
+        outline: 0;
+        font-size: 1.1rem;
+        background-color: rgba( 255, 255, 255, 0 );
     }
 </style>
 
 
-<div id="sentence_root">
-    <div>
-        <h1 class="sentence-title"> <오늘:의 문장> </h1>
-    </div>
+<div id="sentence_root" class="sentence-write-container">
+    <div class="fade-down">
+        <div class="sentence-title-div">
+            <h1 class="sentence-title"> <오늘:의 문장> </h1>
+        </div>
+        
+        <div class="sentence-guide-container">
+            <div>
+                <
+            </div>
+            <div class="sentence-guide-content"> 모든 글은 첫 문장에서부터 시작돼요. 
+                어떤 글을 쓰고 싶은지 먼저 결정해봅시다.
+                논리적인 글? 에세이? 시와 소설?
+            </div>
+            <div>
+                >
+            </div>
+        </div>
+    
+        <div>
+            <h2 class="sentence-title word-recommendation-title">단어 추천</h2>
+            <div class="word-recommendation-container">
+                <button class="word-recommendation-content">단어 1</button>
+                <button class="word-recommendation-content">단어 1</button>
+                <button class="word-recommendation-content">단어 1</button>
+                <button class="word-recommendation-content">단어 1</button>
+                <button class="word-recommendation-content">단어 1</button>
+            </div>
+        </div>
+    
+        <div class="recommendation-indicator-container">
+            <button class="recommendation-indicator"></button>
+            <button class="recommendation-indicator"></button>
+            <button class="recommendation-indicator-selected"></button>
+            <button class="recommendation-indicator"></button>
+            <button class="recommendation-indicator"></button>
+        </div>
+    
+        <div class="next-guide">
+            <span>아래로 스크롤해서 다음 단계로 넘어가봐요.</span>
+            <span>⬇️</span>
+        </div>
+    </div> <!-- fade down part -->
 
+    <div class="fade-up">
+        <div>
+            <div>
+                <button class="sentence-input-menu">tip</button>
+                <input type="text" class="sentence-input" placeholder="당신의 문장을 적어주세요."/> 
+                <button class="sentence-input-menu">-></button>
+            </div>
+        </div>
+    </div>
+   
 </div>
 
 {% endblock %}
