@@ -1,4 +1,4 @@
-.create_account {
+.create-account {
     text-align: left;
     /* font-family: "hahmlet", sans-serif; */
     font-size: 1rem;
@@ -6,7 +6,7 @@
     display: block;
 }
 
-.account_box {
+.account-box {
     width: 450px;
     height: 50px;
     border: 0;
@@ -16,7 +16,7 @@
     font-size: 0.8rem;
 }
 
-.submit_btn {
+.submit-btn {
     font-size: 1.2rem;
     width: 200px;
     height: 60px;
@@ -25,20 +25,30 @@
     border-radius: 40px;
     color: #FFF;
     margin-top: 4rem;
+    margin-bottom: 3rem;
 }
 
-.submit_btn:hover {
+.submit-btn:hover {
     background-color: var(--btn-light-hover);
 }
 
-.login_wrap {
+.login-wrap {
     text-align: center;
     width: 500px;
     height: 500px;
     margin: auto;
     padding-top: 1.5rem;
+    margin-bottom: 7rem;
 }
 
-.title_wrap {
-    padding-top: 4rem;
+.title-wrap {
+    padding-top: 5rem;
+}
+
+.signup-wrap {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    margin-top: 5rem;
 }

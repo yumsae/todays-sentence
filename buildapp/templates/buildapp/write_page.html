@@ -8,6 +8,12 @@
         <div class= "text-area">
             <input class="title-input" placeholder="제목">
             <hr>
+            <div class="sentence-box">
+                <button class="icon-area">
+                    <i class="fa-solid fa-plus fa-lg"></i>
+                    <i class="fa-solid fa-arrows-rotate fa-lg"></i>
+                </button>
+            </div>
             <textarea name="text-input" id="editor" placeholder="당신만의 이야기를 적어주세요."></textarea>
         </div>
         <div class="button-area">
@@ -20,17 +26,7 @@
 <script>
     ClassicEditor
         .create( document.querySelector('#editor'), {
-            removePlugins: ['Heading', '|'],
-            fontFamily: {
-	            options: [
-		            'default',
-                    'Arial',
-                    '궁서체',
-                    '바탕',
-                    '돋움'
-                    ],
-	            supportAllValues: true
-            },
+            removePlugins: ['Heading', '|','Table toolbar'],
             language: "ko"
         })
         .then(editor=>{
@@ -53,7 +49,7 @@
     }
 
     .title-input{
-        width: 65%;
+        width: 60%;
         height: 40px;
         font-size: 20px;
         font-family: 'song myung';
@@ -61,20 +57,24 @@
     }
 
     hr{
-        width: 65%;
+        width: 60%;
     }
 
     .sentence-wrapper{
         text-align: center;
     }
 
-    /* .sentence-box{
-        width: 1000px;
-        height: 100px;
+    .sentence-box{
+        width: 60%;
+        height: 80px;
         border:0 solid black;
         background-color:#D9D9D9;
         margin: 10px;
-    } */
+    }
+
+    .icon-area{
+        text-align: right;
+    }
 
     /* .text-input{
         width: 1000px;
@@ -86,11 +86,11 @@
     } */
 
     .ck.ck-editor{
-        width: 65%;
+        width: 60%;
     }
     
     .ck-editor__editable{
-        min-height: 1000px;
+        min-height: 500px;
     }
 
     .ck-content { 
@@ -111,13 +111,16 @@
         color: white;
         transition: background-color .5s;
         border: none;
-        border-radius: 30px;
+        border-radius: 0.2rem;
     }
 
     .submit-button:hover{
         background-color:  #DE8A8A; 
     }
 
+    .ck-sticky-panel, .ck-sticky-panel__content {
+        position: static;
+    }
 </style>
 
 {% endblock %}

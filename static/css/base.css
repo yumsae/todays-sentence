@@ -40,3 +40,22 @@ button {
     outline: 0;
     background-color: rgba( 255, 255, 255, 0 );
 }
+
+/* 여러 곳에서 쓰이는 스타일 */
+.cont_logo {
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 0;
+}
+
+.cont_sub {
+    font-size: 1.2rem;
+}
+
+.cont_wrap {
+    text-align: center;
+    width: 500px;
+    height: 800px;
+    margin: auto;
+    padding-top: 3rem;
+}
