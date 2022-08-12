@@ -138,7 +138,7 @@
     .modal-overlay {
         width: 100%;
         height: 100%;
-        position: absolute;
+        position: fixed;
         left: 0;
         top: 0;
         display: flex;
@@ -151,12 +151,6 @@
         -webkit-backdrop-filter: blur(1.5px);
         border-radius: 10px;
         border: 1px solid rgba(255, 255, 255, 0.18);
-    }
-
-    #no-sentence-modal {
-        display: none;
-        position: absolute;
-        margin: 0 auto;
     }
 
     .icon {
@@ -368,7 +362,9 @@
     function onClickSubmit() {
         state = true; // 선택된 문장이 없을 경우 ??? 나 이거 이해가 잘 안 돼네 반대 아닌가 
         if ( state ) {
+            document.querySelector(".modal-overlay").setAttribute('style', `top: ${window.pageYOffset}`)
             document.querySelector("#no-sentence-modal").setAttribute('style', 'display: flex');
+            document.body.classList.add("stop-scroll");
         }
     }
 
@@ -378,5 +374,29 @@
     }); 
 
 </script>
+
+<style>
+    .stop-scroll {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .modal-content {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    pre {
+        word-break: break-all;
+        white-space: pre-line;
+        text-align: center;
+        font-family: "Gowun Batang", sans-serif;
+        font-size: 1.4rem;
+    }
+</style>
 
 {% endblock %}
