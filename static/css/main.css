@@ -1,0 +1,108 @@
+
+ .main_cont {
+    position: relative;
+    padding-top: 25rem;
+    height: 80rem;
+    padding-bottom: 25rem;
+}
+
+.main_cont:after {
+   content : "";
+   display: block;
+   position: absolute;
+   top: 0;
+   left: 0;
+   background-image: url("../image/testimg.jpg");
+   width: 100%;
+   height: 100%;
+   background-repeat: no-repeat;
+   background-size: cover;
+   opacity : 0.6;
+   z-index: -1;
+}
+
+
+.main_title {
+   font-weight: 200;
+   font-size: 44px;
+   font-family: 'Song Myung', sans-serif;
+   color: var(--black);
+   text-align: center;
+}
+
+.home_ex_wrap {
+   width: 100%;
+   height: 35rem;
+   max-width: 100%;
+   background: #FFFFFF;
+}
+
+.home_ex{
+   text-align: center;
+   font-family: 'Song Myung', sans-serif;
+   font-size: 4rem;
+   padding-top: 12rem;
+   color: #4A4A4A;
+}
+
+.home_ex p {
+   font-size: 2.5rem;
+}
+
+
+.home_guide_wrap {
+   background-color: var(--bg);
+   height: 100rem;
+}
+
+.home_guide {
+   font-family: 'Song Myung', sans-serif;
+   position: relative;
+   padding-top: 150px;
+   margin: 0 100px;
+}
+
+.guide_title{
+   color: #903C3C;
+   font-size: 2.5rem;
+   margin-bottom: 10px;
+}
+
+.guide_sub {
+   font-size: 3.2rem;
+   margin-bottom: 3rem;
+   line-height: 3.5rem;
+}
+
+.guide_cont {
+   font-size: 2.1rem;
+   font-family: "Gowun Batang", sans-serif;
+   font-weight: 300;
+   line-height: 3rem;
+}
+
+.home_btn {
+   font-family: "hahmlet", sans-serif;
+   border: 1px solid var(--black);
+   border-radius: 10px;
+   padding: 15px 20px 17px;
+   font-size: 1.6rem
+}
+
+.home_btn:hover {
+   border: 1px solid var(--black);
+   background-color: var(--black);
+   color: white;
+}
+
+.home_btn_container {
+   background-color: #D9D9D9;
+   height: 350px;
+   text-align: center;
+   vertical-align: middle;
+   line-height: 130px;
+}
+
+.home_wrap hr {
+   margin: 0
+}
