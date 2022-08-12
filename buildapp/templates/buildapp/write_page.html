@@ -21,6 +21,16 @@
     ClassicEditor
         .create( document.querySelector('#editor'), {
             removePlugins: ['Heading', '|'],
+            fontFamily: {
+	            options: [
+		            'default',
+                    'Arial',
+                    '궁서체',
+                    '바탕',
+                    '돋움'
+                    ],
+	            supportAllValues: true
+            },
             language: "ko"
         })
         .then(editor=>{
