@@ -33,6 +33,13 @@
                 </label>
                 <input type="text" class="account_box" name="email" id="email" placeholder="이메일 주소" value="{{ form.email.value|default_if_none:'' }}">
             </div>
+
+            <div>
+                <label for="nickname" class="create_account">
+                    닉네임
+                </label>
+                <input type="text" class="account_box" name="nickname" id="nickname" placeholder="닉네임" value="{{ form.nickname.value|default_if_none:'' }}">
+            </div>
             <button type="submit" class="submit_btn">생성하기</button>
         </form>
     </div>

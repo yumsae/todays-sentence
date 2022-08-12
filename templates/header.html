@@ -9,7 +9,7 @@
 
                 {% if user.is_authenticated %}
                     <li class="nav_item" style="float: right"><a href="{% url 'profileapp:detail' %}" class="nav_btn">마이페이지</a></li>
-                    <li class="nav_item" style="float: right"><a class="nav_btn" href="{% url 'accountapp:logout' %}">{{ user.username }}</a></li>
+                    <li class="nav_item" style="float: right"><a class="nav_btn" href="{% url 'accountapp:logout' %}">{{ user.nickname }}</a></li>
                 {% else %}
                     <li class="nav_item" style="float: right"><a href="{% url "accountapp:create" %}" class="nav_btn">회원가입</a></li>
                     <li class="nav_item" style="float: right"><a href="{% url "accountapp:login" %}" class="nav_btn">로그인</a></li>
