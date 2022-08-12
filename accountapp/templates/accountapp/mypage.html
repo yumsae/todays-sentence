@@ -2,6 +2,10 @@
 
 {% block content %}
 
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/mypage.css' %}">
+
+
 <h1>반갑습니다, {id.name}님!</h1>
 <hr />
 <div class = "objects">

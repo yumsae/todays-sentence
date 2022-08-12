@@ -80,29 +80,10 @@
     background-size: cover;
 }
 
-
-.cont_logo {
-    font-size: 3rem;
-    margin-top: 50px;
-    margin-bottom: 0;
-}
-
-.cont_sub {
-    font-size: 1.2rem;
-}
-
 .title_wrap {
     display: block;
     margin: auto;
     text-align: center;
-}
-
-.cont_wrap {
-    text-align: center;
-    width: 500px;
-    height: 800px;
-    margin: auto;
-    padding-top: 3rem;
 }
 
 .mypage_title {
