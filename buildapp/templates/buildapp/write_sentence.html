@@ -120,6 +120,36 @@
         font-size: 1.1rem;
         background-color: rgba( 255, 255, 255, 0 );
     }
+
+    .fade-up {
+        text-align: center;
+    }
+
+    .modal-overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(1.5px);
+        -webkit-backdrop-filter: blur(1.5px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    #no-sentence-modal {
+        display: none;
+        position: absolute;
+        margin: 0 auto;
+    }
+
+
 </style>
 
 
@@ -175,8 +205,42 @@
                 <button class="sentence-input-menu">-></button>
             </div>
         </div>
+
+        <div class="sentence-list-container">
+            <div class="sentence-box">
+                <input type="checkbox" class="sentence-select"/>
+                <span class="sentence-content"></span>
+            </div>
+        </div>
+
+        <button onclick="onClickSubmit();" class="submit_btn" id="#submit_btn">쓰러가기</button>
+    </div>
+
+    <div id="no-sentence-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-body">
+                <pre>
+                    문장을 공유하지 않으면, 다른 사람이 공유한 문장을 추천 받을 수 없습니다.
+                    그래도 진행하시겠습니까?
+                </pre>
+            </div>
+            <div class="modal-btns">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
     </div>
    
 </div>
+
+<script>
+    function onClickSubmit() {
+        state = true; // 
+        if ( state ) {
+            document.querySelector("#no-sentence-modal").setAttribute('style', 'display: flex');
+        }
+    }
+
+</script>
 
 {% endblock %}
