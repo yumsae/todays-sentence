@@ -2,9 +2,13 @@
 
 {% block content %}
 
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/account.css' %}">
+
     <div class="cont_wrap" style="border-top:solid 0.2rem #000;">
         <div class="title_wrap">
-            <p class="cont_logo">&lt;오늘:의 문장&gt;</p>
+            <h2>회원가입</h2>
         </div>
         <form action="{% url 'accountapp:create' %}" method="post">
             {% csrf_token %}

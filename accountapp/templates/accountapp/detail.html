@@ -2,9 +2,11 @@
 
 {% block content %}
 
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+
     <div>
         <div style="text-align: center; max-width: 500px; margin: 4rem auto;">
-
 
 
             {% if target_user.profile %}

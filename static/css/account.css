@@ -1,0 +1,44 @@
+.create_account {
+    text-align: left;
+    /* font-family: "hahmlet", sans-serif; */
+    font-size: 1rem;
+    margin: 2rem 0 4px 2.5rem;
+    display: block;
+}
+
+.account_box {
+    width: 450px;
+    height: 50px;
+    border: 0;
+    background-color: #f5f6f7;
+    border-radius: 25px;
+    padding-left: 1.4rem;
+    font-size: 0.8rem;
+}
+
+.submit_btn {
+    font-size: 1.2rem;
+    width: 200px;
+    height: 60px;
+    border: 0;
+    background-color: var(--btn-light);
+    border-radius: 40px;
+    color: #FFF;
+    margin-top: 4rem;
+}
+
+.submit_btn:hover {
+    background-color: var(--btn-light-hover);
+}
+
+.login_wrap {
+    text-align: center;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    padding-top: 1.5rem;
+}
+
+.title_wrap {
+    padding-top: 4rem;
+}
