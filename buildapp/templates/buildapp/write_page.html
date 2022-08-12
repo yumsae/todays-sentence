@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/translations/ko.js"></script>
+</head>
+<body>
+    <div class="form-wrapper">
+        <form>
+            <div class= "text-area">
+                <input class="title-input" placeholder="제목">
+                <hr>
+                <div class="sentence-wrapper">
+                    <div class="sentence-box"></div>
+                </div>
+                <textarea class="text-input" placeholder="당신만의 이야기를 적어주세요"></textarea>
+            </div>
+            <!-- <div class= "text-area">
+                <input class="title-input" placeholder="제목">
+                <hr>
+                <div id="editor">당신만의 이야기를 적어주세요.</div>
+            </div> -->
+            <div class="button-area">
+                <button class="submit-button">게시하기</button>
+            </div>
+        </form>
+    </div>
+    <!-- Ckeditor -->
+    <script>
+        ClassicEditor
+            .create( document.querySelector('#editor'), {
+                removePlugins: ['Heading', '|'],
+                language: "ko"
+            })
+            .then(editor=>{
+                console.log(editor);
+            })
+            .catch(error=>{
+                console.error(error);
+            });
+    </script>
+    <style>
+        
+        .text-area{
+            text-align: center;
+        }
+
+        .title-input{
+            width: 1000px;
+            height: 40px;
+            font-size: 20px;
+            font-family: 'song myung';
+            border:0 solid black;
+        }
+
+        hr{
+            width: 1000px;
+        }
+
+        .sentence-wrapper{
+            text-align: center;
+        }
+
+        .sentence-box{
+            width: 1000px;
+            height: 100px;
+            border:0 solid black;
+            background-color:#D9D9D9;
+            margin: 10px;
+        }
+
+        .text-input{
+            width: 1000px;
+            min-height: 1000px;
+            border:0 solid black;
+            margin: 10px;
+            font-size: 20px;
+            background-color: #D9D9D9;
+        }
+
+        .editor-area{
+            text-align: center;
+        }
+
+        .ck.ck-editor{
+            max-width: 1000px;
+        }
+        
+        .ck-editor__editable{
+            min-height: 1000px;
+        }
+
+        .ck-content { 
+            font-size: 20px; 
+        }
+
+        .button-area{
+            text-align: center;
+        }
+
+        .submit-button{
+            width: 200px;
+            height: 50px;
+            margin: 15px;
+            font-size: 17px;
+            font-family: 'song myung';
+            background-color: rgb(108, 108, 108);
+            color: white;
+            transition: background-color .5s;
+            border: none;
+            border-radius: 30px;
+        }
+
+        .submit-button:hover{
+            background-color:  #DE8A8A; 
+        }
+
+    </style>
+</body>
+</html>

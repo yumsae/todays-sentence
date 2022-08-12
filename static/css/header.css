@@ -1,0 +1,160 @@
+
+.nav {
+    display: block;
+    position: relative;
+    margin: 0;
+    background-color: white;
+    height: 80px;
+    overflow: hidden;
+}
+
+.nav_menu {
+    list-style: none;
+}
+
+.nav_item {
+    height: 80px;
+    float:left;
+    padding: 0 1rem;
+    line-height: 80px;
+    vertical-align: middle;
+}
+
+.nav_wrap {
+    font-family: "Noto Serif KR", sans-serif;
+    width:100%;
+    height: 80px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.nav_btn_wrap {
+    padding-right: 2rem;
+}
+
+.nav_btn {
+    margin: auto;
+    font-family: "Gowun Batang", sans-serif;
+    font-size: 1.5rem;
+    padding: 12px 10px;
+}
+
+.nav_emp {
+    margin: 23px 0;
+    border: 1px solid var(--black);
+    border-radius: 5px;
+    display: inline-block;
+    font-family: "Gowun Batang", sans-serif;
+    font-size: 1.5rem;
+    padding: 0.5rem 2rem;
+    float: left;
+    vertical-align: middle;
+}
+
+.nav_emp:hover {
+    border: 1px solid var(--black);
+    color: #FFF;
+    background-color: var(--black);
+}
+
+.header_today_logo {
+    font-family: 'Song Myung', serif;
+    padding-left: 2rem;
+    /*margin: 0rem 0 1rem;*/
+    font-size: 3rem;
+    float: left;
+    margin-right: 2rem;
+    line-height: 80px;
+    vertical-align: middle;
+}
+
+.login {
+    padding-right: 10px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: url("../image/login.png") no-repeat center;
+    background-size: cover;
+}
+
+
+.cont_logo {
+    font-size: 4rem;
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+
+.cont_sub {
+    font-size: 1.2rem;
+}
+
+.title_wrap {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.cont_wrap {
+    text-align: center;
+    width: 500px;
+    height: 800px;
+    margin: auto;
+    padding-top: 3rem;
+}
+
+.create_account {
+    text-align: left;
+    /* font-family: "hahmlet", sans-serif; */
+    font-size: 1.5rem;
+    margin: 2rem 0 4px 2.5rem;
+    display: block;
+}
+
+.account_box {
+    width: 450px;
+    height: 50px;
+    border: 0;
+    background-color: #f5f6f7;
+    border-radius: 25px;
+    padding-left: 10px;
+}
+
+.submit_btn {
+    font-size: 1.5rem;
+    width: 200px;
+    height: 60px;
+    border: 0;
+    background-color: var(--btn-light);
+    border-radius: 40px;
+    color: #FFF;
+    margin-top: 4rem;
+}
+
+.submit_btn:hover {
+    background-color: var(--btn-light-hover);
+}
+
+.login_wrap {
+    text-align: center;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    padding-top: 3rem;
+}
+
+.mypage_title {
+    font-family: "Gowun Batang", sans-serif;
+    font-size: 2rem;
+    text-align: left;
+ 
+ }
+ 
+ .nav_mypage_wrap {
+    display: inline-block;
+    float: right;
+    padding-right: 2rem;
+ }
