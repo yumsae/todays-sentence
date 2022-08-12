@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% load static %}
+
 
 <style>
     :root {
@@ -241,22 +243,175 @@
         padding: 0;
         margin: 0;
     }
+
+    /* 초기화 */
+    html, body { box-sizing: border-box; padding: 0; margin: 0; text-align: center; }
+    *, *:before, *:after { box-sizing: inherit; }
+    .clearfix:after { content: ''; display: block; clear: both; float: none; }
+    .title { margin-bottom: 0; text-align: center; font-size: 30px; color: #333; }
+    .link, .link:visited { display: inline-block; margin: 20px 0; color: #555; text-decoration: none; font-weight: bold; }
+    .link:hover, .link:focus { color: #9fd6c2; }
+    /* container - body */
+    #container { width: 500px; margin: auto; text-align: center;}
+    .slide_wrap { position: relative; width: 400px; margin: auto; padding-bottom: 30px; }
+    .slide_box { width: 100%; margin: auto; overflow-x: hidden; }
+    .slide_content { display: table; float: left; width: 400px; height: 400px; }
+    .slide_content > p { display: table-cell; vertical-align: middle; text-align: center; font-size: 16px; font-weight: bold; color: #555; }
+    .slide_btn_box > button { position: absolute; top: 50%; margin-top: -45px; width: 60px; height: 60px; font-size: 16px; color: #999; background: none; border: 1px solid #ddd; cursor: pointer; }
+    .slide_btn_box > .slide_btn_prev { left: -100px; }
+    .slide_btn_box > .slide_btn_next { right: -100px; }
+    .slide_pagination { position: absolute; left: 50%; bottom: 0; list-style: none; margin: 0; padding: 0; transform: translateX(-50%); }
+    .slide_pagination .dot { display: inline-block; width: 15px; height: 15px; margin: 0 5px; overflow: hidden; background: #ddd; border-radius: 50%; transition: 0.3s; }
+    .slide_pagination .dot.dot_active { background: #333; }
+    .slide_pagination .dot a { display: block; width: 100%; height: 100%; }
+    
 </style>
 
 
 <div id="sentence_root" class="sentence-write-container">
-    <div class="fade-down">
+    <div class="fade-down" >
         <div class="sentence-title-div">
             <h1 class="sentence-title"> <오늘:의 문장> </h1>
         </div>
-        
-        <div class="sentence_guide_container">
+        <div class="sentence-guide-container">
             <div>
-                <a class="fa-solid fa-circle-left icon"></a>
+                    <a class="fa-solid fa-circle-left icon" 
+                    type="button"
+                    value='guide'
+                    onclick="setInnerText" ></a> 
             </div>
-            <div class="sentence-guide-content"> 모든 글은 첫 문장에서부터 시작돼요. 
-                어떤 글을 쓰고 싶은지 먼저 결정해봅시다.
-                논리적인 글? 에세이? 시와 소설?
+            <div class="sentence-guide-content"> 
+                <!--
+                    <div class="slide_box">
+                    <div class="slide_list clearfix">
+                        <div class = "slide_content slide01">
+                            <p>
+                                모든 글은 첫 문장에서부터 시작돼요.
+                                어떤 글을 쓰고 싶은지 먼저 결정해봅시다. 
+                                논리적인 글? 에세이? 시와 소설? 
+                            </p>
+                        </div>
+                        <div class = "slide_content slide02">
+                            <p>
+                                [주장글(칼럼)] <br> 
+                                인상적인 첫문장을 위해 질문을 던져볼까요? <br> 
+                                질문을 통해 독자들의 집중을 유도하고, 글의 의도를 직,간접적으로 밝힐 수 있어요.<br> 
+    
+                                ex) ‘밥을 먹다가 주변 사람을 긴장시키고 싶은가.’<br> 
+                                - --&lt"추석이란 무엇인가” 되물어라>, 경향신문 오피니언, 김영민 <br> 
+                            </p>
+                        </div>
+                        <div class = "slide_content slide03">
+                            <p>
+                                [주장글(칼럼)]
+                                첫문장에 핵심과 결론을 제시하는 것도 좋은 방법이에요.
+    
+                                ex) 글을 쓰기 위해서는 두 가지를 명심하면 된다. 
+                                첫 번째, 첫 문장을 ‘일단’ ‘그냥’ 써라. 두 번째, 문장을 고쳐라.
+                            </p>
+                        </div>
+                        <div class = "slide_content slide04">
+                            <p>
+                                [에세이]
+                                감성적인 글을 위해 지금 자신의 감정이나 상태를 솔직하게 적어볼까요?
+                                솔직한 문장 뒤에, 이유를 붙여나가다 보면 금방 쓸 것들이 생길 거예요.
+    
+                                ex) 지금 글을 써야하는데, 글을 쓰기가 어렵다. ...
+                            </p>
+                        </div>
+                        <div class = "slide_content slide05">
+                            <p>
+                                [문학-시]
+                                신선한 문장 표현을 위해 단어와 단어의 의미가 먼 것들을 붙여볼까요?
+                                추천단어를 무작정 한 문장으로 연결해봐도 좋아요. 
+                                당장에 말이 되지 않아도 좋아요!
+                            </p>
+                        </div>
+                        <div class = "slide_content slide06">
+                            <p>
+                                [문학-소설]
+                                소설의 첫 문장은 궁금증을 유발해야해요.
+                                충격적인 사건이나 대사, 독백 등을 간결한 문장으로 써보아요
+    
+                                ex) ‘오늘 엄마가 죽었다. 아니, 어쩌면 어제.’          -알베르 까뮈, -- &lt이방인-- &gt   
+                            </p>
+                        </div>
+                    </div>
+                    <div class="slide_btn_box">
+                        <button type="button" class="slide_btn_prev">Prev</button>
+                        <button type="button" class="slide_btn_next">Next</button>
+                    </div>
+                </div> 
+                -->     
+                <div id="container">
+                    <div class="slide_wrap">
+                        <div class="slide_box">
+                            <div class="slide_list clearfix">
+                                <div class="slide_content slide01">
+                                    <p>모든 글은 첫 문장에서부터 시작돼요.
+                                        어떤 글을 쓰고 싶은지 먼저 결정해봅시다. <br> 
+                                                논리적인 글? 에세이? 시와 소설? <br></p>
+                                </div>
+                                <div class="slide_content slide02">
+                                    <p>[주장글(칼럼)]
+                                        인상적인 첫문장을 위해 질문을 던져볼까요?
+                                        질문을 통해 독자들의 집중을 유도하고, 글의 의도를 직,간접적으로 밝힐
+                                       수 있어요.
+                                        <br> 
+                                        ex) ‘밥을 먹다가 주변 사람을 긴장시키고 싶은가.’---&lt"추석이란 무엇
+                                        인가” 되물어라>, 경향신문 오피니언, 김영민 <br></p>
+                                </div>
+                                <div class="slide_content slide03">
+                                    <p>
+                                                [주장글(칼럼)]
+                                                첫문장에 핵심과 결론을 제시하는 것도 좋은 방법이에요.
+                    
+                                                ex) 글을 쓰기 위해서는 두 가지를 명심하면 된다. 
+                                                첫 번째, 첫 문장을 ‘일단’ ‘그냥’ 써라. 두 번째, 문장을 고쳐라.
+                                            </p>
+                                </div>
+                                <div class="slide_content slide04">
+                                    <p>
+                                                [에세이]
+                                                감성적인 글을 위해 지금 자신의 감정이나 상태를 솔직하게 적어볼까요?
+                                                솔직한 문장 뒤에, 이유를 붙여나가다 보면 금방 쓸 것들이 생길 거예요.
+                    
+                                                ex) 지금 글을 써야하는데, 글을 쓰기가 어렵다. ...
+                                            </p>
+                                </div>
+                                <div class="slide_content slide05">
+                                    <p>
+                                                [문학-시]
+                                                신선한 문장 표현을 위해 단어와 단어의 의미가 먼 것들을 붙여볼까요?
+                                                추천단어를 무작정 한 문장으로 연결해봐도 좋아요. 
+                                                당장에 말이 되지 않아도 좋아요!
+                                            </p>
+                                </div>
+                                <div class = "slide_content slide06">
+                                            <p>
+                                                [문학-소설]
+                                                소설의 첫 문장은 궁금증을 유발해야해요.
+                                                충격적인 사건이나 대사, 독백 등을 간결한 문장으로 써보아요
+                    
+                                                ex) ‘오늘 엄마가 죽었다. 아니, 어쩌면 어제.’          -알베르 까뮈, -- &lt이방인-- &gt   
+                                            </p>
+                                        </div>
+                                
+                            </div>
+                            <!-- // .slide_list -->
+                        </div>
+                        <!-- // .slide_box -->
+                        <div class="slide_btn_box">
+                            <button type="button" class="slide_btn_prev">Prev</button>
+                            <button type="button" class="slide_btn_next">Next</button>
+                        </div>
+                        <!-- // .slide_btn_box -->
+                        <ul class="slide_pagination"></ul>
+                        <!-- // .slide_pagination -->
+                    </div>
+                    <!-- // .slide_wrap -->
+                </div>
+                <!-- // .container -->
             </div>
             <div>
                 <a class="fa-solid fa-circle-right icon"></a>
@@ -359,10 +514,6 @@
    
 </div>
 
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-          AOS.init();
-        </script>
 
 <script>
     function onClickSubmit() {
@@ -376,7 +527,17 @@
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip();
     }); 
+    
 
 </script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init();
+        </script>
+
+
+<script type="text/javascript" scr="{% static 'js/setentece_guide.js' %}">
+    </script>
 
 {% endblock %}
