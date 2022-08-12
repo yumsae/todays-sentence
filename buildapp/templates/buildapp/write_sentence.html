@@ -17,8 +17,8 @@
 
     /* header */
     .sentence-title-div {
-        padding: 3rem;
-        padding-top: 10rem;
+        padding: 2rem;
+        padding-top: 5rem;
     }
 
     .sentence-title {
@@ -42,9 +42,9 @@
 
     .sentence-guide-content {
         word-break: break-all;
-        white-space: pre-line;
         text-align: left;
-        padding: 3rem;
+        padding: 1rem;
+        height: 90%;
         width: 90%;
         font-size: 1.5rem;
         background-color: var(--trans-white);
@@ -72,7 +72,6 @@
     }
 
     .word-recommendation-title {
-        margin-top: 6rem; 
         text-align: left;
         padding-left: 2rem;
     }
@@ -236,6 +235,8 @@
     p {
         padding: 0;
         margin: 0;
+        word-break: break-all;
+        white-space: pre-line;
     }
 
     /* 초기화 */
@@ -246,15 +247,15 @@
     .link, .link:visited { display: inline-block; margin: 20px 0; color: #555; text-decoration: none; font-weight: bold; }
     .link:hover, .link:focus { color: #9fd6c2; }
     /* container - body */
-    #container { width: 500px; margin: auto; text-align: center;}
-    .slide_wrap { position: relative; width: 400px; margin: auto; padding-bottom: 30px; }
+    #container { width: 100%; margin: auto; text-align: center;}
+    .slide_wrap { position: relative; width: 400px; height: 10rem; margin: auto; }
     .slide_box { width: 100%; margin: auto; overflow-x: hidden; }
     .slide_content { display: table; float: left; width: 400px; height: 400px; }
-    .slide_content > p { display: table-cell; vertical-align: middle; text-align: center; font-size: 16px; font-weight: bold; color: #555; }
+    .slide_content > p { display: table-cell; text-align: center; font-size: 16px; font-weight: bold; color: #555; height: 30rem; }
     .slide_btn_box > button { position: absolute; top: 50%; margin-top: -45px; width: 60px; height: 60px; font-size: 16px; color: #999; background: none; border: 1px solid #ddd; cursor: pointer; }
     .slide_btn_box > .slide_btn_prev { left: -100px; }
     .slide_btn_box > .slide_btn_next { right: -100px; }
-    .slide_pagination { position: absolute; left: 50%; bottom: 0; list-style: none; margin: 0; padding: 0; transform: translateX(-50%); }
+    .slide_pagination { position: absolute; left: 50%; bottom: 0; list-style: none; margin: 0; padding: 0; transform: translateX(-50%); padding-top: 4rem;}
     .slide_pagination .dot { display: inline-block; width: 15px; height: 15px; margin: 0 5px; overflow: hidden; background: #ddd; border-radius: 50%; transition: 0.3s; }
     .slide_pagination .dot.dot_active { background: #333; }
     .slide_pagination .dot a { display: block; width: 100%; height: 100%; }
@@ -277,18 +278,15 @@
                                 <div class="slide_content slide01">
                                     <p>
                                         모든 글은 첫 문장에서부터 시작돼요.
-                                        어떤 글을 쓰고 싶은지 먼저 결정해봅시다. <br> 
-                                        논리적인 글? 에세이? 시와 소설? <br>
+                                        어떤 글을 쓰고 싶은지 먼저 결정해봅시다. 
+                                        논리적인 글? 에세이? 시와 소설? 
                                     </p>
                                 </div>
                                 <div class="slide_content slide02">
                                     <p>[주장글(칼럼)]
                                         인상적인 첫문장을 위해 질문을 던져볼까요?
-                                        질문을 통해 독자들의 집중을 유도하고, 글의 의도를 직,간접적으로 밝힐
-                                       수 있어요.
-                                        <br> 
-                                        ex) ‘밥을 먹다가 주변 사람을 긴장시키고 싶은가.’---&lt"추석이란 무엇
-                                        인가” 되물어라>, 경향신문 오피니언, 김영민 <br>
+                                        질문을 통해 독자들의 집중을 유도하고, 글의 의도를 직, 간접적으로 밝힐 수 있어요.
+                                        ex) ‘밥을 먹다가 주변 사람을 긴장시키고 싶은가.’---&lt"추석이란 무엇인가” 되물어라>, 경향신문 오피니언, 김영민 
                                     </p>
                                 </div>
                                 <div class="slide_content slide03">
@@ -322,8 +320,7 @@
                                         [문학-소설]
                                         소설의 첫 문장은 궁금증을 유발해야해요.
                                         충격적인 사건이나 대사, 독백 등을 간결한 문장으로 써보아요
-            
-                                        ex) ‘오늘 엄마가 죽었다. 아니, 어쩌면 어제.’          -알베르 까뮈, -- &lt이방인-- &gt   
+                                        ex) ‘오늘 엄마가 죽었다. 아니, 어쩌면 어제.’  -알베르 까뮈, &lt이방인&gt   
                                     </p>
                                 </div>
                             </div>
@@ -355,17 +352,10 @@
             </div>
         </div>
     
-        <div class="recommendation-indicator-container">
-            <button class="recommendation-indicator"></button>
-            <button class="recommendation-indicator"></button>
-            <button class="recommendation-indicator-selected"></button>
-            <button class="recommendation-indicator"></button>
-            <button class="recommendation-indicator"></button>
-        </div>
     
         <div class="next-guide">
             <span>아래로 스크롤해서 다음 단계로 넘어가봐요.</span>
-            <span>⬇️</span>
+            <i class="fa-solid fa-chevron-down"></i>
         </div>
     </div> <!-- fade down part -->
 
@@ -456,10 +446,10 @@
         $('[data-toggle="tooltip"]').tooltip();
     }); 
 </script>
-<<<<<<< HEAD
+
 <script type="text/javascript" src="../../../static/js/sentence_guide.js">
     </script>
-=======
+
 
 <script type="text/javascript">
     (function () {
@@ -573,7 +563,6 @@
 })();
 
 </script>
->>>>>>> 2a82892da5fa861897d92bd7b258ca3fb22d4c2a
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>
