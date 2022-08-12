@@ -11,4 +11,4 @@ def write_sentence(request):
     return render(request, 'buildapp/write_sentence.html')
 
 def write_poet(request):
-    return render(request, 'buildapp/write_poet.html')
+    return render(request, 'buildapp/write_page.html')
