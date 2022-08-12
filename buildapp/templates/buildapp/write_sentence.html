@@ -141,7 +141,7 @@
         position: fixed;
         left: 0;
         top: 0;
-        display: flex;
+        display: none;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -244,7 +244,7 @@
             <h1 class="sentence-title"> <오늘:의 문장> </h1>
         </div>
         
-        <div class="sentence_guide_container">
+        <div class="sentence-guide-container">
             <div>
                 <a class="fa-solid fa-circle-left icon"></a>
             </div>
@@ -345,8 +345,8 @@
                 </pre>
             </div>
             <div class="modal-btns">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn" data-dismiss="modal">아니오</button>
+                <button type="button" class="btn">예</button>
             </div>
         </div>
     </div>
@@ -383,7 +383,7 @@
 
     .modal-content {
         width: 60%;
-        display: flex;
+        display: none;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -395,7 +395,7 @@
         white-space: pre-line;
         text-align: center;
         font-family: "Gowun Batang", sans-serif;
-        font-size: 1.4rem;
+        font-size: 1rem;
     }
 </style>
 
