@@ -6,7 +6,7 @@
 <div class="form-wrapper">
     <form>
         <div class= "text-area">
-            <input class="title-input" placeholder="제목">
+            <input class="title-input" type="text" placeholder="제목">
             <hr>
             <div class="sentence-box">
                 <button class="icon-area">
@@ -39,6 +39,10 @@
 
 <style>
     
+    body{
+        background-image: url("https://images.unsplash.com/photo-1586075010923-2dd4570fb338?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80");
+    }
+
     .text-area{
         text-align: center;
         padding-top: 8rem;
@@ -50,9 +54,10 @@
 
     .title-input{
         width: 60%;
-        height: 40px;
-        font-size: 20px;
+        height: 2.5rem;
+        font-size: 1.25rem;
         font-family: 'song myung';
+        background-color:transparent;
         border:0 solid black;
     }
 
@@ -66,10 +71,10 @@
 
     .sentence-box{
         width: 60%;
-        height: 80px;
+        height: 5rem;
         border:0 solid black;
         background-color:#D9D9D9;
-        margin: 10px;
+        margin: 0.625rem;
     }
 
     .icon-area{
@@ -90,11 +95,11 @@
     }
     
     .ck-editor__editable{
-        min-height: 500px;
+        min-height: 31.25rem;
     }
 
     .ck-content { 
-        font-size: 40px; 
+        font-size: 2.5rem; 
     }
 
     .button-area{
@@ -102,10 +107,10 @@
     }
 
     .submit-button{
-        width: 200px;
-        height: 50px;
-        margin: 15px;
-        font-size: 17px;
+        width: 12.5rem;
+        height: 3.125rem;
+        margin: 0.938rem;
+        font-size: 1.063rem;
         font-family: 'song myung';
         background-color: rgb(108, 108, 108);
         color: white;
@@ -118,9 +123,6 @@
         background-color:  #DE8A8A; 
     }
 
-    .ck-sticky-panel, .ck-sticky-panel__content {
-        position: static;
-    }
 </style>
 
 {% endblock %}
