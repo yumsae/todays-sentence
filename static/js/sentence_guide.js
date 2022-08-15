@@ -5,11 +5,11 @@
     const slideBtnPrev = document.querySelector(".slide_btn_prev"); // prev button
     const pagination = document.querySelector(".slide_pagination");
     const slideLen = slideContents.length; // slide length
-    const slideWidth = 400; // slide width
+    const slideWidth = 32; // slide width
     const slideSpeed = 300; // slide speed
     const startNum = 0; // initial slide index (0 ~ 4)
 
-    slideList.style.width = slideWidth * (slideLen + 2) + "px";
+    slideList.style.width = slideWidth * (slideLen + 2) + "rem";
 
     // Copy first and last slide
     let firstChild = slideList.firstElementChild;
@@ -32,7 +32,7 @@
     const pageDots = document.querySelectorAll(".dot"); // each dot from pagination
 
     slideList.style.transform =
-        "translate3d(-" + slideWidth * (startNum + 1) + "px, 0px, 0px)";
+        "translate3d(-" + slideWidth * (startNum + 1) + "rem, 0rem, 0rem)";
 
     let curIndex = startNum; // current slide index (except copied slide)
     let curSlide = slideContents[curIndex]; // current slide dom
@@ -43,13 +43,13 @@
         if (curIndex <= slideLen - 1) {
             slideList.style.transition = slideSpeed + "ms";
             slideList.style.transform =
-                "translate3d(-" + slideWidth * (curIndex + 2) + "px, 0px, 0px)";
+                "translate3d(-" + slideWidth * (curIndex + 2) + "rem, 0rem, 0rem)";
         }
         if (curIndex === slideLen - 1) {
             setTimeout(function () {
                 slideList.style.transition = "0ms";
                 slideList.style.transform =
-                    "translate3d(-" + slideWidth + "px, 0px, 0px)";
+                    "translate3d(-" + slideWidth + "rem, 0rem, 0rem)";
             }, slideSpeed);
             curIndex = -1;
         }
@@ -67,13 +67,13 @@
         if (curIndex >= 0) {
             slideList.style.transition = slideSpeed + "ms";
             slideList.style.transform =
-                "translate3d(-" + slideWidth * curIndex + "px, 0px, 0px)";
+                "translate3d(-" + slideWidth * curIndex + "rem, 0rem, 0rem)";
         }
         if (curIndex === 0) {
             setTimeout(function () {
                 slideList.style.transition = "0ms";
                 slideList.style.transform =
-                    "translate3d(-" + slideWidth * slideLen + "px, 0px, 0px)";
+                    "translate3d(-" + slideWidth * slideLen + "rem, 0rem, 0rem)";
             }, slideSpeed);
             curIndex = slideLen;
         }
@@ -103,7 +103,12 @@
             curSlide.classList.add("slide_active");
             slideList.style.transition = slideSpeed + "ms";
             slideList.style.transform =
-                "translate3d(-" + slideWidth * (curIndex + 1) + "px, 0px, 0px)";
+                "translate3d(-" + slideWidth * (curIndex + 1) + "rem, 0rem, 0rem)";
         });
     });
 })();
+
+
+function displayNone () {
+    
+}

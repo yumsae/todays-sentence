@@ -2,276 +2,19 @@
 
 {% block content %}
 {% load static %}
-
-
-<style>
-    :root {
-    --red: #CC3F3B;
-    --black: #121212;
-    --bg: #D9D9D9;
-    --btn-light: #D5C4C4;
-    --btn-light-hover: #B5A4A4;
-    --dark-grey: rgba( 0, 0, 0, 0.5 );
-    --trans-white: rgba( 255, 255, 255, 0.5 );
-    }
-
-    /* header */
-    .sentence-title-div {
-        padding: 2rem;
-        padding-top: 5rem;
-    }
-
-    .sentence-title {
-        text-align: center;
-        padding-top: 3rem;
-        font-family: 'Song Myung', sans-serif;
-    }
-
-    .sentence-write-container {
-        background-image: url("https://images.unsplash.com/photo-1586075010923-2dd4570fb338?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80");
-    }
-
-    /* 작성 가이드 */
-    .sentence-guide-container {
-        padding: 1rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .sentence-guide-content {
-        word-break: break-all;
-        text-align: left;
-        padding: 1rem;
-        height: 90%;
-        width: 90%;
-        font-size: 1.5rem;
-        background-color: var(--trans-white);
-        border-radius: 0.1rem;
-    }
-
-
-    /* 단어 추천 파트 */
-    .word-recommendation-container {
-        display: flex;
-        justify-content: space-around;
-        background-color:  var(--trans-white);
-        padding: 2rem;
-        margin: 0 auto;
-    }
-
-    .word-recommendation-content {
-        border: 0;
-        outline: 0;
-        font-size: 1.1rem;
-        background-color: transparent;
-    }
-    .word-recommendation-content:hover {
-        color: var(--red);
-    }
-
-    .word-recommendation-title {
-        text-align: left;
-        padding-left: 2rem;
-    }
-
-
-    /* 인디케이터 */
-    .recommendation-indicator-container {
-        margin: 0 auto;
-        text-align: center;
-        padding-bottom: 1rem;
-    }
-
-    .recommendation-indicator {
-        margin: 2rem 0.6rem;
-        border: 0;
-        outline: 0;
-        background-color: var(--trans-white);
-        padding: 1rem;
-        border-radius: 4rem;
-    }   
-
-    .recommendation-indicator:hover {
-        margin: 2rem 0.6rem;
-        border: 0;
-        outline: 0;
-        background-color: var(--dark-grey);
-        padding: 1rem;
-        border-radius: 4rem;
-    }   
-
-    .recommendation-indicator-selected {
-        margin: 2rem 0.6rem;
-        border: 0;
-        outline: 0;
-        background-color: var(--dark-grey);
-        padding: 1rem;
-        border-radius: 4rem;
-    }   
-
-    .next-guide {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 2rem;
-        margin-top: 2rem;
-    }
-
-    .next-guide span {
-        font-size: 1.4rem;
-        margin-bottom: 1rem;
-    }
-
-    .sentence-input-menu {
-        border: 0;
-        outline: 0;
-        font-size: 1.1rem;
-        background-color: transparent;
-    }
-
-    .fade-up {
-        text-align: center;
-        padding-bottom: 5rem;
-    }
-
-    .modal-overlay {
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        left: 0;
-        top: 0;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background: rgba(255, 255, 255, 0.25);
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-        backdrop-filter: blur(1.5px);
-        -webkit-backdrop-filter: blur(1.5px);
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-    }
-
-    .icon {
-        font-size: 2rem;
-        color: var(--dark-grey);
-    }
-
-    .square-btn {
-        padding: 0.8rem;
-        background-color: var(--dark-grey);
-        color: white;
-        font-size: 2rem;
-        border-radius: 0.1rem;
-    }
-
-    .sentence-input {
-        display: block;
-        border: 0;
-        outline-style:none; /*크롬 브라우져 input 주황색 테두리 없애는법*/
-        border-radius:0px 0px; /* 아이폰의 input 라운드 초기화 */
-        -webkit-appearance:none; /* form 요소의 디바이스 기반 스타일 초기화 */ 
-        padding: 1rem;
-        width: 70%;
-        background-color: var(--trans-white);
-    }
-
-    .sentence-input-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 4rem;
-    }
-
-    /* 문장 목록 */
-    .sentence-list-container {
-        background-color: var(--trans-white);
-        width: 70%;
-        margin: 0 auto;
-        margin-top: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
-
-    .sentence-box:not(:last-child) {
-        border-bottom: 1px solid var(--dark-grey);
-    }
-
-    .sentence-box {
-        display: flex;
-        width: 100%;
-        padding: 1rem;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .sentence-content {
-        padding-left: 1rem;
-        font-size: 1.2rem;
-    }
-
-    .select-menu-btn {
-        padding: 0.5rem;
-        margin-left: 0.2rem;
-        background-color: var(--dark-grey);
-        color: white;
-    }
-
-    .select-menu-btn-container {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        margin-bottom: 0.3rem;
-    }
-
-    .sentence-eraser {
-        color: var(--black);
-    }
-
-    p {
-        padding: 0;
-        margin: 0;
-        word-break: break-all;
-        white-space: pre-line;
-    }
-
-    /* 초기화 */
-    html, body { box-sizing: border-box; padding: 0; margin: 0; text-align: center; }
-    *, *:before, *:after { box-sizing: inherit; }
-    .clearfix:after { content: ''; display: block; clear: both; float: none; }
-    .title { margin-bottom: 0; text-align: center; font-size: 30px; color: #333; }
-    .link, .link:visited { display: inline-block; margin: 20px 0; color: #555; text-decoration: none; font-weight: bold; }
-    .link:hover, .link:focus { color: #9fd6c2; }
-    /* container - body */
-    #container { width: 100%; margin: auto; text-align: center;}
-    .slide_wrap { position: relative; width: 400px; height: 10rem; margin: auto; }
-    .slide_box { width: 100%; margin: auto; overflow-x: hidden; }
-    .slide_content { display: table; float: left; width: 400px; height: 400px; }
-    .slide_content > p { display: table-cell; text-align: center; font-size: 16px; font-weight: bold; color: #555; height: 30rem; }
-    .slide_btn_box > button { position: absolute; top: 50%; margin-top: -45px; width: 60px; height: 60px; font-size: 16px; color: #999; background: none; border: 1px solid #ddd; cursor: pointer; }
-    .slide_btn_box > .slide_btn_prev { left: -100px; }
-    .slide_btn_box > .slide_btn_next { right: -100px; }
-    .slide_pagination { position: absolute; left: 50%; bottom: 0; list-style: none; margin: 0; padding: 0; transform: translateX(-50%); padding-top: 4rem;}
-    .slide_pagination .dot { display: inline-block; width: 15px; height: 15px; margin: 0 5px; overflow: hidden; background: #ddd; border-radius: 50%; transition: 0.3s; }
-    .slide_pagination .dot.dot_active { background: #333; }
-    .slide_pagination .dot a { display: block; width: 100%; height: 100%; }
-    
-</style>
+<link rel="stylesheet" type="text/css" href="{% static 'css/write_sentence.css' %}">
 
 
 <div id="sentence_root" class="sentence-write-container">
-    <div class="fade-down" >
+    <div class="fade-down" data-aos="fade-down" >
         <div class="sentence-title-div">
             <h1 class="sentence-title"> <오늘:의 문장> </h1>
         </div>
 
         <div class="sentence-guide-container">
-            <div class="sentence-guide-content">   
+            <div class="sentence-guide-content">  
                 <div id="container">
+                    <button type="button" class="slide_btn_prev"><i class="fa-solid fa-circle-left icon"></i></button>
                     <div class="slide_wrap">
                         <div class="slide_box">
                             <div class="slide_list clearfix">
@@ -284,14 +27,17 @@
                                 </div>
                                 <div class="slide_content slide02">
                                     <p>[주장글(칼럼)]
+
                                         인상적인 첫문장을 위해 질문을 던져볼까요?
                                         질문을 통해 독자들의 집중을 유도하고, 글의 의도를 직, 간접적으로 밝힐 수 있어요.
+
                                         ex) ‘밥을 먹다가 주변 사람을 긴장시키고 싶은가.’---&lt"추석이란 무엇인가” 되물어라>, 경향신문 오피니언, 김영민 
                                     </p>
                                 </div>
                                 <div class="slide_content slide03">
                                     <p>
                                         [주장글(칼럼)]
+
                                         첫문장에 핵심과 결론을 제시하는 것도 좋은 방법이에요.
             
                                         ex) 글을 쓰기 위해서는 두 가지를 명심하면 된다. 
@@ -301,6 +47,7 @@
                                 <div class="slide_content slide04">
                                     <p>
                                         [에세이]
+
                                         감성적인 글을 위해 지금 자신의 감정이나 상태를 솔직하게 적어볼까요?
                                         솔직한 문장 뒤에, 이유를 붙여나가다 보면 금방 쓸 것들이 생길 거예요.
             
@@ -308,8 +55,9 @@
                                     </p>
                                 </div>
                                 <div class="slide_content slide05">
-                                    <p>
+                                    <p >
                                         [문학-시]
+
                                         신선한 문장 표현을 위해 단어와 단어의 의미가 먼 것들을 붙여볼까요?
                                         추천단어를 무작정 한 문장으로 연결해봐도 좋아요. 
                                         당장에 말이 되지 않아도 좋아요!
@@ -318,48 +66,48 @@
                                 <div class = "slide_content slide06">
                                     <p>
                                         [문학-소설]
+
                                         소설의 첫 문장은 궁금증을 유발해야해요.
                                         충격적인 사건이나 대사, 독백 등을 간결한 문장으로 써보아요
+
                                         ex) ‘오늘 엄마가 죽었다. 아니, 어쩌면 어제.’  -알베르 까뮈, &lt이방인&gt   
                                     </p>
                                 </div>
                             </div>
+
                             <!-- // .slide_list -->
                         </div>
-                        <!-- // .slide_box -->
-                        <div class="slide_btn_box">
-                            <button type="button" class="slide_btn_prev"><i class="fa-solid fa-circle-left icon"></i></button>
-                            <button type="button" class="slide_btn_next"><i class="fa-solid fa-circle-right icon"></i></button>
-                        </div>
-                        <!-- // .slide_btn_box -->
                         <ul class="slide_pagination"></ul>
-                        <!-- // .slide_pagination -->
+
+                        <!-- // .slide_box -->
                     </div>
-                    <!-- // .slide_wrap -->
+                    <button type="button" class="slide_btn_next"><i class="fa-solid fa-circle-right icon"></i></button>
                 </div>
                 <!-- // .container -->
             </div>
         </div>
-    
+        <!--WORDS RECOMMEND-->
         <div>
-            <h2 class="sentence-title word-recommendation-title">단어 추천</h2>
-            <div class="word-recommendation-container">
-                <button class="word-recommendation-content" data-toggle="tooltip" title="단어 정의">단어 1</button>
-                <button class="word-recommendation-content" data-toggle="tooltip" title="단어 정의">단어 1</button>
-                <button class="word-recommendation-content" data-toggle="tooltip" title="단어 정의">단어 1</button>
-                <button class="word-recommendation-content" data-toggle="tooltip" title="단어 정의">단어 1</button>
-                <button class="word-recommendation-content" data-toggle="tooltip" title="단어 정의">단어 1</button>
-            </div>
+                <h2 class="sentence-title word-recommendation-title">단어 추천</h2>
+                <div class="word-recommendation-container">
+                    <button class="word-recommendation-content" data-toggle="tooltip" title="단어 정의">단어 1</button>
+                    <button class="word-recommendation-content" data-toggle="tooltip" title="단어 정의">단어 1</button>
+                    <button class="word-recommendation-content" data-toggle="tooltip" title="단어 정의">단어 1</button>
+                    <button class="word-recommendation-content" data-toggle="tooltip" title="단어 정의">단어 1</button>
+                    <button class="word-recommendation-content" data-toggle="tooltip" title="단어 정의">단어 1</button>
+                </div>
         </div>
-    
     
         <div class="next-guide">
-            <span>아래로 스크롤해서 다음 단계로 넘어가봐요.</span>
-            <i class="fa-solid fa-chevron-down"></i>
+                <span>아래로 스크롤해서 다음 단계로 넘어가봐요.</span>
+                <button class="down-button">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
         </div>
-    </div> <!-- fade down part -->
+    </div> 
+    <!-- fade down part -->
 
-    <div class="fade-up"> 
+    <div class="fade-up" data-aos="fade-up"> 
         <form>
             <div class="sentence-input-container">
                 <a class="fa-solid fa-circle-question square-btn"></a>
@@ -413,6 +161,8 @@
         <button onclick="onClickSubmit();" class="submit_btn" id="#submit_btn">선택한 문장으로 시 쓰기</button>
     </div>
 
+    
+    <!--MODAL-->
     <div id="no-sentence-modal" class="modal-overlay">
         <div class="modal-content">
             <div class="modal-body">
@@ -447,155 +197,14 @@
     }); 
 </script>
 
+<!--GUIDE JS-->
 <script type="text/javascript" src="../../../static/js/sentence_guide.js">
     </script>
 
-
-<script type="text/javascript">
-    (function () {
-    const slideList = document.querySelector(".slide_list"); // Slide parent dom
-    const slideContents = document.querySelectorAll(".slide_content"); // each slide dom
-    const slideBtnNext = document.querySelector(".slide_btn_next"); // next button
-    const slideBtnPrev = document.querySelector(".slide_btn_prev"); // prev button
-    const pagination = document.querySelector(".slide_pagination");
-    const slideLen = slideContents.length; // slide length
-    const slideWidth = 400; // slide width
-    const slideSpeed = 300; // slide speed
-    const startNum = 0; // initial slide index (0 ~ 4)
-
-    slideList.style.width = slideWidth * (slideLen + 2) + "px";
-
-    // Copy first and last slide
-    let firstChild = slideList.firstElementChild;
-    let lastChild = slideList.lastElementChild;
-    let clonedFirst = firstChild.cloneNode(true);
-    let clonedLast = lastChild.cloneNode(true);
-
-    // Add copied Slides
-    slideList.appendChild(clonedFirst);
-    slideList.insertBefore(clonedLast, slideList.firstElementChild);
-
-    // Add pagination dynamically
-    let pageChild = "";
-    for (var i = 0; i < slideLen; i++) {
-        pageChild += '<li class="dot';
-        pageChild += i === startNum ? " dot_active" : "";
-        pageChild += '" data-index="' + i + '"><a href="#"></a></li>';
-    }
-    pagination.innerHTML = pageChild;
-    const pageDots = document.querySelectorAll(".dot"); // each dot from pagination
-
-    slideList.style.transform =
-        "translate3d(-" + slideWidth * (startNum + 1) + "px, 0px, 0px)";
-
-    let curIndex = startNum; // current slide index (except copied slide)
-    let curSlide = slideContents[curIndex]; // current slide dom
-    curSlide.classList.add("slide_active");
-
-    /** Next Button Event */
-    slideBtnNext.addEventListener("click", function () {
-        if (curIndex <= slideLen - 1) {
-            slideList.style.transition = slideSpeed + "ms";
-            slideList.style.transform =
-                "translate3d(-" + slideWidth * (curIndex + 2) + "px, 0px, 0px)";
-        }
-        if (curIndex === slideLen - 1) {
-            setTimeout(function () {
-                slideList.style.transition = "0ms";
-                slideList.style.transform =
-                    "translate3d(-" + slideWidth + "px, 0px, 0px)";
-            }, slideSpeed);
-            curIndex = -1;
-        }
-        curSlide.classList.remove("slide_active");
-        pageDots[curIndex === -1 ? slideLen - 1 : curIndex].classList.remove(
-            "dot_active"
-        );
-        curSlide = slideContents[++curIndex];
-        curSlide.classList.add("slide_active");
-        pageDots[curIndex].classList.add("dot_active");
-    });
-
-    /** Prev Button Event */
-    slideBtnPrev.addEventListener("click", function () {
-        if (curIndex >= 0) {
-            slideList.style.transition = slideSpeed + "ms";
-            slideList.style.transform =
-                "translate3d(-" + slideWidth * curIndex + "px, 0px, 0px)";
-        }
-        if (curIndex === 0) {
-            setTimeout(function () {
-                slideList.style.transition = "0ms";
-                slideList.style.transform =
-                    "translate3d(-" + slideWidth * slideLen + "px, 0px, 0px)";
-            }, slideSpeed);
-            curIndex = slideLen;
-        }
-        curSlide.classList.remove("slide_active");
-        pageDots[curIndex === slideLen ? 0 : curIndex].classList.remove(
-            "dot_active"
-        );
-        curSlide = slideContents[--curIndex];
-        curSlide.classList.add("slide_active");
-        pageDots[curIndex].classList.add("dot_active");
-    });
-
-    /** Pagination Button Event */
-    let curDot;
-    Array.prototype.forEach.call(pageDots, function (dot, i) {
-        dot.addEventListener("click", function (e) {
-            e.preventDefault();
-            curDot = document.querySelector(".dot_active");
-            curDot.classList.remove("dot_active");
-
-            curDot = this;
-            this.classList.add("dot_active");
-
-            curSlide.classList.remove("slide_active");
-            curIndex = Number(this.getAttribute("data-index"));
-            curSlide = slideContents[curIndex];
-            curSlide.classList.add("slide_active");
-            slideList.style.transition = slideSpeed + "ms";
-            slideList.style.transform =
-                "translate3d(-" + slideWidth * (curIndex + 1) + "px, 0px, 0px)";
-        });
-    });
-})();
-
-</script>
-
+<!--AOS-->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>
           AOS.init();
         </script>
-
-
-<script type="text/javascript" scr="{% static 'js/setentece_guide.js' %}">
-</script>
-
-<style>
-    .stop-scroll {
-        height: 100%;
-        overflow: hidden;
-    }
-
-    .modal-content {
-        width: 60%;
-        display: none;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 2rem;
-    }
-
-    pre {
-        word-break: break-all;
-        white-space: pre-line;
-        text-align: center;
-        font-family: "Gowun Batang", sans-serif;
-        font-size: 1rem;
-    }
-</style>
-
 
 {% endblock %}
