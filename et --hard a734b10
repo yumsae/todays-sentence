@@ -1,0 +1,121 @@
+[33maed3c9c[m[33m ([m[1;36mHEAD -> [m[1;32mjsediting[m[33m, [m[1;31morigin/jsediting[m[33m)[m sorry
+[33ma734b10[m tst_write_community 완성 및 기존 파일 세부사항 수정
+[33m4bf0199[m Merge branch 'jsediting' of https://github.com/yumsae/todays-sentence into jsediting
+[33mc4cf0ad[m sentence_guide_clean
+[33m0fa82a7[m px->rem, home.html 버튼 글자 변경 및 페이지 하단 버튼 1개->2개로 변경(문장쓰기, 글쓰기) 가더미데이터를 위한 tst_write_community.html 파일 생성
+[33m7b5c815[m Merge branch 'jsediting' of https://github.com/yumsae/todays-sentence into jsediting
+[33mc0aceae[m guide_sentence2
+[33m1725830[m Merge branch 'jsediting' of https://github.com/yumsae/todays-sentence into jsediting
+[33m4076ce9[m add pictures on home
+[33m5cec0cb[m write_poet 페이지 삭제
+[33m49d11f8[m guide_2
+[33ma6fe261[m guidesentence
+[33m2a82892[m Merge branch 'jsediting' of https://github.com/yumsae/todays-sentence into jsediting
+[33m4f7cbb2[m merge
+[33mfc86d02[m Merge branch 'jsediting' of https://github.com/yumsae/todays-sentence into jsediting
+[33m406460f[m css refactoring
+[33m699b403[m 글 작성 페이지 수정
+[33mb706981[m guide_slide
+[33m5ed88b1[m guide_sentence
+[33mdbb8a78[m guide_sentence
+[33m4a609e2[m account
+[33m0a1c22f[m add css file
+[33m7e9d3ab[m Merge branch 'jsediting' of https://github.com/yumsae/todays-sentence into jsediting
+[33m1e37bcb[m modal
+[33m1cf1fa6[m 필요없는 페이지 삭제
+[33m0c93cfe[m 글 작성 페이지
+[33m5489bcd[m -
+[33ma390872[m merge
+[33mc8ad8e8[m conflict_gg
+[33m76201a1[m guide_ing
+[33mb347242[m merge
+[33m88869a9[m Merge branch 'jsediting' of https://github.com/yumsae/todays-sentence into jsediting
+[33m50bbe49[m 글 작성 페이지
+[33mc303fcd[m css editing
+[33md66b550[m Merge branch 'jsediting' of https://github.com/yumsae/todays-sentence into jsediting
+[33m4c5eecf[m modal
+[33m5437d4e[m Merge branch 'jsediting' of https://github.com/yumsae/todays-sentence into jsediting
+[33m57e7de7[m react_안해유
+[33m4fcf61d[m making sentence page
+[33m00b4184[m css refactoring
+[33m42ff189[m -
+[33m3146261[m Merge branch 'jsediting' of https://github.com/yumsae/todays-sentence into jsediting
+[33m285e099[m -
+[33m1a40c14[m add packages
+[33m2effdf8[m Merge branch 'jsediting' of https://github.com/yumsae/todays-sentence into jsediting
+[33ma9c47cb[m Merge branch 'master' of https://github.com/yumsae/todays-sentence into jsediting
+[33m51c75a7[m pull error
+[33mdbe9ac9[m profile process
+[33m46b8333[m test commit
+[33m5bd69a0[m parksw
+[33md5bbc76[m image_sample_upload
+[33m5c6cfe5[m home modify
+[33m182f39b[m bye
+[33mff9237e[m 교환->공유, 문장 부분 수정
+[33m2e92bf4[m Merge branch 'master' of github.com:yumsae/todays-sentence
+[33mf61df98[m profile FE Dev
+[33md927199[m placeholder 추가
+[33md4d716d[m 로그인 페이지 placeholder 추가함 우아앙
+[33m71f5bbb[m profile FE dev
+[33ma821dfc[m 로그인 페이지 placeholder 추가함 우아앙
+[33mf70b217[m 시 -> 글
+[33m301de57[m 로그인 페이지 placeholder 추가했음
+[33m4898350[m main imple
+[33m541b074[m community
+[33mdb86205[m 시 -> 글
+[33mb1a3d45[m home_bar_fix
+[33md1a581e[m 시 -> 글
+[33m811d8c9[m fixed_header
+[33mac96a6a[m 	modified:   buildapp/templates/buildapp/home.html
+[33m8a48f22[m conflict_success
+[33maff5d5c[m merigconflict
+[33m8689d66[m js_home_
+[33maa4a996[m header update & btn set up
+[33m22d4e71[m homejs_17_46
+[33m093e88e[m homejsstart
+[33mebd4b5e[m js_file_make
+[33m9f97355[m[33m ([m[1;31morigin/beIssue[m[33m)[m acccount create imple
+[33mc5ec862[m main update
+[33m36fb28a[m login FE imple
+[33m5591d79[m account imple
+[33m9c6735e[m btn imple
+[33m670d1ec[m Merge branch 'master' of github.com:yumsae/todays-sentence
+[33mc6a4d31[m header update
+[33ma856cde[m snfskfndn
+[33ma6832ca[m deletimg
+[33m0ce3612[m main imple
+[33m185f504[m merge
+[33m8bfafa9[m issue1 merge
+[33maa13c77[m akak
+[33m42b9438[m Merge branch 'issue1' of https://github.com/yumsae/todays-sentence into issue1
+[33mcdf70a3[m login_page
+[33m8c93a15[m ajjajajaja
+[33ma8b64e7[m mmmm
+[33m990c1be[m login
+[33m4863f51[m login
+[33m47b391a[m 	modified:   today.html
+[33m8047822[m 	new file:   testimg.jpg 	modified:   today.html
+[33m1cc30db[m 	new file:   img1.jpg 	modified:   today.html
+[33mbd8a6f5[m issue1
+[33m1c1656e[m Merge branch 'master' of https://github.com/yumsae/todays-sentence
+[33m665ebfc[m nothing
+[33m86f648c[m 2nd init
+[33m4ba2624[m guideapp
+[33m6a48da7[m guideapp_idonknow
+[33m70c3485[m accouont create
+[33mae474bb[m profileapp implementation
+[33me93767c[m error_please
+[33ma899158[m sw
+[33m913790a[m 너무 느려
+[33m0ab28f3[m ㅎ
+[33mb79a921[m header demo
+[33m2386026[m header demo
+[33mfb2f0b5[m footer
+[33m8316f77[m Merge branch 'master' of github.com:yumsae/todays-sentence
+[33mec599e1[m template imple
+[33m9ead998[m templates set up
+[33m77de1a1[m Add files via upload
+[33m43e5cc1[m imple env
+[33m9f0edab[m delete .idea dir
+[33md97d302[m add gitignore
+[33m64b518c[m init commit
