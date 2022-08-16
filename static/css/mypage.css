@@ -1,14 +1,28 @@
+
+.mypage_wrap {
+    width: 600px;
+    height: 700px;
+    text-align: center;
+    margin: auto;
+    padding-top: 80px;
+}
+
 .mypage_title {
     margin-top: .5rem;
+    font-size: 2rem;
 }
 
 .profile_wrap {
     text-align: right;
 }
 
+.profile_item_wrap {
+    margin: .7rem 0;
+}
+
 .profile_item {
     font-family: "Gowun Batang", sans-serif;
-    display: block;
-    font-size: 2rem;
+    display: inline;
+    font-size: 1.5rem;
     margin-bottom: .5rem;
 }

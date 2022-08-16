@@ -1,11 +1,11 @@
 from django.urls import path
 
-from profileapp.views import AccountDetailView
+# from profileapp.views import AccountDetailView
+from profileapp import views
 
 app_name = 'profileapp'
 
 urlpatterns = [
-    path('detail/', AccountDetailView.as_view(), name="detail"),
-    # path('mypage/', views.Mypage, name='mypage'),
+    path('mypage/', views.MyPage, name='mypage'),
     ]
 
