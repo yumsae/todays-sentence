@@ -3,10 +3,14 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
+from django.views.generic import DetailView
+from django.views.generic.list import MultipleObjectMixin
+
 from accountapp.forms import UserForm
 
 
 # Create your views here.
+from profileapp.models import Profile
 
 
 def AccountCreate(request):
@@ -22,3 +26,9 @@ def AccountCreate(request):
     else:
         form = UserForm()
     return render(request, 'accountapp/create.html', {'form': form})
+
+
+class AccountDetailView(DetailView, MultipleObjectMixin):
+    model = Profile
+    context_object_name = 'target_user'
+    template_name = 'accountapp/detail.html'

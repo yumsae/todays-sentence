@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/mypage.css' %}">
+
+<body>
+    <div class="mypage_wrap">
+        <div class="title_wrap">
+            <p class="cont_logo" style="text-align: left; font-family: 'Song Myung', serif;">&lt;오늘:의 문장&gt;</p>
+        </div>
+        <div>
+            <p class="mypage_title">
+                반갑습니다. {{ user.username }}님!
+            </p>
+        </div>
+        <hr>
+        <div class="profile_wrap">
+            <div class="profile_item_wrap">
+                <a href="{% url 'buildapp:write_sentence' %}" class="profile_item">문장쓰기</a>
+            </div>
+            <div class="profile_item_wrap">
+                <a href="" class="profile_item">작성한 문장</a>
+            </div>
+            <div class="profile_item_wrap">
+                <a href="" class="profile_item">작성한 게시글</a>
+            </div>
+            <div class="profile_item_wrap">
+                <a href="{% url 'accountapp:detail' pk=user.pk %}" class="profile_item">개인정보관리</a>
+            </div>
+            <div class="profile_item_wrap">
+                <a href="{% url 'accountapp:logout' %}" class="profile_item">로그아웃</a>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+{% endblock %}
+
+

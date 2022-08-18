@@ -1,20 +1,33 @@
 <!-- 필드 오류와 넌필드 오류를 출력한다. -->
 {% if form.errors %}
-<div class="alert alert-danger">
+
+<div class="">
     {% for field in form %}
+
     <!-- 필드 오류 -->
     {% if field.errors %}
-    <div>
-        <strong>{{ field.label }}</strong>
-        {{ field.errors }}
-    </div>
+    <script>
+        var tmp = "";
+        if ( "{{ field.label }}" == 'Username'){
+            tmp = 'username';
+        } else if ( "{{ field.label }}" == 'Password' ) {
+            tmp = 'password1';
+        } else if ( "{{ field.label }}" == 'Password confirmation' ) {
+            tmp = 'password2';
+        } else {
+            tmp = 'email';
+        }
+
+        var label =  tmp;
+    </script>
     {% endif %}
     {% endfor %}
+
     <!-- 넌필드 오류 -->
     {% for error in form.non_field_errors %}
-    <div>
-        <strong>{{ error }}</strong>
-    </div>
+    <script>
+        var message = "{{ error }}";
+    </script>
     {% endfor %}
 </div>
 {% endif %}

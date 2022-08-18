@@ -1,21 +1,29 @@
+:root {
+    --red: #CC3F3B;
+    --black: #121212;
+    --bg: #D9D9D9;
+    --btn-light: #D5C4C4;
+    --btn-light-hover: #B5A4A4;
+}
 
 * {
     margin: 0;
     padding: 0;
-    font-size: 10px;
+    font-size: 16px;
+    font-family: "Gowun Batang", sans-serif;
 }
 a {
     text-decoration: none;
-    color: black;
+    color: var(--black);
 }
 
 a:visited {
     text-decoration: none;
-    color: black;
+    color: var(--black);
 }
 
 a:hover {
-    color: #CC3F3B;
+    color: var(--red);
 }
 
 html, body {
@@ -27,115 +35,21 @@ ul, li {
     list-style-type: none;
 }
 
-.nav {
-    display: block;
-    position: relative;
-    margin: 0;
-    background-color: white;
-    height: 80px;
-    overflow: hidden;
+button {
+    border: 0;
+    outline: 0;
+    background-color: rgba( 255, 255, 255, 0 );
 }
 
-.nav_menu {
-    list-style: none;
-}
-
-.nav_item {
-    height: 80px;
-    float:left;
-    padding: 0 1rem;
-    line-height: 80px;
-    vertical-align: middle;
-}
-
-.nav_wrap {
-    font-family: "Noto Serif KR", sans-serif;
-    width:100%;
-    height: 80px;
-    overflow: hidden;
-}
-
-.nav_btn_wrap {
-    padding-right: 2rem;
-}
-
-.nav_btn {
-    margin: auto;
-    font-family: "Gowun Batang", sans-serif;
-    font-size: 1.5rem;
-    padding: 12px 10px;
-}
-
-.nav_emp {
-    margin: 23px 0;
-    border: 1px solid black;
-    border-radius: 5px;
-    display: inline-block;
-    font-family: "Gowun Batang", sans-serif;
-    font-size: 1.5rem;
-    padding: 0.5rem 2rem;
-    float: left;
-    vertical-align: middle;
-}
-
-.nav_emp:hover {
-    border: 1px solid black;
-    color: #FFF;
-    background-color: black;
-}
-
-.header_today_logo {
-    font-family: 'Song Myung', serif;
-    padding-left: 2rem;
-    /*margin: 0rem 0 1rem;*/
-    font-size: 3rem;
-    float: left;
-    margin-right: 2rem;
-    line-height: 80px;
-    vertical-align: middle;
-}
-
-.login {
-    padding-right: 10px;
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    background: url("../image/login.png") no-repeat center;
-    background-size: cover;
-}
-
-.footer_wrap {
-    color: #000;
-    background-color: #D9D9D9;
-    padding: 20px 0 20px;
-}
-
-.footer {
-    margin: 16px;
-    text-align: center;
-}
-
-.footer_cont {
-    font-size: 16px;
-    margin-bottom: 6px;
-}
-
+/* 여러 곳에서 쓰이는 스타일 */
 .cont_logo {
-    font-family: "Song Myung", serif;
-    font-size: 4rem;
-    margin-top: 30px;
+    font-size: 2rem;
+    margin-top: 3rem;
     margin-bottom: 0;
 }
 
 .cont_sub {
-    font-family: "Song Myung", serif;
     font-size: 1.2rem;
-}
-
-.title_wrap {
-    display: block;
-    margin: auto;
-    text-align: center;
 }
 
 .cont_wrap {
@@ -144,180 +58,4 @@ ul, li {
     height: 800px;
     margin: auto;
     padding-top: 3rem;
-}
-
-.create_account {
-    text-align: left;
-    font-family: "hahmlet", sans-serif;
-    font-size: 1.5rem;
-    margin: 2rem 0 4px 2.5rem;
-    display: block;
-}
-
-.account_box {
-    width: 450px;
-    height: 50px;
-    border: 0;
-    background-color: #f5f6f7;
-    border-radius: 25px;
-    padding-left: 10px;
-}
-
-.submit_btn {
-    font-size: 1.5rem;
-    width: 200px;
-    height: 60px;
-    border: 0;
-    background-color: #D5C4C4;
-    border-radius: 40px;
-    color: #FFF;
-    margin-top: 4rem;
-}
-
-.submit_btn:hover {
-    background-color: #B5A4A4;
-}
-
-.login_wrap {
-    text-align: center;
-    width: 500px;
-    height: 500px;
-    margin: auto;
-    padding-top: 3rem;
-}
-
- .main_cont {
-     position: relative;
-     padding-top: 25rem;
-     height: 80rem;
-     padding-bottom: 25rem;
-}
-
-.main_cont:after {
-    content : "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: url("../image/testimg.jpg");
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity : 0.6;
-    z-index: -1;
-}
-
-
-.main_title {
-    font-weight: 200;
-    font-size: 44px;
-    font-family: 'Song Myung', sans-serif;
-    color: black;
-    text-align: center;
-}
-
-.home_ex_wrap {
-    width: 100%;
-    height: 35rem;
-    max-width: 100%;
-    background: #FFFFFF;
-}
-
-.home_ex{
-    text-align: center;
-    font-family: 'Song Myung', sans-serif;
-    font-size: 4rem;
-    padding-top: 12rem;
-    color: #4A4A4A;
-}
-
-.home_ex p {
-    font-size: 2.5rem;
-}
-
-
-.home_guide_wrap {
-    background-color: #D9D9D9;
-    height: 100rem;
-}
-
-.home_guide {
-    font-family: 'Song Myung', sans-serif;
-    position: relative;
-    padding-top: 150px;
-    margin: 0 100px;
-}
-
-.guide_title{
-    color: #903C3C;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-.guide_sub {
-    font-size: 3.2rem;
-    margin-bottom: 3rem;
-    line-height: 3.5rem;
-}
-
-.guide_cont {
-    font-size: 2.1rem;
-    font-family: "Gowun Batang", sans-serif;
-    font-weight: 300;
-    line-height: 3rem;
-}
-
-.home_btn {
-    font-family: "hahmlet", sans-serif;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 15px 20px 17px;
-    font-size: 1.6rem
-}
-
-.home_btn:hover {
-    border: 1px solid black;
-    background-color: black;
-    color: white;
-}
-
-.mypage_title {
-    font-family: "Gowun Batang", sans-serif;
-    font-size: 2rem;
-    text-align: left;
-
-}
-
-.nav_mypage_wrap {
-    display: inline-block;
-    float: right;
-    padding-right: 2rem;
-}
-
-.home_btn_container {
-    background-color: #D9D9D9;
-    height: 350px;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 130px;
-}
-
-.home_wrap hr {
-    margin: 0
-}
-
-.mypage_title {
-    margin-top: .5rem;
-}
-
-.profile_wrap {
-    text-align: right;
-}
-
-.profile_item {
-    font-family: "Gowun Batang", sans-serif;
-    display: block;
-    font-size: 2rem;
-    margin-bottom: .5rem;
 }
