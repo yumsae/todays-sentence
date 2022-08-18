@@ -1,0 +1,348 @@
+:root {
+
+    --dark-grey: rgba( 0, 0, 0, 0.5 );
+    --trans-white: rgba( 255, 255, 255, 0.5 );
+    }
+
+/* header */
+.sentence-title-div {
+    padding: 2rem;
+    padding-top: 5rem;
+}
+
+.sentence-title {
+    text-align: center;
+    padding-top: 3rem;
+    font-family: 'Song Myung', sans-serif;
+}
+
+.sentence-write-container {
+    background-image: url("https://images.unsplash.com/photo-1586075010923-2dd4570fb338?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80");
+}
+
+
+/* 작성 가이드 */
+.sentence-guide-container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sentence-guide-content {
+    word-break: break-all;
+    text-align: left;
+    padding: 1rem;
+    height: 90%;
+    width: 90%;
+    font-size: 1.5rem;
+    background-color: var(--trans-white);
+    border-radius: 0.1rem;
+}
+
+
+/* 단어 추천 파트 */
+.word-recommendation-container {
+    display: flex;
+    justify-content: space-around;
+    background-color:  var(--trans-white);
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+.word-recommendation-content {
+    border: 0;
+    outline: 0;
+    font-size: 1.1rem;
+    background-color: transparent;
+}
+.word-recommendation-content:hover {
+    color: var(--red);
+}
+
+.word-recommendation-title {
+    text-align: left;
+    padding-left: 1rem;
+}
+
+
+/* 인디케이터 */
+.recommendation-indicator-container {
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.recommendation-indicator {
+    margin: 2rem 0.6rem;
+    border: 0;
+    outline: 0;
+    background-color: var(--trans-white);
+    padding: 1rem;
+    border-radius: 4rem;
+}   
+
+.recommendation-indicator:hover {
+    margin: 2rem 0.6rem;
+    border: 0;
+    outline: 0;
+    background-color: var(--dark-grey);
+    padding: 1rem;
+    border-radius: 4rem;
+}   
+
+.recommendation-indicator-selected {
+    margin: 2rem 0.6rem;
+    border: 0;
+    outline: 0;
+    background-color: var(--dark-grey);
+    padding: 1rem;
+    border-radius: 4rem;
+}   
+
+.next-guide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.next-guide span {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.sentence-input-menu {
+    border: 0;
+    outline: 0;
+    font-size: 1.1rem;
+    background-color: transparent;
+}
+
+.fade-up {
+    text-align: center;
+    padding-bottom: 5rem;
+}
+
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.icon {
+    font-size: 2rem;
+    color: var(--dark-grey);
+}
+
+.square-btn {
+    padding: 0.8rem;
+    background-color: var(--dark-grey);
+    color: white;
+    font-size: 2rem;
+    border-radius: 0.1rem;
+}
+
+.sentence-input {
+    display: block;
+    border: 0;
+    outline-style:none; /*크롬 브라우져 input 주황색 테두리 없애는법*/
+    border-radius:0px 0px; /* 아이폰의 input 라운드 초기화 */
+    -webkit-appearance:none; /* form 요소의 디바이스 기반 스타일 초기화 */ 
+    padding: 1rem;
+    width: 70%;
+    background-color: var(--trans-white);
+}
+
+.sentence-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+/* 문장 목록 */
+.sentence-list-container {
+    background-color: var(--trans-white);
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.sentence-box:not(:last-child) {
+    border-bottom: 1px solid var(--dark-grey);
+}
+
+.sentence-box {
+    display: flex;
+    width: 100%;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sentence-content {
+    padding-left: 1rem;
+    font-size: 1.2rem;
+}
+
+.select-menu-btn {
+    padding: 0.5rem;
+    margin-left: 0.2rem;
+    background-color: var(--dark-grey);
+    color: white;
+}
+
+.select-menu-btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.3rem;
+}
+
+.sentence-eraser {
+    color: var(--black);
+}
+
+p {
+    padding: 0;
+    margin: 0;
+    word-break: break-all;
+}
+
+/* 초기화 */
+#container { 
+    width: 100%; 
+    height: 15rem; 
+    margin: auto; 
+    text-align: center; 
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*슬라이드*/
+.slide_wrap { 
+    position: relative; 
+    width: 32rem; 
+    height: 100%; 
+    text-align: center; 
+}
+
+.slide_box { 
+    width: 100%; 
+    height: 90%;
+    margin: auto; 
+    overflow-x: hidden;
+    flex:1; 
+}
+
+.slide_content { 
+    display: table; 
+    float: left; 
+    width: 32rem; 
+    height: 160px; 
+}
+
+
+.slide_content > p { 
+    display: table-cell; 
+    text-align: center; 
+    font-size: 16px; 
+    font-weight: bold; 
+    color: #555; 
+    vertical-align:middle;
+    white-space: pre-line;
+}
+
+.slide_btn_box > button { 
+    position: absolute; 
+    top: 50%; 
+    margin-top: -45px; 
+    width: 60px; 
+    height: 60px; 
+    font-size: 16px; 
+    color: var(--dark-grey); 
+    background: none; 
+    cursor: pointer; 
+    flex:1;
+}
+
+/* .slide_btn_box >  */
+.slide_btn_prev { 
+    left: -100px;  
+    flex:1;
+}
+
+.slide_btn_next { 
+    right: -100px; 
+    flex:1; 
+}
+.slide_pagination {
+    width: 100%; 
+    height: 10%;
+    bottom:5%; 
+    list-style: none; 
+    margin: 0; 
+    padding: 0;
+}
+
+.slide_pagination .dot { 
+    display: inline-block; 
+    width: 15px; 
+    height: 15px; 
+    margin: 0 5px; 
+    overflow: hidden; 
+    background: #ddd; 
+    border-radius: 50%; 
+    transition: 0.3s; 
+}
+
+
+.slide_pagination .dot.dot_active { 
+    background: #333; 
+}
+
+.slide_pagination .dot a { 
+    display: block; 
+    width: 100%; 
+    height: 100%; 
+}
+
+.stop-scroll {
+    height: 100%;
+    overflow: hidden;
+}
+
+.modal-content {
+    width: 60%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+pre {
+    word-break: break-all;
+    white-space: pre-line;
+    text-align: center;
+    font-family: "Gowun Batang", sans-serif;
+    font-size: 1rem;
+}

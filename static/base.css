@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+
+.today_logo {
+    font-family: 'Song Myung', serif;
+    padding-left: 1rem;
+    margin: 0.2rem 0 0.2rem;
+    float: left;
+    font-size: 2rem;
+}
+
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.nav {
+    display: block;
+    position: relative;
+    height: 50px;
+    padding: 0 ;
+    margin: 0;
+    background-color: white;
+}
+
+.nav_wrap {
+    font-family: "Noto Serif KR", sans-serif;
+    width:100%;
+}
+
+.nav_btn_wrap {
+    display: inline-block;
+    float: right;
+}
+
+.nav_btn {
+    padding: 13px 20px 13px;
+    margin: auto;
+    display: inline-block;
+    font-family: "hahmlet", sans-serif;
+    font-size: 0.9rem;
+}
+
+.login {
+    margin: 10px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: url("image/login.png") no-repeat center;
+    background-size: cover;
+}
+
+.footer_wrap {
+    color: #000;
+    background-color: #D9D9D9;
+    padding: 20px 0 20px;
+}
+
+.footer {
+    margin: 16px;
+    text-align: center;
+}
+
+.footer_cont {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.cont_logo {
+    font-family: "Song Myung", serif;
+    font-size: 4rem;
+    margin-top: 30px;
+}
+
+.title_wrap {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.cont_wrap {
+    text-align: center;
+    width: 400px;
+    height: 800px;
+    margin: auto;
+}
+
+.create_account {
+    text-align: left;
+    font-family: "hahmlet", sans-serif;
+    font-size: 1.5rem;
+    margin: 2rem 0 0 1rem;
+
+}
+
+.account_box {
+    width: 400px;
+    height: 40px;
+    border: 0;
+    background-color: #D9D9D9;
+    border-radius: 25px;
+}

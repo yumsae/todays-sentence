@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="form-wrapper">
+    <form>
+        <div class= "text-area">
+            <input class="title-input" type="text" placeholder="제목">
+            <hr>
+            <div class="sentence-box">
+                <button class="icon-area">
+                    <i class="fa-solid fa-plus fa-lg"></i>
+                    <i class="fa-solid fa-arrows-rotate fa-lg"></i>
+                </button>
+            </div>
+            <textarea name="text-input" id="editor" placeholder="당신만의 이야기를 적어주세요."></textarea>
+        </div>
+        <div class="button-area">
+            <button class="submit-button">게시하기</button>
+        </div>
+    </form>
+</div>
+
+<!-- Ckeditor -->
+<script>
+    ClassicEditor
+        .create( document.querySelector('#editor'), {
+            removePlugins: ['Heading', '|','Table toolbar'],
+            language: "ko"
+        })
+        .then(editor=>{
+            console.log(editor);
+        })
+        .catch(error=>{
+            console.error(error);
+        });
+</script>
+
+<style>
+    
+    body{
+        background-image: url("https://images.unsplash.com/photo-1586075010923-2dd4570fb338?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80");
+    }
+
+    .text-area{
+        text-align: center;
+        padding-top: 8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .title-input{
+        width: 60%;
+        height: 2.5rem;
+        font-size: 1.25rem;
+        font-family: 'song myung';
+        background-color:transparent;
+        border:0 solid black;
+    }
+
+    hr{
+        width: 60%;
+    }
+
+    .sentence-wrapper{
+        text-align: center;
+    }
+
+    .sentence-box{
+        width: 60%;
+        height: 5rem;
+        border:0 solid black;
+        background-color:#D9D9D9;
+        margin: 0.625rem;
+        display: flex;
+    }
+
+    .icon-area{
+        margin-left: auto;
+    }
+
+    /* .text-input{
+        width: 1000px;
+        min-height: 1000px;
+        border:0 solid black;
+        margin: 10px;
+        font-size: 20px;
+        background-color: #D9D9D9;
+    } */
+
+    .ck.ck-editor{
+        width: 60%;
+    }
+    
+    .ck-editor__editable{
+        min-height: 31.25rem;
+    }
+
+    .ck-content { 
+        font-size: 2.5rem; 
+    }
+
+    .button-area{
+        text-align: center;
+    }
+
+    .submit-button{
+        width: 12.5rem;
+        height: 3.125rem;
+        margin: 0.938rem;
+        font-size: 1.063rem;
+        font-family: 'song myung';
+        background-color: rgb(108, 108, 108);
+        color: white;
+        transition: background-color .5s;
+        border: none;
+        border-radius: 0.2rem;
+    }
+
+    .submit-button:hover{
+        background-color:  #DE8A8A; 
+    }
+
+</style>
+
+{% endblock %}
