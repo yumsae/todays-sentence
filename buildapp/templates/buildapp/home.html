@@ -12,7 +12,7 @@
                     <h1 class= "main_title">글쓰기의 첫 걸음,</h1>
                     <h1 class= "main_title">오늘의 한 문장부터</h1>
                     <div style="text-align: center; margin-top: 40px">
-                        <a href="" class="home_btn">문장 쓰러가기</a>
+                        <a href="{% url 'buildapp:write_sentence' %}" class="home_btn">글쓰기</a>
                     </div>
 
                 </div>
@@ -53,8 +53,8 @@
                 <p class="guide_cont">
                     - 김소월, &lt;먼 훗날&gt;
                 </p>
-                <a href="" class="home_btn">문장쓰기</a>
-                <a href="" class="home_btn">글쓰기</a>
+                <a href="{% url 'buildapp:write_poet' %}" class="home_btn">글쓰기</a>
+                <a href="{% url 'buildapp:write_sentence' %}" class="home_btn">문장쓰기</a>
             </div>
             <hr>
 
