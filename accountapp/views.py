@@ -28,7 +28,9 @@ def AccountCreate(request):
     return render(request, 'accountapp/create.html', {'form': form})
 
 
+
 class AccountDetailView(DetailView, MultipleObjectMixin):
     model = Profile
     context_object_name = 'target_user'
     template_name = 'accountapp/detail.html'
+
