@@ -22,3 +22,4 @@ def AccountCreate(request):
     else:
         form = UserForm()
     return render(request, 'accountapp/create.html', {'form': form})
+

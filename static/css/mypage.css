@@ -1,4 +1,4 @@
-.mypage_title {
+.mypage-title {
     margin-top: .5rem;
 }
 
@@ -11,4 +11,19 @@
     display: block;
     font-size: 2rem;
     margin-bottom: .5rem;
+}
+
+.object1 {
+    display: flex;
+    justify-content: space-around;
+    background-color:  var(--trans-white);
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+.word-recommendation-content {
+    border: 0;
+    outline: 0;
+    font-size: 1.1rem;
+    background-color: transparent;
 }
