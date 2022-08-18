@@ -17,16 +17,23 @@
 
         .modalBox{
           position: absolute;
-          background-color: #fff;
-          width: 400px;
-          height: 200px;
-          padding: 15px;
+          background-color: rgba(255, 255, 255, 0.9);
+          width: 40%;
+          padding: 1rem;
+          text-align: center;
         }
 
         .modalBox button {
-          display: block;
           width: 80px;
-          margin: 0 auto;
+          padding: 0.2rem;
+          margin: 0.5rem 1rem;
+          border: 1px solid rgba(0, 0, 0, 0.4);
+          border-radius: 0.1rem;
+        }
+
+        .modalBox button:hover {
+            background-color: rgba(0, 0, 0, 0.4) ;
+            color: white;
         }
 
         .hidden {
@@ -38,8 +45,8 @@
 
 <div id="sentence_root" class="sentence-write-container">
     <div class="fade-down" data-aos="fade-down" >
+
         <div class="sentence-title-div">
-            <h1 class="sentence-title"> <오늘:의 문장> </h1>
         </div>
 
         <div class="sentence-guide-container">
@@ -143,57 +150,22 @@
                     <i class="fa-solid fa-chevron-down"></i>
                 </button>
         </div>
-    </div> 
-    <!-- fade down part -->
+    </div> <!-- fade down part -->
+
 
     <div class="fade-up" data-aos="fade-up"> 
         <form>
             <div class="sentence-input-container">
                 <a class="fa-solid fa-circle-question square-btn"></a>
                 <input type="text" class="sentence-input" placeholder="당신의 문장을 적어주세요."/> 
-                <button type="submit" class="fa-solid fa-pen-nib square-btn"></button>
+                <button type="submit" onclick="addSentence(event);" class="fa-solid fa-pen-nib square-btn"></button>
             </div>
         </form>
 
         <div class="sentence-list-container">
             <div class="select-menu-btn-container">
-                <button class="select-menu-btn">전체 선택</button>
-                <button class="select-menu-btn">선택 삭제</button>
-            </div>
-            <div class="sentence-box">
-                <p>
-                    <input type="checkbox" class="sentence-select"/>
-                    <span class="sentence-content">너와 나의 계절이 오래도록 선명하게</span>
-                </p>
-                <button class="sentence-eraser"><i class="fa-solid fa-eraser"></i></button>
-            </div>
-            <div class="sentence-box">
-                <p>
-                    <input type="checkbox" class="sentence-select"/>
-                    <span class="sentence-content">네 생각이 떠도는 밤</span>
-                </p>
-                <button class="sentence-eraser"><i class="fa-solid fa-eraser"></i></button>
-            </div>
-            <div class="sentence-box">
-                <p>
-                    <input type="checkbox" class="sentence-select"/>
-                    <span class="sentence-content">멀어지는 사람의 등은 아름다운가 왜</span>
-                </p>
-                <button class="sentence-eraser"><i class="fa-solid fa-eraser"></i></button>
-            </div>
-            <div class="sentence-box">
-                <p>
-                    <input type="checkbox" class="sentence-select"/>
-                    <span class="sentence-content">무너지기 위해 시작하는 사랑이 있다</span>
-                </p>
-                <button class="sentence-eraser"><i class="fa-solid fa-eraser"></i></button>
-            </div>
-            <div class="sentence-box">
-                <p>
-                    <input type="checkbox" class="sentence-select"/>
-                    <span class="sentence-content">절망할 때만 젊음이 잦다</span>
-                </p>
-                <button class="sentence-eraser"><i class="fa-solid fa-eraser"></i></button>
+                <button class="select-menu-btn" onclick="selectAll()">전체 선택</button>
+                <button class="select-menu-btn" onclick="selectDel()">선택 삭제</button>
             </div>
         </div>
 
@@ -254,8 +226,87 @@
 
 <!-- Sentence CRUD -->
 <script>
-    function addSentence() {
+    var sentences = [
+        "너와 나의 계절이 오래도록 선명하게",
+        "네 생각이 떠도는 밤",
+        "멀어지는 사람의 등은 아름다운가 왜",
+        "무너지기 위해 시작하는 사랑이 있다",
+        "절망할 때만 젊음이 잦다",
+    ];
 
+    function loadSentence() {
+        const container = document.querySelector(".sentence-list-container");
+
+        container.innerHTML = `
+            <div class="select-menu-btn-container">
+                <button class="select-menu-btn" onclick="selectAll()">전체 선택</button>
+                <button class="select-menu-btn" onclick="selectDel()">선택 삭제</button>
+            </div>
+        `; // 비우기 
+
+        // 채우기
+        sentences.forEach((sentence) => {
+            container.innerHTML += `
+                <div class="sentence-box">
+                    <p>
+                        <label class="sentence-content">
+                            <input type="checkbox" class="sentence-select" value="${sentence}"/>
+                            ${sentence}
+                        </label>
+                    </p>
+                    <button class="sentence-eraser" onclick="deleteOne('${sentence}');"><i class="fa-solid fa-eraser"></i></button>
+                </div>
+            `;
+        });
+
+        // 문장 없을 경우
+        if ( sentences.length === 0 ) {
+            container.innerHTML += `
+                <span class="sentence-content">아직 담은 문장이 없어요. 문장을 추가해주세요.</span><br>
+            `;
+        }
+    }
+
+    window.onload = () => {
+        loadSentence();
+    }
+
+    function addSentence(e) {
+        e.preventDefault(); // 새로고침 방지 
+        const input = document.querySelector('.sentence-input').value;
+        if ( input === "" ) { // 빈 문장은 추가 X
+            return;
+        }
+        sentences.push(input);
+        document.querySelector('.sentence-input').value = "";
+        loadSentence();
+    }   
+
+    function selectAll() {
+        var check = true;
+        var checkboxs = document.querySelectorAll('.sentence-select')
+        checkboxs.forEach((checkbox) => {
+            check = ! checkbox.checked;
+        })
+
+        checkboxs.forEach((checkbox) => {
+            checkbox.checked = check;
+        })
+    }
+
+    function selectDel() {
+        var checkboxs = document.querySelectorAll('.sentence-select')
+        checkboxs.forEach((checkbox) => {
+            if ( checkbox.checked ) {
+                sentences.splice(sentences.indexOf(checkbox.value), 1);
+            }
+        })
+        loadSentence();
+    }
+
+    function deleteOne(sentence) {
+        sentences.splice(sentences.indexOf(sentence), 1);
+        loadSentence();
     }
 </script>
 

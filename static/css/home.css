@@ -97,9 +97,9 @@
 }
 
 .home_btn:hover {
-   border: 1px solid var(--black);
    background-color: var(--black);
    color: white;
+   transition: all 1s; 
 }
 
 .home_btn_container {

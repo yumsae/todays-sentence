@@ -59,6 +59,7 @@
 }
 .word-recommendation-content:hover {
     color: var(--red);
+    transition: all 0.5s; 
 }
 
 .word-recommendation-title {
@@ -90,6 +91,7 @@
     background-color: var(--dark-grey);
     padding: 1rem;
     border-radius: 4rem;
+    transition: all 0.5s; 
 }   
 
 .recommendation-indicator-selected {
@@ -199,7 +201,11 @@
 
 .sentence-content {
     padding-left: 1rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
+}
+
+.sentence-select {
+    margin-right: 1rem;
 }
 
 .select-menu-btn {
@@ -227,9 +233,19 @@ p {
 }
 
 .submit_btn {
-    margin: 1.5rem;
+    margin: 2rem;
+    background-color: var(--dark-grey);
+    padding: 1rem 2rem;
+    border-radius: 0.1rem;
+    color: white;
 }
 
+.submit_btn:hover {
+    background-color: transparent;
+    border: 1px solid var(--dark-grey);
+    color: var(--dark-grey);
+    transition: all 0.5s; 
+}
 /* 초기화 */
 #container { 
     width: 100%; 
