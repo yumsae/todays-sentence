@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+<style>
+
+    :root {
+        --red: #CC3F3B;
+        --black: #121212;
+        --bg: #D9D9D9;
+        --btn-light: #D5C4C4;
+        --btn-light-hover: #B5A4A4;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        font-family: "Gowun Batang", sans-serif;
+    }
+    .create-profile {
+        text-align: left;
+        /* font-family: "hahmlet", sans-serif; */
+        font-size: 1rem;
+        margin: 2rem 0 4px 2.5rem;
+        display: block;
+    }
+
+    .profile-nickname {
+        width: 30rem;
+        height: 50px;
+        border: 0;
+        background-color: #f5f6f7;
+        border-radius: 25px;
+        padding-left: 1.4rem;
+        font-size: 0.8rem;
+    }
+    .profile-image {
+        width: 30rem;
+        padding:1rem;
+        background-color: #f5f6f7;
+        border-radius: 25px;
+        margin: 0.5rem;
+        text-align: left;
+
+    }
+
+    .profile-message {
+        width: 30rem;
+        height: 15rem;
+        resize: none;
+        border-radius: 1rem;
+        border: 0;
+        padding: 1rem;
+        background-color: #f5f6f7;
+
+
+    }
+
+    .submit-btn {
+        font-size: 1.2rem;
+        width: 200px;
+        height: 60px;
+        border: 0;
+        background-color: var(--btn-light);
+        border-radius: 40px;
+        color: #FFF;
+        margin-top: 4rem;
+        margin-bottom: 3rem;
+    }
+
+    .submit-btn:hover {
+        background-color: var(--btn-light-hover);
+    }
+
+    .profile-wrap {
+        text-align: center;
+        width: 500px;
+        height: 500px;
+        margin: auto;
+        padding-top: 1.5rem;
+        margin-bottom: 7rem;
+    }
+
+    .title-wrap {
+        padding-top: 5rem;
+    }
+
+    .signup-wrap {
+        margin-bottom: 3rem;
+    }
+
+    h2 {
+        margin-top: 5rem;
+    }
+</style>
+
+
+    <div class="cont_wrap" style="border-top:solid 0.2rem #000;">
+
+        <div class="title_wrap">
+            <h2>프로필 작성</h2>
+        </div>
+
+        <form action="{% url 'profileapp:create' %}" method="post" class="profile-wrap">
+            {% csrf_token %}
+
+            {% include "profileapp/forms_errors.html" %}
+
+            <div>
+                <label type="images" class = "create-profile" id="profielImage"  >
+                    프로필 이미지 선택하기
+                </label>
+                <img class="profile-image" style="width: 10rem; height: 10rem; text-align: left;" id="preview-image" alt="profile-image" src="https://dummyimage.com/500x500/ffffff/000000.png&text=preview+image">
+                <input style="display: block;" type="file" id="input-image">
+                <!-- <input type="file" class="profile-image" name="profielImage" accept="image/*" onchange="loadFile(this)"> -->
+                <label for="nickname" class="create-profile">
+                    닉네임
+                </label>
+                <input type="text" class="profile-nickname" name="nickname" id="nickname" placeholder="닉네임" value="{{ form.nickname.value|default_if_none:'' }}">
+            </div>
+            <div>
+                <label type="text" for="message" class="create-profile">
+                    설명글
+                </label>
+                <textarea type="text" class="profile-message" name="message" id="message" placeholder="자신을 소개해주세요." value="{{ form.message.value|default_if_none:'' }}"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">생성하기</button>
+        </form>
+    </div>
+
+    <script>
+        element = document.querySelector("#"+label);
+        element.focus();
+        element.setAttribute('style', 'border: 3px solid #CC3F3B;');
+        const error = message ? message : "올바른 값을 입력해주세요.";
+        element.setAttribute('placeholder', error);
+    </script>
+
+
+    <script>
+        function readImage(input) {
+        // 인풋 태그에 파일이 있는 경우
+        if(input.files && input.files[0]) {
+            // 이미지 파일인지 검사 (생략)
+            // FileReader 인스턴스 생성
+            const reader = new FileReader()
+            // 이미지가 로드가 된 경우
+            reader.onload = e => {
+                const previewImage = document.getElementById("preview-image")
+                previewImage.src = e.target.result
+            }
+            // reader가 이미지 읽도록 하기
+            reader.readAsDataURL(input.files[0])
+        }
+        }
+        // input file에 change 이벤트 부여
+        const inputImage = document.getElementById("input-image")
+        inputImage.addEventListener("change", e => {
+            readImage(e.target)
+            document.getElementById(profile-image)
+        })
+
+    </script>
+
+{% endblock %}
