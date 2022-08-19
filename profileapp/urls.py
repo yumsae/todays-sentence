@@ -10,3 +10,4 @@ urlpatterns = [
     path('create/', views.ProfileCreate, name='create'),
 ]
 
+

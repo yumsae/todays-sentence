@@ -22,7 +22,7 @@ def AccountCreate(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)  # 사용자 인증
             login(request, user)  # 로그인
-            return redirect('buildapp:home')
+            return redirect('profileapp:create')  # 바꿔야
     else:
         form = UserForm()
     return render(request, 'accountapp/create.html', {'form': form})

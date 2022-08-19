@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <style>
+
+        :root {
+            --red: #CC3F3B;
+            --black: #121212;
+            --bg: #D9D9D9;
+            --btn-light: #D5C4C4;
+            --btn-light-hover: #B5A4A4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            font-family: "Gowun Batang", sans-serif;
+        }
+        hr{
+            width: 65%;
+        }
+
+        .list-area{
+            text-align: center;
+        }
+
+        .sentence-list-wrap {
+            text-align: center;
+            margin: 2rem;
+        }
+
+        .sentence-box{
+            padding: 1rem 0 0.5rem 0;
+            width: 30rem;
+            height: 2.5rem;
+            background-color:#D9D9D9;
+            margin: 1rem;
+            padding: 0.5rem;
+        
+        }
+
+        .sentence {
+            float: left;
+        }
+        .sentence-date{
+            float: right;
+
+        }
+    </style>
+
+
+    <div class="sentence-list-wrap">
+        <div class="list-area">
+            <hr>
+            <div class="sentence-box" >
+                <p class="sentence">문장</p>
+                <p class="sentence-date">2022-08-19</p>
+            </div>
+            <div class="sentence-box">
+                <p class="sentence">문장</p>
+                <p class="sentence-date">2022-08-19</p>
+            </div>
+            <div class="sentence-box">
+                <p class="sentence">문장</p>
+                <p class="sentence-date">2022-08-19</p>
+            </div>
+            <div class="sentence-box">
+                <p class="sentence">문장</p>
+                <p class="sentence-date">2022-08-19</p>
+            </div>
+        </div>    
+    </div>
+
+{% endblock %}

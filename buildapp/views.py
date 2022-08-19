@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
+=======
+from asyncore import write
+from sqlite3 import Time
+from django.shortcuts import render
+>>>>>>> 07c13ec744692792fe17a0d883af27a0113a4fd6
+
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 from django.utils.decorators import method_decorator
@@ -10,11 +18,11 @@ from django.views.generic import CreateView
 from buildapp.forms import SentenceCreationForm
 from buildapp.models import Article, Sentence
 
-
 def home(request):
     return render(request, 'buildapp/home.html')
 
 
+<<<<<<< HEAD
 @method_decorator(login_required, name='dispatch')
 class SentenceCreateView(CreateView):
     model = Sentence
@@ -46,6 +54,12 @@ class SentenceCreateView(CreateView):
 
 
 @login_required(login_url='/account/login/')
+=======
+def write_sentence(request):
+    return render(request, 'buildapp/write_sentence.html')
+
+
+>>>>>>> 07c13ec744692792fe17a0d883af27a0113a4fd6
 def write_poet(request):
 
     # articles = Article.objects.all()
@@ -71,8 +85,31 @@ def write_poet(request):
 
     return render(request, 'buildapp/write_page.html')
 
+@login_required(login_url='/account/login/')
+def write_poet(request):
+
+    # articles = Article.objects.all()
+
+<<<<<<< HEAD
+=======
+    if request.method == 'POST':
+        title = request.POST.get('title', False)
+        text = request.POST.get('text', False)
+
+        writer = request.user
+
+        article = Article()
+        article.title = title
+        article.text = text
+        article.writer = writer
+        article.save()
+
+        return render(request, 'profileapp/mypage.html')
+
+    return render(request, 'buildapp/write_page.html')
 
 
+>>>>>>> 07c13ec744692792fe17a0d883af27a0113a4fd6
 def community(request):
     return render(request, 'buildapp/tst_write_community.html')
 

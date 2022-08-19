@@ -5,6 +5,19 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/mypage.css' %}">
 
+<style>
+    .profile-detail-wrap {
+        background-color: #d9d9d9;
+        width: 15rem;
+        height: 20rem;
+        margin: 2rem;
+    }
+    
+
+
+</style>
+
+
 <body>
     <div class="mypage_wrap">
         <div class="title_wrap">
@@ -16,23 +29,37 @@
             </p>
         </div>
         <hr>
-        <div class="profile_wrap">
-            <div class="profile_item_wrap">
-                <a href="{% url 'buildapp:write_sentence' %}" class="profile_item">문장쓰기</a>
-            </div>
-            <div class="profile_item_wrap">
-                <a href="" class="profile_item">작성한 문장</a>
-            </div>
-            <div class="profile_item_wrap">
-                <a href="" class="profile_item">작성한 게시글</a>
-            </div>
-            <div class="profile_item_wrap">
-                <a href="{% url 'accountapp:detail' pk=user.pk %}" class="profile_item">개인정보관리</a>
-            </div>
-            <div class="profile_item_wrap">
-                <a href="{% url 'accountapp:logout' %}" class="profile_item">로그아웃</a>
-            </div>
+        <div class="profile-wrap" style="display:flex ;">
+            <div class="profile-detail-wrap" style="flex:1 ;">
+                <div class="profile-img">
+                    {{ user.image }}
+                </div>
+                <div class="profile-text">
+                    <div>
+                        {{ user.nickname }}
+                        {{ user.message }}
+                    </div>
 
+                </div>     
+            </div>
+            <div class="profie-nav" style="flex:1 ;">
+                <div class="profile_item_wrap">
+                    <a href="{% url 'buildapp:write_sentence' %}" class="profile_item">문장쓰기</a>
+                </div>
+                <div class="profile_item_wrap">
+                    <a href="" class="profile_item">작성한 문장</a>
+                </div>
+                <div class="profile_item_wrap">
+                    <a href="" class="profile_item">작성한 게시글</a>
+                </div>
+                <div class="profile_item_wrap">
+                    <a href="{% url 'accountapp:detail' pk=user.pk %}" class="profile_item">개인정보관리</a>
+                </div>
+                <div class="profile_item_wrap">
+                    <a href="{% url 'accountapp:logout' %}" class="profile_item">로그아웃</a>
+                </div>    
+            </div>
+            
         </div>
     </div>
 </body>

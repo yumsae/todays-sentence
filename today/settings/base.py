@@ -13,34 +13,18 @@ import environ
 import os
 from pathlib import Path
 
-from django.urls import reverse_lazy
 
-
-
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, True)
-)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
 
 
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG')
-
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".cloudtype.app"]
-CSRF_TRUSTED_ORIGINS = ['https://*.cloudtype.app']
 
 # Application definition
 
@@ -87,15 +71,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'today.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
