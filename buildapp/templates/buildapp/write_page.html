@@ -4,9 +4,9 @@
 
 
 <div class="form-wrapper">
-    <form>
+    <form method="post">
         <div class= "text-area">
-            <input class="title-input" type="text" placeholder="제목">
+            <input class="title-input" type="text" placeholder="제목" name="title">
             <hr>
             <div class="sentence-box">
                 <div class="sentence-area">
@@ -19,7 +19,7 @@
                     <i class="fa-solid fa-arrows-rotate fa-lg"></i>
                 </button>
             </div>
-            <textarea name="text-input" id="editor" placeholder="당신만의 이야기를 적어주세요."></textarea>
+            <textarea name="text-input" id="editor" placeholder="당신만의 이야기를 적어주세요." name="text"></textarea>
         </div>
         <div class="button-area">
             <button class="submit-button" onclick="">게시하기</button>

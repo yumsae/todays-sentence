@@ -13,8 +13,18 @@
         </div>
     </div>
     <div class="content-area">
-        <h5 class="new-content"> 최신 게시물</h5>
-        <h5 class="trend-content">인기 게시물</h5> 
+        <div class="new-content">
+            <h5> 최신 게시물</h5>
+            <hr>
+            <p>서시</p>
+            <p>작성자 : 윤동주(starlight)</p>
+        </div>
+        <div class="trend-content">
+            <h5>인기 게시물</h5>
+            <hr>
+            <p>나는 오늘 회사를 그만두었다</p>
+            <p>작성자 : 몇 번이라도(anytime)</p>
+        </div>
     </div>
         <div class= "list-area">
             <div class="list-box">
@@ -38,6 +48,19 @@
                 </div>
             </div>
         </div>
+
+        <style>
+
+            .new-content{
+                background-image: url(https://images.unsplash.com/photo-1596868801151-5d26796963b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+                color: white;
+
+            }
+
+            .trend-content{
+                background-image: url(https://images.unsplash.com/photo-1639690222445-595b0794bbd4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+            }
+        </style>
 </div>
 
 {% endblock %}
