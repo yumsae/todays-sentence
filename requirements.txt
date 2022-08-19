@@ -4,4 +4,3 @@ django-environ==0.7.0
 django-filter==21.1
 environ==1.0
 nodejs==0.1.1
-requests @ file:///opt/conda/conda-bld/requests_1641824580448/work
