@@ -1,0 +1,365 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/write_sentence.css' %}">
+<style>
+        .modal {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .modalBox{
+          position: absolute;
+          background-color: rgba(255, 255, 255, 0.9);
+          width: 40%;
+          padding: 1rem;
+          text-align: center;
+        }
+
+        .modalBox button {
+          width: 80px;
+          padding: 0.2rem;
+          margin: 0.5rem 1rem;
+          border: 1px solid rgba(0, 0, 0, 0.4);
+          border-radius: 0.1rem;
+        }
+
+        .modalBox button:hover {
+            background-color: rgba(0, 0, 0, 0.4) ;
+            color: white;
+        }
+
+        .hidden {
+          display: none;
+        }
+
+        .tip-title {
+            color: red;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .tip-container {
+            text-align: left;
+            padding: 0.5rem;
+        }
+
+        .tip-content {
+            margin-bottom: 0.5rem;
+            word-break: break-all;
+            white-space: pre-line;
+        }
+
+        ol {
+            margin: 0;
+            padding: 0;
+        }
+
+</style>
+
+
+<div id="sentence_root" class="sentence-write-container">
+    <div class="fade-down" data-aos="fade-down" >
+
+        <div class="sentence-title-div">
+        </div>
+
+        <div class="sentence-guide-container">
+            <div class="sentence-guide-content">  
+                <div id="container">
+                    <button type="button" class="slide_btn_prev"><i class="fa-solid fa-circle-left icon"></i></button>
+                    <div class="slide_wrap">
+                        <div class="slide_box">
+                            <div class="slide_list clearfix">
+                                <div class="slide_content slide01">
+                                    <p>
+                                        모든 글은 첫 문장에서부터 시작돼요.
+                                        어떤 글을 쓰고 싶은지 먼저 결정해봅시다. 
+                                        논리적인 글? 에세이? 시와 소설? 
+                                    </p>
+                                </div>
+                                <div class="slide_content slide02">
+                                    <p>[주장글(칼럼)]
+
+                                        인상적인 첫문장을 위해 질문을 던져볼까요?
+                                        질문을 통해 독자들의 집중을 유도하고, 글의 의도를 직, 간접적으로 밝힐 수 있어요.
+
+                                        ex) ‘밥을 먹다가 주변 사람을 긴장시키고 싶은가.’---&lt"추석이란 무엇인가” 되물어라>, 경향신문 오피니언, 김영민 
+                                    </p>
+                                </div>
+                                <div class="slide_content slide03">
+                                    <p>
+                                        [주장글(칼럼)]
+
+                                        첫문장에 핵심과 결론을 제시하는 것도 좋은 방법이에요.
+            
+                                        ex) 글을 쓰기 위해서는 두 가지를 명심하면 된다. 
+                                        첫 번째, 첫 문장을 ‘일단’ ‘그냥’ 써라. 두 번째, 문장을 고쳐라.
+                                    </p>
+                                </div>
+                                <div class="slide_content slide04">
+                                    <p>
+                                        [에세이]
+
+                                        감성적인 글을 위해 지금 자신의 감정이나 상태를 솔직하게 적어볼까요?
+                                        솔직한 문장 뒤에, 이유를 붙여나가다 보면 금방 쓸 것들이 생길 거예요.
+            
+                                        ex) 지금 글을 써야하는데, 글을 쓰기가 어렵다... .
+                                    </p>
+                                </div>
+                                <div class="slide_content slide05">
+                                    <p >
+                                        [문학-시]
+
+                                        신선한 문장 표현을 위해 단어와 단어의 의미가 먼 것들을 붙여볼까요?
+                                        추천단어를 무작정 한 문장으로 연결해봐도 좋아요. 
+                                        당장에 말이 되지 않아도 좋아요!
+                                    </p>
+                                </div>
+                                <div class = "slide_content slide06">
+                                    <p>
+                                        [문학-소설]
+
+                                        소설의 첫 문장은 궁금증을 유발해야해요.
+                                        충격적인 사건이나 대사, 독백 등을 간결한 문장으로 써보아요
+
+                                        ex) ‘오늘 엄마가 죽었다. 아니, 어쩌면 어제.’  -알베르 까뮈, &lt이방인&gt   
+                                    </p>
+                                </div> 
+                            </div>
+
+                            <!-- // .slide_list -->
+                        </div>
+                        <ul class="slide_pagination"></ul>
+
+                        <!-- // .slide_box -->
+                    </div>
+                    <button type="button" class="slide_btn_next"><i class="fa-solid fa-circle-right icon"></i></button>
+                </div>
+                <!-- // .container -->
+            </div>
+        </div>
+        <!--WORDS RECOMMEND-->
+        <div>
+                <h2 class="sentence-title word-recommendation-title">순 우리말 추천 오늘:의 단어</h2>
+                <div class="word-recommendation-container">
+                    <button class="word-recommendation-content" data-toggle="tooltip" title="그린 듯이 아름다운 날개">그린나래</button>
+                    <button class="word-recommendation-content" data-toggle="tooltip" title="얼굴이나 털빛이 까만 사람이나 동물을 일컫는 말">까미</button>
+                    <button class="word-recommendation-content" data-toggle="tooltip" title="마음이 맑고 바르며 깨끗하다">끌끌하다</button>
+                    <button class="word-recommendation-content" data-toggle="tooltip" title="늘 해와 함께 살아가는 밝고 강한 사람">늘해랑</button>
+                    <button class="word-recommendation-content" data-toggle="tooltip" title="성미가 활발한 사람.">더펄이</button>
+                </div>
+        </div>
+    
+        <div class="next-guide">
+                <span>아래로 스크롤해서 다음 단계로 넘어가봐요.</span>
+                <button class="down-button">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+        </div>
+    </div> <!-- fade down part -->
+
+
+    <div class="fade-up" data-aos="fade-up"> 
+        <form>
+            <div class="sentence-input-container">
+                <button type="button" class="fa-solid fa-circle-question square-btn" id="tip"></button>
+                <input type="text" class="sentence-input" placeholder="당신의 문장을 적어주세요."/> 
+                <button type="submit" onclick="addSentence(event);" class="fa-solid fa-pen-nib square-btn"></button>
+            </div>
+        </form>
+
+        <div class="sentence-list-container">
+            <div class="select-menu-btn-container">
+                <button class="select-menu-btn" onclick="selectAll()">전체 선택</button>
+                <button class="select-menu-btn" onclick="selectDel()">선택 삭제</button>
+            </div>
+        </div>
+
+        <button class="submit_btn">선택한 문장으로 글쓰기</button>
+    </div>
+
+    
+    <!--MODAL-->
+    <div class="modal hidden" id="submitModal">
+        <div class="modalBox">
+            <div class="modal-body">
+                <p>
+                    문장을 공유하지 않으면, 다른 사람이 공유한 문장을 추천 받을 수 없습니다.
+                    그래도 진행하시겠습니까?
+                </p>
+            </div>
+            <div class="modal-btns">
+                <button type="button" class="closeBtn" id="closeSubmitModal">아니오</button>
+                <button type="button" class="passBtn">예</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal hidden" id="tipModal">
+        <div class="modalBox">
+            <div class="modal-body">
+                <pre class="tip-title">
+                    문장 가이드를 참고하여
+                    문장들을  자유롭게 작성합니다
+                </pre>
+                <ol class="tip-container">
+                    <li class="tip-content">1. 문장을 작성한 뒤,</li>
+                    <li class="tip-content">2. 체크 칸을 클릭하면,</li>
+                    <li class="tip-content">3. 체크 문장은 글을 쓰는 곳에,</li>
+                    <li class="tip-content">4. 체크 되지 않은 문장은 공유 리스트에 올라가요</li>
+                    <li class="tip-content">5. 공유 리스트에 올라온 다른 사람들의 문장을 참고하여 새로운 문장을 쓰거나, 작품에 인용할 수 있어요</li>
+                    <li class="tip-content">6. 공유 리스트로 올라간 문장들은 다른 사람들의 작품에 참고되거나, 인용되어요. 문장 공유 이외의 무단도용은 허가되지 않습니다.</li>
+                </ol>
+            </div>
+            <div class="modal-btns">
+                <button type="button" class="closeBtn" id="closeTipModal">확인</button>
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+<script>
+    // submit modal
+    const openSubmitModal = () => {
+        document.querySelector("#submitModal").classList.remove("hidden");
+    }
+
+    const closeSubmitModal = () => {
+        document.querySelector("#submitModal").classList.add("hidden");
+    }
+
+    document.querySelector(".submit_btn").addEventListener("click", openSubmitModal);
+    document.querySelector("#closeSubmitModal").addEventListener("click", closeSubmitModal);
+    // document.querySelector(".bg").addEventListener("click", closeSubmitModal);
+
+
+    // tip modal
+    const openTipModal = () => {
+        // e.preventDefault();
+        document.querySelector("#tipModal").classList.remove("hidden");
+    }
+
+    const closeTipModal = () => {
+        document.querySelector("#tipModal").classList.add("hidden");
+    }
+
+    document.querySelector("#tip").addEventListener("click", openTipModal);
+    document.querySelector("#closeTipModal").addEventListener("click", closeTipModal);
+    // document.querySelector(".bg").addEventListener("click", closeTipModal);
+
+</script>
+
+<!-- WORD TOOLTIP -->
+<script>
+    // 툴팁 정의
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    }); 
+</script>
+
+<!--GUIDE JS-->
+<script type="text/javascript" src="../../../static/js/sentence_guide.js">
+</script>
+
+<!--AOS-->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+<!-- Sentence CRUD -->
+<script>
+    var sentences = [
+        "너와 나의 계절이 오래도록 선명하게",
+        "네 생각이 떠도는 밤",
+        "멀어지는 사람의 등은 아름다운가 왜",
+        "무너지기 위해 시작하는 사랑이 있다",
+        "절망할 때만 젊음이 잦다",
+    ];
+
+    function loadSentence() {
+        const container = document.querySelector(".sentence-list-container");
+
+        container.innerHTML = `
+            <div class="select-menu-btn-container">
+                <button class="select-menu-btn" onclick="selectAll()">전체 선택</button>
+                <button class="select-menu-btn" onclick="selectDel()">선택 삭제</button>
+            </div>
+        `; // 비우기 
+
+        // 채우기
+        sentences.forEach((sentence) => {
+            container.innerHTML += `
+                <div class="sentence-box">
+                    <p>
+                        <label class="sentence-content">
+                            <input type="checkbox" class="sentence-select" value="${sentence}"/>
+                            ${sentence}
+                        </label>
+                    </p>
+                    <button class="sentence-eraser" onclick="deleteOne('${sentence}');"><i class="fa-solid fa-eraser"></i></button>
+                </div>
+            `;
+        });
+
+        // 문장 없을 경우
+        if ( sentences.length === 0 ) {
+            container.innerHTML += `
+                <span class="sentence-content">아직 담은 문장이 없어요. 문장을 추가해주세요.</span><br>
+            `;
+        }
+    }
+
+    window.onload = () => {
+        loadSentence();
+    }
+
+    function addSentence(e) {
+        e.preventDefault(); // 새로고침 방지 
+        const input = document.querySelector('.sentence-input').value;
+        if ( input === "" ) { // 빈 문장은 추가 X
+            return;
+        }
+        sentences.push(input);
+        document.querySelector('.sentence-input').value = "";
+        loadSentence();
+    }   
+
+    function selectAll() {
+        var check = true;
+        var checkboxs = document.querySelectorAll('.sentence-select')
+        checkboxs.forEach((checkbox) => {
+            check = ! checkbox.checked;
+        })
+
+        checkboxs.forEach((checkbox) => {
+            checkbox.checked = check;
+        })
+    }
+
+    function selectDel() {
+        var checkboxs = document.querySelectorAll('.sentence-select')
+        checkboxs.forEach((checkbox) => {
+            if ( checkbox.checked ) {
+                sentences.splice(sentences.indexOf(checkbox.value), 1);
+            }
+        })
+        loadSentence();
+    }
+
+    function deleteOne(sentence) {
+        sentences.splice(sentences.indexOf(sentence), 1);
+        loadSentence();
+    }
+</script>
+
+{% endblock %}
