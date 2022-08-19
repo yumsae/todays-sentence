@@ -2,23 +2,24 @@
 
 {% block content %}
 
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/write_poet.css' %}">
 
 <div class="form-wrapper">
-    <form action="{% url 'buildapp:write_poet' %}" method="post" enctype="multipart" id='writePoet'/>
+    <form action="{% url 'buildapp:write_poet' %}" enctype="multipart" id='writePoet'/>
         {% csrf_token %}
         <div class= "text-area">
             <input class="title-input" type="text" placeholder="제목" name="title">
             <hr>
             <div class="sentence-box">
                 <div class="sentence-area">
-                    <p class="sentence-text">나보기가 역겨워 가실 때에는 말없이 고이 보내 드리오리다</p>
+                    <p class="sentence-text random-sentence">나보기가 역겨워 가실 때에는 말없이 고이 보내 드리오리다</p>
                     <p class="sentence-text creator">원작자 : 김소월(ilovemunhak)</p>
                 </div>
-                <button class="icon-area">
-                    <i class="fa-regular fa-copy fa-lg"></i>
-                    <i class="fa-solid fa-plus fa-lg"></i>
-                    <i class="fa-solid fa-arrows-rotate fa-lg"></i>
-                </button>
+                <span class="icon-area">
+                    <button id="plus"><i class="fa-solid fa-plus fa-lg icon-btn"></i></button>
+                    <button id="rotate"><i class="fa-solid fa-arrows-rotate fa-lg icon-btn"></i></button>
+                </span>
             </div>
             <textarea name="text-input" id="editor" placeholder="당신만의 이야기를 적어주세요." name="text"></textarea>
             <input type="hidden" name="text" id="text"/>
@@ -31,6 +32,47 @@
 
 <!-- Ckeditor -->
 <script>
+    const sentences = [
+        "나보기가 역겨워 가실 때에는 말없이 고이 보내 드리오리다",
+        "문장 1", 
+        "문장 2", 
+    ];
+    const creators = [
+        "김소월(ilovemunhak)",
+        "원작자 1",
+        "원작자 2",
+    ]; 
+
+    var sentence = "";
+    var creator = "";
+
+    function randomIdx() {
+        return Math.floor( Math.random() * sentences.length );
+    };
+
+    // 문장 랜덤 추출
+    function randomSentence(e) {
+        e.preventDefault(); 
+
+        let idx = randomIdx();
+        sentence = sentences[idx];
+        creator = creators[idx];
+
+        document.querySelector(".random-sentence").innerHTML = sentence;
+        document.querySelector(".creator").innerHTML = "원작자 : " + creator;
+    }
+
+    // 초기화
+    let idx = randomIdx();
+    sentence = sentences[idx];
+    creator = creators[idx];
+
+    document.querySelector(".random-sentence").innerHTML = sentence;
+    document.querySelector(".creator").innerHTML = "원작자 : " + creator;
+
+    document.querySelector("#rotate").addEventListener("click", function(){ randomSentence(event) });
+
+    // editor 
     let editor; 
 
     ClassicEditor
@@ -42,137 +84,27 @@
             // console.log(newEditor);
             editor = newEditor;
             // editor.setData('안녕');
-            console.log("뭘까")
+
             function applyText() {
                 var text = editor.getData().replace('<p>', '').replace('</p>', '');
                 document.querySelector("#text").value = text;
+                document.forms.writePoet.method = "post";
                 document.forms.writePoet.submit();
+            }
 
+            function addSentence(e) {
+                e.preventDefault();
+                editor.setData(sentence);
             }
 
             document.querySelector('#poetSubmit').addEventListener("click", applyText);
+            document.querySelector("#plus").addEventListener("click", function(){ addSentence(event) });
         })
         .catch(error=>{
             console.error(error);
         });
 
 
-    
-
 </script>
-
-<style>
-
-    :root {
-    --red: #CC3F3B;
-    --black: #121212;
-    --bg: #D9D9D9;
-    --btn-light: #D5C4C4;
-    --btn-light-hover: #B5A4A4;
-    }
-    
-    body{
-        background-image: url("https://images.unsplash.com/photo-1586075010923-2dd4570fb338?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80");
-    }
-
-    p {
-        margin: 0;
-        padding: 0;
-    }
-
-    .text-area{
-        text-align: center;
-        padding-top: 8rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .title-input{
-        width: 60%;
-        height: 2.5rem;
-        font-size: 1.25rem;
-        font-family: 'song myung';
-        background-color:transparent;
-        border:0 solid var(--black);
-    }
-
-    hr{
-        width: 60%;
-    }
-
-    .sentence-wrapper{
-        text-align: center;
-    }
-
-    .sentence-box{
-        width: 60%;
-        border:0 solid var(--black);
-        background-color: rgba(255, 255, 255, 0.5);
-        margin: 0.625rem;
-        display: flex;
-        padding: 1rem;
-    }
-
-    .creator {
-        font-size: 0.8rem;
-        margin-top: 0.4rem;
-    }
-
-    .sentence-area{
-        margin: 0 auto;
-        justify-content: center;
-        align-items: space-between;
-    }
-
-    .icon-area{
-        margin-left: auto;
-        padding: 1rem;
-    }
-
-    /* .text-input{
-        width: 1000px;
-        min-height: 1000px;
-        border:0 solid black;
-        margin: 10px;
-        font-size: 20px;
-        background-color: #D9D9D9;
-    } */
-
-    .ck.ck-editor{
-        width: 60%;
-    }
-    
-    .ck-editor__editable{
-        min-height: 31.25rem;
-    }
-
-    .ck-content { 
-        font-size: 2.5rem; 
-    }
-
-    .button-area{
-        text-align: center;
-    }
-
-    .submit-button{
-        width: 12.5rem;
-        height: 3.125rem;
-        margin: 0.938rem;
-        font-size: 1.063rem;
-        font-family: 'song myung';
-        background-color: rgb(108, 108, 108);
-        color: white;
-        transition: background-color .5s;
-        border: none;
-        border-radius: 0.2rem;
-    }
-
-    .submit-button:hover{
-        background-color:  #DE8A8A; 
-    }
-
-</style>
 
 {% endblock %}
