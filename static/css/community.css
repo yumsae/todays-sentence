@@ -1,0 +1,62 @@
+body{
+    background-image: url("https://images.unsplash.com/photo-1586075010923-2dd4570fb338?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80");
+    margin: 0 auto;
+}
+
+.content {
+    padding-left: 1rem;
+}
+
+.list-line{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.list-title{
+    text-align: center;
+}
+
+/* 최신 게시물, 인기 게시물 */
+.content-area{
+    display: flex;
+    justify-content: center;
+}
+
+.new-content, .trend-content{
+    width: 20rem;
+    height: 20rem;
+    padding: 1rem;
+    background-color: #F6F3F3;
+    margin: 1rem;
+}
+
+.list-area {
+    display:flex;
+    margin-bottom: 7rem;
+}
+
+.list-box{
+    width: 42rem;
+    height: 25rem;
+    background-color: #EAEAEA;
+    margin: auto;
+}
+
+.content:hover{
+    color:#DE8A8A;
+    padding-left: 1rem;
+}
+
+.list-page{
+    text-align: center;
+}
+
+.list-number{
+    color: #DE8A8A;
+
+}
+
+.list-subtitle {
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+}

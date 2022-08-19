@@ -350,15 +350,6 @@ p {
     overflow: hidden;
 }
 
-.modal-content {
-    width: 60%;
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-}
-
 pre {
     word-break: break-all;
     white-space: pre-line;
@@ -366,3 +357,62 @@ pre {
     font-family: "Gowun Batang", sans-serif;
     font-size: 1rem;
 }
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modalBox{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 40%;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .modalBox button {
+    width: 80px;
+    padding: 0.2rem;
+    margin: 0.5rem 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 0.1rem;
+  }
+
+  .modalBox button:hover {
+      background-color: rgba(0, 0, 0, 0.4) ;
+      color: white;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .tip-title {
+      color: red;
+      font-weight: bold;
+      font-size: 1.2rem;
+  }
+
+  .tip-container {
+      text-align: left;
+      padding: 0.5rem;
+  }
+
+  .tip-content {
+      margin-bottom: 0.5rem;
+      word-break: break-all;
+      white-space: pre-line;
+  }
+
+  ol {
+      margin: 0;
+      padding: 0;
+  }
