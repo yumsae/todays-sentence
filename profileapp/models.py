@@ -11,3 +11,12 @@ class Profile(models.Model):
     message = models.CharField(max_length=100, null=True)
 
 
+
+
+#class Article(models.Model):
+#    writer = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='article', null=True)
+#    info = models.ForeignKey(Profile, on_delete=models.SET_NULL, related_name='article', null=True)
+#
+#    title = models.CharField(max_length=100, null=True)
+#    text = models.TextField(null=False)
+#    created_at = models.DateTimeField(auto_now=True)

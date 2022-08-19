@@ -13,30 +13,35 @@ from profileapp.forms import ProfileCreationForm
 #def Create(request):
 #    if request.method == 'GET':
 #        return render(request, 'profileapp/create.html')
+# def Create(request):
+#     if request.method == "POST":
+#         form = ProfileCreationForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             nickname = form.cleaned_data.get('nickname')
+#             return redirect('buildapp:home')
+#     else:
+#         form = ProfileCreationForm()
+#     return render(request, 'profileapp/create.html', {'form': form})
+#
+#
+# class Nickname:
+#     pass
+
+
 def Create(request):
-    if request.method == "POST":
-        form = ProfileCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            nickname = form.cleaned_data.get('nickname')
-            return redirect('profileapp:create')
-    else:
-        form = ProfileCreationForm()
-    return render(request, 'buildapp:home', {'form': form})
-#    return render(request, 'profileapp/create.html', {'form': form})
-#def Create(request):
-#    if request.method == "POST":
-#        form = ProfileCreationForm(request.POST)
-#        if form.is_valid():
-#            form.save()
-#            username = form.cleaned_data.get('username')
-#            raw_password = form.cleaned_data.get('password1')
-#            user = authenticate(username=username, password=raw_password)  # 사용자 인증
-#            login(request, user)  # 로그인
-#            return redirect('profileapp:create')  # 바꿔야
-#    else:
-#        form = UserForm()
-#    return render(request, 'accountapp/create.html', {'form': form})
+
+    if request.method == 'POST':
+        Nickname = request.POST.get('nickname', False)
+
+
+        nickname = Nickname()
+
+        nickname.save()
+
+        return render(request, 'buildapp:home')
+
+    return render(request, 'profileapp/create.html')
 
 
 
@@ -53,7 +58,6 @@ def MyPage(request):
 def View(request):
     if request.method == 'GET':
         return render(request, 'profileapp/profile.html')
-
 
 
 
