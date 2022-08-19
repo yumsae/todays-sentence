@@ -276,7 +276,7 @@ p {
     display: table; 
     float: left; 
     width: 32rem; 
-    height: 160px; 
+    height: 10rem; 
 }
 
 
@@ -288,6 +288,7 @@ p {
     color: #555; 
     vertical-align:middle;
     white-space: pre-line;
+    
 }
 
 .slide_btn_box > button { 
