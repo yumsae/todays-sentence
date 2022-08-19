@@ -5,7 +5,6 @@ from buildapp.views import community, home, write_poet, write_sentence
 
 app_name = 'buildapp'
 
-
 urlpatterns = [
     path('', home, name='home'),
     path('sentence/write', write_sentence, name="write_sentence"),
