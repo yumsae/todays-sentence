@@ -12,3 +12,6 @@ class Article(models.Model):
     title = models.CharField(max_length=100, null=True)
     text = models.TextField(null=False)
     created_at = models.DateTimeField(auto_now=True)
+
+class Sentence(models.Model):
+    text = models.TextField(null=True)
