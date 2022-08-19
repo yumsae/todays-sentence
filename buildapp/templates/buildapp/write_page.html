@@ -11,7 +11,7 @@
             <div class="sentence-box">
                 <div class="sentence-area">
                     <p class="sentence-text">나보기가 역겨워 가실 때에는 말없이 고이 보내 드리오리다</p>
-                    <p class="sentence-text">원작자 : 김소월(ilovemunhak)</p>
+                    <p class="sentence-text creator">원작자 : 김소월(ilovemunhak)</p>
                 </div>
                 <button class="icon-area">
                     <i class="fa-regular fa-copy fa-lg"></i>
@@ -43,9 +43,22 @@
 </script>
 
 <style>
+
+    :root {
+    --red: #CC3F3B;
+    --black: #121212;
+    --bg: #D9D9D9;
+    --btn-light: #D5C4C4;
+    --btn-light-hover: #B5A4A4;
+    }
     
     body{
         background-image: url("https://images.unsplash.com/photo-1586075010923-2dd4570fb338?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80");
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
     }
 
     .text-area{
@@ -63,7 +76,7 @@
         font-size: 1.25rem;
         font-family: 'song myung';
         background-color:transparent;
-        border:0 solid black;
+        border:0 solid var(--black);
     }
 
     hr{
@@ -76,16 +89,22 @@
 
     .sentence-box{
         width: 60%;
-        height: 5rem;
-        border:0 solid black;
-        background-color:#D9D9D9;
+        border:0 solid var(--black);
+        background-color: rgba(255, 255, 255, 0.5);
         margin: 0.625rem;
         display: flex;
+        padding: 1rem;
+    }
+
+    .creator {
+        font-size: 0.8rem;
+        margin-top: 0.4rem;
     }
 
     .sentence-area{
         margin: 0 auto;
         justify-content: center;
+        align-items: space-between;
     }
 
     .icon-area{
