@@ -15,7 +15,6 @@ def write_sentence(request):
     return render(request, 'buildapp/write_sentence.html')
 
 
-
 def write_poet(request):
     # model = Article
     #

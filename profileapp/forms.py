@@ -9,6 +9,7 @@ class ProfileCreationForm(ModelForm):
         model = Profile
         fields = ['image', 'nickname', 'message']
 
+
 #class CustomCsUserChangeForm(UserChangeForm):
 #    password = None
 #    hp = forms.IntegerField(label='', widget=forms.NumberInput(
