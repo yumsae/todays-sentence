@@ -40,6 +40,27 @@
           display: none;
         }
 
+        .tip-title {
+            color: red;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .tip-container {
+            text-align: left;
+            padding: 0.5rem;
+        }
+
+        .tip-content {
+            margin-bottom: 0.5rem;
+            word-break: break-all;
+            white-space: pre-line;
+        }
+
+        ol {
+            margin: 0;
+            padding: 0;
+        }
 </style>
 
 
@@ -110,15 +131,7 @@
 
                                         ex) ‘오늘 엄마가 죽었다. 아니, 어쩌면 어제.’  -알베르 까뮈, &lt이방인&gt   
                                     </p>
-                                </div>
-                                <div class="slide_content slide07">
-                                    <p>
-                                        1. 문장을 작성한 뒤,
-                                        2. 체크 칸을 클릭하면,
-                                        3. 체크 문장은 글을 쓰는 곳에, 
-                                        4. 체크 되지 않은 문장은 공유 리스트에 올라가요.
-                                    </p>
-                                </div>
+                                </div> 
                             </div>
 
                             <!-- // .slide_list -->
@@ -156,7 +169,7 @@
     <div class="fade-up" data-aos="fade-up"> 
         <form>
             <div class="sentence-input-container">
-                <button class="fa-solid fa-circle-question square-btn" id="tip"></button>
+                <button type="button" class="fa-solid fa-circle-question square-btn" id="tip"></button>
                 <input type="text" class="sentence-input" placeholder="당신의 문장을 적어주세요."/> 
                 <button type="submit" onclick="addSentence(event);" class="fa-solid fa-pen-nib square-btn"></button>
             </div>
@@ -192,9 +205,18 @@
     <div class="modal hidden" id="tipModal">
         <div class="modalBox">
             <div class="modal-body">
-                <p>
-                    꿀팁 .  .  . 뭐냐 왜 안 되냐 
-                </p>
+                <pre class="tip-title">
+                    문장 가이드를 참고하여
+                    문장들을  자유롭게 작성합니다
+                </pre>
+                <ol class="tip-container">
+                    <li class="tip-content">1. 문장을 작성한 뒤,</li>
+                    <li class="tip-content">2. 체크 칸을 클릭하면,</li>
+                    <li class="tip-content">3. 체크 문장은 글을 쓰는 곳에,</li>
+                    <li class="tip-content">4. 체크 되지 않은 문장은 공유 리스트에 올라가요</li>
+                    <li class="tip-content">5. 공유 리스트에 올라온 다른 사람들의 문장을 참고하여 새로운 문장을 쓰거나, 작품에 인용할 수 있어요</li>
+                    <li class="tip-content">6. 공유 리스트로 올라간 문장들은 다른 사람들의 작품에 참고되거나, 인용되어요. 문장 공유 이외의 무단도용은 허가되지 않습니다.</li>
+                </ol>
             </div>
             <div class="modal-btns">
                 <button type="button" class="closeBtn" id="closeTipModal">확인</button>
@@ -216,11 +238,12 @@
 
     document.querySelector(".submit_btn").addEventListener("click", openSubmitModal);
     document.querySelector("#closeSubmitModal").addEventListener("click", closeSubmitModal);
-    document.querySelector(".bg").addEventListener("click", closeSubmitModal);
+    // document.querySelector(".bg").addEventListener("click", closeSubmitModal);
 
 
     // tip modal
     const openTipModal = () => {
+        // e.preventDefault();
         document.querySelector("#tipModal").classList.remove("hidden");
     }
 
@@ -230,7 +253,7 @@
 
     document.querySelector("#tip").addEventListener("click", openTipModal);
     document.querySelector("#closeTipModal").addEventListener("click", closeTipModal);
-
+    // document.querySelector(".bg").addEventListener("click", closeTipModal);
 </script>
 
 <!-- WORD TOOLTIP -->
