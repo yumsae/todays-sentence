@@ -19,11 +19,11 @@ def Create(request):
         if form.is_valid():
             form.save()
             nickname = form.cleaned_data.get('nickname')
-            return redirect('buildapp:home')
+            return redirect('profileapp:create')
     else:
         form = ProfileCreationForm()
-    return render(request, 'profileapp/create.html', {'form': form})
-
+    return render(request, 'buildapp:home', {'form': form})
+#    return render(request, 'profileapp/create.html', {'form': form})
 #def Create(request):
 #    if request.method == "POST":
 #        form = ProfileCreationForm(request.POST)
