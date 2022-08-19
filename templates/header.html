@@ -6,8 +6,8 @@
         <div class="nav" >
             <a href="{% url 'buildapp:home' %}" class="header_today_logo">&lt;오늘:의 문장&gt;</a>
             <ul class="nav_menu">
-                <li class="nav_item"><a href="{% url 'buildapp:write_poet' %}" class="nav_btn">글쓰기</a></li>
                 <li class="nav_item"><a href="{% url 'buildapp:write_sentence' %}" class="nav_btn">문장쓰기</a></li>
+                <li class="nav_item"><a href="{% url 'buildapp:write_poet' %}" class="nav_btn">글쓰기</a></li>
                 <li class="nav_item"><a href="{% url 'buildapp:community' %}" class="nav_btn">커뮤니티</a></li>
 
                 {% if user.is_authenticated %}
