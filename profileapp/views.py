@@ -8,7 +8,8 @@ from django.views.generic.list import MultipleObjectMixin
 #from profileapp.forms import CustomCsUserChangeForm
 #from profileapp.models import Profile
 
-
+def profile_create(request):
+    return render(request, 'profileapp/create.html')
 
 def MyPage(request):
     return render(request, 'profileapp/mypage.html')
@@ -30,4 +31,5 @@ def profile_view(request):
 #        user_change_form = CustomCsUserChangeForm(instance = request.user)
 #
 #        return render(request, 'users/profile_update.html', {'user_change_form':user_change_form})
+
 
