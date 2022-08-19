@@ -5,8 +5,8 @@ from django.shortcuts import render
 from django.views.generic import DetailView
 from django.views.generic.list import MultipleObjectMixin
 
-from profileapp.forms import CustomCsUserChangeForm
-from profileapp.models import Profile
+#from profileapp.forms import CustomCsUserChangeForm
+#from profileapp.models import Profile
 
 
 
@@ -23,11 +23,11 @@ def profile_view(request):
 #    if request.method == 'POST':
 #        user_change_form = CustomCsUserChangeForm(request.POST, instance = request.user)
 #
-        if user_change_form.is_valid():
-            user_change_form.save()
-            return render(request, 'users/profile.html')
-    else:
-        user_change_form = CustomCsUserChangeForm(instance = request.user)
-
-        return render(request, 'users/profile_update.html', {'user_change_form':user_change_form})
+#        if user_change_form.is_valid():
+#            user_change_form.save()
+#            return render(request, 'users/profile.html')
+#    else:
+#        user_change_form = CustomCsUserChangeForm(instance = request.user)
+#
+#        return render(request, 'users/profile_update.html', {'user_change_form':user_change_form})
 
