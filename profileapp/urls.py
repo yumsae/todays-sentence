@@ -7,7 +7,7 @@ app_name = 'profileapp'
 
 urlpatterns = [
     path('mypage/', views.MyPage, name='mypage'),
-    path('create/', views.profile_create, name='create'),
-    path('profile/', views.profile_view, name='profile'),
+    path('create/', views.Create, name='create'),
+    path('profile/', views.View, name='profile'),
     ]
 

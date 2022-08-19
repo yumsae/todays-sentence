@@ -22,7 +22,7 @@
     }
     .create-profile {
         text-align: left;
-        /* font-family: "hahmlet", sans-serif; */
+        /* font-family: "hamlet", sans-serif; */
         font-size: 1rem;
         margin: 2rem 0 4px 2.5rem;
         display: block;
@@ -107,7 +107,7 @@
         <form action="{% url 'profileapp:create' %}" method="post" class="profile-wrap">
             {% csrf_token %}
 
-            {% include "profileapp/forms_errors.html" %}
+{#            {% include "profileapp/forms_errors.html" %}#}
 
             <div>
                 <label type="images" class = "create-profile" id="profielImage"  >

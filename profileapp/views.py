@@ -8,15 +8,16 @@ from django.views.generic.list import MultipleObjectMixin
 #from profileapp.forms import CustomCsUserChangeForm
 #from profileapp.models import Profile
 
-def profile_create(request):
-    return render(request, 'profileapp/create.html')
+def Create(request):
+    if request.method == 'GET':
+        return render(request, 'profileapp/create.html')
 
 def MyPage(request):
     return render(request, 'profileapp/mypage.html')
 
 # users/views.py
 
-def profile_view(request):
+def View(request):
     if request.method == 'GET':
         return render(request, 'profileapp/profile.html')
 
