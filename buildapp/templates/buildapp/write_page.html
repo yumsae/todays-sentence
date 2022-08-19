@@ -4,21 +4,20 @@
 
 
 <div class="form-wrapper">
-    <form action="{% url 'buildapp:write_poet' %}" method="post" enctype="multipart" id='writePoet'/>
+    <form action="{% url 'buildapp:write_poet' %}" enctype="multipart" id='writePoet'/>
         {% csrf_token %}
         <div class= "text-area">
             <input class="title-input" type="text" placeholder="제목" name="title">
             <hr>
             <div class="sentence-box">
                 <div class="sentence-area">
-                    <p class="sentence-text">나보기가 역겨워 가실 때에는 말없이 고이 보내 드리오리다</p>
+                    <p class="sentence-text random-sentence">나보기가 역겨워 가실 때에는 말없이 고이 보내 드리오리다</p>
                     <p class="sentence-text creator">원작자 : 김소월(ilovemunhak)</p>
                 </div>
-                <button class="icon-area">
-                    <i class="fa-regular fa-copy fa-lg"></i>
-                    <i class="fa-solid fa-plus fa-lg"></i>
-                    <i class="fa-solid fa-arrows-rotate fa-lg"></i>
-                </button>
+                <span class="icon-area">
+                    <button id="plus"><i class="fa-solid fa-plus fa-lg icon-btn"></i></button>
+                    <button id="rotate"><i class="fa-solid fa-arrows-rotate fa-lg icon-btn"></i></button>
+                </span>
             </div>
             <textarea name="text-input" id="editor" placeholder="당신만의 이야기를 적어주세요." name="text"></textarea>
             <input type="hidden" name="text" id="text"/>
@@ -31,6 +30,47 @@
 
 <!-- Ckeditor -->
 <script>
+    const sentences = [
+        "나보기가 역겨워 가실 때에는 말없이 고이 보내 드리오리다",
+        "문장 1", 
+        "문장 2", 
+    ];
+    const creators = [
+        "김소월(ilovemunhak)",
+        "원작자 1",
+        "원작자 2",
+    ]; 
+
+    var sentence = "";
+    var creator = "";
+
+    function randomIdx() {
+        return Math.floor( Math.random() * sentences.length );
+    };
+
+    // 문장 랜덤 추출
+    function randomSentence(e) {
+        e.preventDefault(); 
+
+        let idx = randomIdx();
+        sentence = sentences[idx];
+        creator = creators[idx];
+
+        document.querySelector(".random-sentence").innerHTML = sentence;
+        document.querySelector(".creator").innerHTML = "원작자 : " + creator;
+    }
+
+    // 초기화
+    let idx = randomIdx();
+    sentence = sentences[idx];
+    creator = creators[idx];
+
+    document.querySelector(".random-sentence").innerHTML = sentence;
+    document.querySelector(".creator").innerHTML = "원작자 : " + creator;
+
+    document.querySelector("#rotate").addEventListener("click", function(){ randomSentence(event) });
+
+    // editor 
     let editor; 
 
     ClassicEditor
@@ -42,22 +82,26 @@
             // console.log(newEditor);
             editor = newEditor;
             // editor.setData('안녕');
-            console.log("뭘까")
+
             function applyText() {
                 var text = editor.getData().replace('<p>', '').replace('</p>', '');
                 document.querySelector("#text").value = text;
+                document.forms.writePoet.method = "post";
                 document.forms.writePoet.submit();
+            }
 
+            function addSentence(e) {
+                e.preventDefault();
+                editor.setData(sentence);
             }
 
             document.querySelector('#poetSubmit').addEventListener("click", applyText);
+            document.querySelector("#plus").addEventListener("click", function(){ addSentence(event) });
         })
         .catch(error=>{
             console.error(error);
         });
 
-
-    
 
 </script>
 
@@ -171,6 +215,11 @@
 
     .submit-button:hover{
         background-color:  #DE8A8A; 
+    }
+
+    .icon-btn {
+        margin: 0.6rem;
+        padding: 0;
     }
 
 </style>
