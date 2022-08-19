@@ -31,8 +31,16 @@
         <hr>
         <div class="profile-wrap" style="display:flex ;">
             <div class="profile-detail-wrap" style="flex:1 ;">
-                dfwsw
-                
+                <div class="profile-img">
+                    {{ user.image }}
+                </div>
+                <div class="profile-text">
+                    <div>
+                        {{ user.nickname }}
+                        {{ user.message }}
+                    </div>
+
+                </div>     
             </div>
             <div class="profie-nav" style="flex:1 ;">
                 <div class="profile_item_wrap">
