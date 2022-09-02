@@ -42,11 +42,6 @@ def write_poet(request):
 
     # articles = Article.objects.all()
 
-    def sentenceInsert(request):
-        
-        return HttpResponse(request, 'buildapp/write_page.html', {'sentence':list_sentence})
-
-
     if request.method == 'POST':
         title = request.POST.get('title', False)
         text = request.POST.get('text', False)
