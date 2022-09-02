@@ -118,19 +118,18 @@
 
     <div class="fade-up" data-aos="fade-up"> 
 
-        <form action="{% url 'buildapp:write_poet' %}" method="get" enctype="multipart/form-data" id="writeSentence">
+        <form action="{% url 'buildapp:write_poet' %}" enctype="multipart/form-data" id="writeSentence">
             {% csrf_token %}
             <div class="sentence-list-container">
                 <div class="select-menu-btn-container">
-                    <button class="select-menu-btn" onclick="selectAll()">전체 선택</button>
-                    <button class="select-menu-btn" onclick="selectDel()">선택 삭제</button>
+                    <a class="select-menu-btn" href="javascript:selectAll()">전체 선택</a>
+                    <a class="select-menu-btn" href="javascript:selectDel()">선택 삭제</a>
                 </div>
             </div>
-            <button type='submit' class="submit_btn" onclick="location.href='{% url 'buildapp:write_poet' %}'">선택한 문장으로 글쓰기</button>
+            <input type="button" class="submit_btn" onclick="submit(false)">선택한 문장으로 글쓰기</input>
         </form>
     </div>
 
-    
     <!--MODAL-->
     <div class="modal hidden" id="submitModal">
         <div class="modalBox">
@@ -142,10 +141,11 @@
             </div>
             <div class="modal-btns">
                 <button type="button" class="closeBtn" id="closeSubmitModal">아니오</button>
-                <button type="button" class="passBtn" onclick="location.href='{% url 'buildapp:write_poet' %}'">예</button>
+                <button type="button" class="passBtn" onclick="submit(true)">예</button>
             </div>
         </div>
     </div>
+
 
     <div class="modal hidden" id="tipModal">
         <div class="modalBox">
@@ -199,6 +199,14 @@
     document.querySelector("#tip").addEventListener("click", openTipModal);
     document.querySelector("#closeTipModal").addEventListener("click", closeTipModal);
     // document.querySelector(".bg").addEventListener("click", closeTipModal);
+
+    function submit(isChecked) {
+        if ( isChecked ) { // 문장 없을 경우 
+            document.forms.writeSentence
+        } else {
+
+        }
+    }
 </script>
 
 <!-- WORD TOOLTIP -->

@@ -23,27 +23,17 @@ class SentenceCreateView(CreateView):
     form_class = SentenceCreationForm
     template_name = 'buildapp/write_sentence.html'
 
-    # def input_test(request):
-    #     if request.method == 'POST':
-    #         list_sentence = request.POST.getlist('sentence-select')
-    #
-    #         for i in list_sentence:
-    #             writer = request.user
-    #             sentence = Sentence()
-    #             sentence.text = i
-    #             sentence.writer = writer
-    #             sentence.save()
+    def form_valid(self, form):
+        temp_comment = form.save(commit=False)
+        temp_comment.writer = self.request.writer
+        temp_comment.save()
 
+        self.list_sentence = self.request.POST.getlist('sentence-select') # 선택된 문장 가져오기 
 
+        return super().form_valid(form)
 
-
-
-    # def form_valid(self, form):
-    #     temp_comment = form.save(commit=False)
-    #     temp_comment.article = Sentence.objects.get(pk=self.request.POST['sentence_pk'])
-    #     temp_comment.writer = self.request.writer
-    #     temp_comment.save()
-    #     return super().form_valid(form)
+    def get_success_url(self) :
+        return super().get_success_url() # context + render 필요 
 
 
 
@@ -53,7 +43,7 @@ def write_poet(request):
     # articles = Article.objects.all()
 
     def sentenceInsert(request):
-        list_sentence = request.POST.getlist('sentence-select')
+        
         return HttpResponse(request, 'buildapp/write_page.html', {'sentence':list_sentence})
 
 
