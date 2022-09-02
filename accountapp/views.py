@@ -34,3 +34,4 @@ class AccountDetailView(DetailView, MultipleObjectMixin):
     context_object_name = 'target_user'
     template_name = 'accountapp/detail.html'
 
+
