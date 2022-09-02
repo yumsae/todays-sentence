@@ -13,12 +13,12 @@ services:
       - 80:80
 
   django_container_gunicorn:
-    image: django_test_iamge:11
+    image: django_test_iamge:13
     networks:
       - network
     volumes:
-      - static-volume:/home/today/staticfiles
-      - media-volume:/home/today/media
+      - static-volume:/home/todays-sentence/staticfiles
+      - media-volume:/home/todays-sentence/media
     secrets:
       - MYSQL_PASSWORD
       - DJANGO_SECRET_KEY
