@@ -4,7 +4,7 @@ WORKDIR /home/
 
 RUN echo wb01
 
-RUN git clone gh repo clone yumsae/todays-sentence
+RUN git clone gh repo clone todays-sentence
 
 WORKDIR /home/todays-sentence/
 
