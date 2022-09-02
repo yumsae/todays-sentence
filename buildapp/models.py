@@ -7,7 +7,6 @@ from profileapp.models import Profile
 
 class Article(models.Model):
     writer = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='article', null=True)
-    info = models.ForeignKey(Profile, on_delete=models.SET_NULL, related_name='article', null=True)
 
     title = models.CharField(max_length=100, null=True)
     text = models.TextField(null=False)
