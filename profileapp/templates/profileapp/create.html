@@ -103,17 +103,21 @@
             <h2>프로필 작성</h2>
         </div>
 
+
         <form action="{% url 'profileapp:create' %}" method="post" class="profile-wrap">
             {% csrf_token %}
 
 {#            {% include "profileapp/forms_errors.html" %}#}
 
+
             <div>
                 <label type="images" class = "create-profile" id="profielImage"  >
                     프로필 이미지 선택하기
                 </label>
-                <img class="profile-image" id="preview-image" alt="profile-image" src="https://dummyimage.com/500x500/ffffff/000000.png&text=preview+image">
-                <input style="display: block;" type="file" id="input-image">
+
+                <img class="profile-image" id="preview-image" alt="profile-image" src="https://dummyimage.com/500x500/ffffff/000000.png&text=preview+image" enctype="multipart/form-data">
+                <input style="display: block;" type="file" id="input-image" name="image">
+
                 <!-- <input type="file" class="profile-image" name="profielImage" accept="image/*" onchange="loadFile(this)"> -->
                 <label for="nickname" class="create-profile">
                     닉네임
@@ -124,7 +128,9 @@
                 <label type="text" for="message" class="create-profile">
                     설명글
                 </label>
+
                 <textarea type="text" class="profile-message" name="message" id="message" placeholder="자신을 소개해주세요." value="{{ form.message.value|default_if_none:'' }}"></textarea>
+
             </div>
             <button type="submit" class="submit-btn">생성하기</button>
         </form>

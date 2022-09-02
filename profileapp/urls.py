@@ -1,13 +1,13 @@
 from django.urls import path
 
-#from profileapp.views import AccountDetailView
+
 from profileapp import views
 
 app_name = 'profileapp'
 
 urlpatterns = [
     path('mypage/', views.MyPage, name='mypage'),
-    path('create/', views.Create, name='create'),
-    path('profile/', views.View, name='profile'),
-    ]
+    path('create/', views.ProfileCreate, name='create'),
+]
+
 
