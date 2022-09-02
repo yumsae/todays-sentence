@@ -6,7 +6,7 @@ services:
     networks:
       - network
     volumes:
-      - /home/today/nginx.conf:/etc/nginx/nginx.conf
+      - /home/todays-sentence/nginx.conf:/etc/nginx/nginx.conf
       - static-volume:/data/static/
       - media-volume:/data/media/
     ports:
