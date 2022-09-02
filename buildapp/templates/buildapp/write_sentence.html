@@ -97,6 +97,14 @@
                     <button class="word-recommendation-content" data-toggle="tooltip" title="늘 해와 함께 살아가는 밝고 강한 사람">늘해랑</button>
                     <button class="word-recommendation-content" data-toggle="tooltip" title="성미가 활발한 사람.">더펄이</button>
                 </div>
+
+                <form>
+                    <div class="sentence-input-container">
+                        <button type="button" class="fa-solid fa-circle-question square-btn" id="tip"></button>
+                        <input type="text" class="sentence-input" placeholder="당신의 문장을 적어주세요."/> 
+                        <button type="submit" onclick="addSentence(event);" class="fa-solid fa-pen-nib square-btn"></button>
+                    </div>
+                </form>
         </div>
     
         <div class="next-guide">
@@ -109,13 +117,7 @@
 
 
     <div class="fade-up" data-aos="fade-up"> 
-        <form>
-            <div class="sentence-input-container">
-                <button type="button" class="fa-solid fa-circle-question square-btn" id="tip"></button>
-                <input type="text" class="sentence-input" placeholder="당신의 문장을 적어주세요."/> 
-                <button type="submit" onclick="addSentence(event);" class="fa-solid fa-pen-nib square-btn"></button>
-            </div>
-        </form>
+        
 
         <div class="sentence-list-container">
             <div class="select-menu-btn-container">
