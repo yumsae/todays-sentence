@@ -118,17 +118,16 @@
 
     <div class="fade-up" data-aos="fade-up"> 
 
-        <form action="{% url 'buildapp:write_poet' %}" enctype="multipart/form-data" id="writeSentence">
-            {% csrf_token %}
+        <form id="writeSentence" action="{% url 'buildapp:write_poet' %}">
             <div class="sentence-list-container">
                 <div class="select-menu-btn-container">
-                    <a class="select-menu-btn" href="javascript:selectAll()">전체 선택</a>
-                    <a class="select-menu-btn" href="javascript:selectDel()">선택 삭제</a>
+                    <button type="button" class="select-menu-btn" onclick="selectAll()">전체 선택</button>
+                    <button type="button" class="select-menu-btn" onclick="selectDel()">선택 삭제</button>
                 </div>
             </div>
             
-            <input type="button" class="submit_btn" onclick="submit(false)">선택한 문장으로 글쓰기</input>
-            <div  class="selected-sentence-list"></div>
+            <button type="button" class="submit_btn" onclick="submit(false)">선택한 문장으로 글쓰기</button>
+            <div class="selected-sentence-list"></div>
         </form>
     </div>
 
@@ -232,8 +231,8 @@
 
         container.innerHTML = `
             <div class="select-menu-btn-container">
-                <button class="select-menu-btn" onclick="selectAll()">전체 선택</button>
-                <button class="select-menu-btn" onclick="selectDel()">선택 삭제</button>
+                <button type="button"  class="select-menu-btn" onclick="selectAll()">전체 선택</button>
+                <button type="button" class="select-menu-btn" onclick="selectDel()">선택 삭제</button>
             </div>
         `; // 비우기 
 
@@ -247,7 +246,7 @@
                                 ${sentence}
                             </label>
                         </p>
-                        <button class="sentence-eraser" onclick="deleteOne('${sentence}');"><i class="fa-solid fa-eraser"></i></button>
+                        <button type="button" class="sentence-eraser" onclick="deleteOne('${sentence}');"><i class="fa-solid fa-eraser"></i></button>
                     </div>
             `;
         });
@@ -305,6 +304,7 @@
     function submit(isChecked) {
         if ( isChecked ) { // 문장 없을 경우 
             document.forms.writeSentence.method = "POST";
+            document.forms.writeSentence.action = "{% url 'buildapp:write_poet' %}";
         } else {
             // 선택한 문장은 따로 context로 빼주기 
             var checkboxs = document.querySelectorAll('.sentence-select')
@@ -316,6 +316,7 @@
                 }
             })
             document.forms.writeSentence.method = "POST";
+            document.forms.writeSentence.action = "{% url 'buildapp:write_poet' %}"
         }
     }
 </script>
