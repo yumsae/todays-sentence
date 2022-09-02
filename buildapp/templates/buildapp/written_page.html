@@ -1,0 +1,97 @@
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/written-page.css' %}">
+    <body>
+    <div class="written-page">
+        <div class="written-title">
+            <h2>글 제목</h2>
+            <hr>
+            <p class="written-writer">글쓰니</p>
+        </div>
+        <div class="written-area">
+            <div class="written-text">
+
+                죽는 날까지 하늘을 우러러
+                한 점 부끄럼이 없기를,
+                잎새에 이는 바람에도
+                나는 괴로워했다.
+                별을 노래하는 마음으로
+                모든 죽어 가는 것을 사랑해야지
+                그리고 나한테 주어진 길을
+                걸어가야겠다.
+                
+                오늘 밤에도 별이 바람에 스치운다.
+
+            </div>
+            <div class="sentence-box">
+                공유 리스트의 문장(랜덤1문장)
+                원작자: user1
+            </div>
+            <div class="btn-area">
+                <button class="return-btn">커뮤니티로 돌아가기</button>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+
+    body{
+        background-image: url("https://images.unsplash.com/photo-1586075010923-2dd4570fb338?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80");
+    }
+
+    hr{
+        width: 60%;
+    }
+
+    .written-area{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h2{
+        text-align: left;
+        margin-left: 20%;
+    }
+
+    .written-writer{
+        text-align: right;
+        margin-right: 20%;
+    }
+
+    .written-text{
+        width: 60%;
+        min-height: 31.25rem;;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin: 0.625rem;
+    }
+
+    .sentence-box{
+        width: 60%;
+        height:3rem;
+        margin: 2 rem;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .return-btn{
+        width: 12.5rem;
+        height: 3.125rem;
+        margin: 0.938rem;
+        font-size: 1.063rem;
+        font-family: 'song myung';
+        background-color: rgb(108, 108, 108);
+        color: white;
+        transition: background-color .5s;
+        border: none;
+        border-radius: 0.2rem;
+    }
+
+    .return-btn:hover{
+        background-color:  #DE8A8A; 
+    }
+
+
+
+</style>
