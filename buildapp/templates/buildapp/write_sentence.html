@@ -117,21 +117,7 @@
 
 
     <div class="fade-up" data-aos="fade-up"> 
-<<<<<<< HEAD
-        
 
-        <div class="sentence-list-container">
-            <div class="select-menu-btn-container">
-                <button class="select-menu-btn" onclick="selectAll()">전체 선택</button>
-                <button class="select-menu-btn" onclick="selectDel()">선택 삭제</button>
-=======
-        <form>
-            <div class="sentence-input-container">
-                <button type="button" class="fa-solid fa-circle-question square-btn" id="tip"></button>
-                <input type="text" class="sentence-input" placeholder="당신의 문장을 적어주세요."/> 
-                <button type="submit" onclick="addSentence(event);" class="fa-solid fa-pen-nib square-btn"></button>
-            </div>
-        </form>
         <form action="{% url 'buildapp:write_poet' %}" method="get" enctype="multipart/form-data" id="writeSentence">
             {% csrf_token %}
             <div class="sentence-list-container">
@@ -139,7 +125,6 @@
                     <button class="select-menu-btn" onclick="selectAll()">전체 선택</button>
                     <button class="select-menu-btn" onclick="selectDel()">선택 삭제</button>
                 </div>
->>>>>>> cc9cdbaea3d493feedef98e3038186ba4a1cb8eb
             </div>
             <button type='submit' class="submit_btn" onclick="location.href='{% url 'buildapp:write_poet' %}'">선택한 문장으로 글쓰기</button>
         </form>
