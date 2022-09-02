@@ -13,7 +13,7 @@ services:
       - 80:80
 
   django_container_gunicorn:
-    image: django_test_iamge:5
+    image: django_test_iamge:6
     networks:
       - network
     volumes:
@@ -52,6 +52,6 @@ secrets:
   DJANGO_SECRET_KEY:
     external: true
   MYSQL_PASSWORD:
-      external: true
+    external: true
   MYSQL_ROOT_PASSWORD:
     external: true
