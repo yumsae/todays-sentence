@@ -3,7 +3,6 @@ from sqlite3 import Time
 
 from django.http import HttpResponse
 from django.shortcuts import render
-
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -12,6 +11,7 @@ from django.views.generic import CreateView
 
 from buildapp.forms import SentenceCreationForm
 from buildapp.models import Article, Sentence
+
 
 def home(request):
     return render(request, 'buildapp/home.html')
@@ -52,6 +52,8 @@ def write_poet(request):
 
     return render(request, 'buildapp/write_page.html')
 
+
 def community(request):
     return render(request, 'buildapp/tst_write_community.html')
+
 
