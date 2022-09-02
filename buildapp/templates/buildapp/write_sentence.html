@@ -127,6 +127,8 @@
                 </div>
             </div>
             <input type="button" class="submit_btn" onclick="submit(false)">선택한 문장으로 글쓰기</input>
+            <div  class="selected-sentence-list">
+            </div>
         </form>
     </div>
 
@@ -199,14 +201,6 @@
     document.querySelector("#tip").addEventListener("click", openTipModal);
     document.querySelector("#closeTipModal").addEventListener("click", closeTipModal);
     // document.querySelector(".bg").addEventListener("click", closeTipModal);
-
-    function submit(isChecked) {
-        if ( isChecked ) { // 문장 없을 경우 
-            document.forms.writeSentence
-        } else {
-
-        }
-    }
 </script>
 
 <!-- WORD TOOLTIP -->
@@ -306,6 +300,23 @@
     function deleteOne(sentence) {
         sentences.splice(sentences.indexOf(sentence), 1);
         loadSentence();
+    }
+
+    function submit(isChecked) {
+        if ( isChecked ) { // 문장 없을 경우 
+            document.forms.writeSentence.method = "POST";
+        } else {
+            // 선택한 문장은 따로 context로 빼주기 
+            var checkboxs = document.querySelectorAll('.sentence-select')
+            checkboxs.forEach((checkbox) => {
+                if ( checkbox.checked ) {
+                    document.querySelector(".selected-sentence-list").innerHTML += `
+                        <input type="hidden" name="selectedSentece[]"></input>
+                    `
+                }
+            })
+            document.forms.writeSentence.method = "POST";
+        }
     }
 </script>
 
