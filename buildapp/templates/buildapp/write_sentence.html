@@ -125,6 +125,7 @@
                     <a class="select-menu-btn" href="javascript:selectAll()">전체 선택</a>
                     <a class="select-menu-btn" href="javascript:selectDel()">선택 삭제</a>
                 </div>
+
             </div>
             <input type="button" class="submit_btn" onclick="submit(false)">선택한 문장으로 글쓰기</input>
             <div  class="selected-sentence-list">
@@ -311,7 +312,7 @@
             checkboxs.forEach((checkbox) => {
                 if ( checkbox.checked ) {
                     document.querySelector(".selected-sentence-list").innerHTML += `
-                        <input type="hidden" name="selectedSentece[]"></input>
+                        <input type="hidden" name="selectedSentence[]"></input>
                     `
                 }
             })

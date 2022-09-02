@@ -24,7 +24,9 @@ def write_sentence(request):
 
     if request.method == 'POST' :
         list_sentence = request.POST.getlist('sentence[]') # 선택되지 않은 문장 가져오기 
+        
         list_selected = request.POST.getlist('selectedSentence[]') # 선택된 문장 가져오기 
+
         writer = request.user
         return render('buildapp/write_page.html', {'list_selected':list_selected})
 
