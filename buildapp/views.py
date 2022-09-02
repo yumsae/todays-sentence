@@ -17,24 +17,16 @@ def home(request):
     return render(request, 'buildapp/home.html')
 
 
-@method_decorator(login_required, name='dispatch')
-class SentenceCreateView(CreateView):
-    model = Sentence
-    form_class = SentenceCreationForm
-    template_name = 'buildapp/write_sentence.html'
+@login_required(login_url='/accounts/login/')
+def write_sentence(request): 
+    if request.method == 'GET' :
+        return render(request, 'buildapp/write_page.html')
 
-    def form_valid(self, form):
-        temp_comment = form.save(commit=False)
-        temp_comment.writer = self.request.writer
-        temp_comment.save()
-
-        self.list_sentence = self.request.POST.getlist('sentence-select') # 선택된 문장 가져오기 
-
-        return super().form_valid(form)
-
-    def get_success_url(self) :
-        return super().get_success_url() # context + render 필요 
-
+    if request.method == 'POST' :
+        list_sentence = request.POST.getlist('sentence[]') # 선택되지 않은 문장 가져오기 
+        list_selected = request.POST.getlist('selectedSentence[]') # 선택된 문장 가져오기 
+        writer = request.user
+        return render('buildapp/write_page.html', {'list_selected':list_selected})
 
 
 @login_required(login_url='/accounts/login/')
