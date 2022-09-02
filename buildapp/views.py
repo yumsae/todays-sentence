@@ -20,7 +20,7 @@ def home(request):
 @login_required(login_url='/accounts/login/')
 def write_sentence(request): 
     if request.method == 'GET' :
-        return render(request, 'buildapp/write_page.html')
+        return render(request, 'buildapp/write_sentence.html')
 
     if request.method == 'POST' :
         list_sentence = request.POST.getlist('sentence[]') # 선택되지 않은 문장 가져오기 
