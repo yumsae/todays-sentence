@@ -2,7 +2,7 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo wb01
+RUN echo wb02
 
 RUN git clone gh repo clone todays-sentence
 
