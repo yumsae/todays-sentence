@@ -47,7 +47,7 @@ class SentenceCreateView(CreateView):
 
 
 
-@login_required(login_url='/account/login/')
+@login_required(login_url='/accounts/login/')
 def write_poet(request):
 
     # articles = Article.objects.all()

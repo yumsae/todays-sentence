@@ -8,7 +8,6 @@ from django.views.generic.list import MultipleObjectMixin
 
 
 from profileapp.forms import ProfileCreationForm
-<<<<<<< HEAD
 
 
 #def Create(request):
@@ -46,10 +45,7 @@ def Create(request):
 
 
 
-
-=======
 from profileapp.models import Profile
->>>>>>> d4cce5b6ce3b571b6503159af56b9b3247a4d565
 
 
 
@@ -66,8 +62,6 @@ def ProfileCreate(request):
         profile.nickname = request.POST['nickname']
         profile.message = request.POST['message']
         profile.save()
-
-<<<<<<< HEAD
 
 
 
@@ -93,8 +87,6 @@ def ProfileCreate(request):
 #
 #        return render(request, 'users/profile_update.html', {'user_change_form':user_change_form})
 
-=======
         return redirect('buildapp:home')
     return render(request, 'profileapp/create.html')
->>>>>>> d4cce5b6ce3b571b6503159af56b9b3247a4d565
 
