@@ -2,7 +2,7 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo "wb11"
+RUN echo "wb12"
 
 RUN git clone https://github.com/ssorn88/todays-sentence.git
 
